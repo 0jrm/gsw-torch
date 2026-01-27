@@ -1,0 +1,61 @@
+Function,Gradients Work,Num Differentiable Inputs,Status,Issues,Error Message
+CT_first_derivatives,Yes,2,PASS,,
+CT_freezing,No,3,FAIL,Non-finite gradients for input 0; Non-finite gradients for input 1; Non-finite gradients for input 2,
+CT_maxdensity,Yes,2,PASS,,
+CT_second_derivatives,Yes,2,PASS,,
+IPV_vs_fNsquared_ratio,No,0,ERROR,,only integer tensors of a single element can be converted to an index
+Nsquared,No,0,ERROR,,name '_grav' is not defined
+O2sol_SP_pt,No,2,FAIL,Non-finite gradients for input 0; Non-finite gradients for input 1,
+SR_from_SP,Yes,1,PASS,,
+adiabatic_lapse_rate_from_CT,Yes,3,PASS,,
+alpha,Yes,3,PASS,,
+alpha_on_beta,Yes,3,PASS,,
+beta,Yes,3,PASS,,
+cabbeling,No,0,ERROR,,grad can be implicitly created only for scalar outputs
+distance,No,0,ERROR,,only integer tensors of a single element can be converted to an index
+dynamic_enthalpy,Yes,3,PASS,,
+enthalpy,Yes,3,PASS,,
+enthalpy_SSO_0,Yes,1,PASS,,
+enthalpy_diff,Yes,4,PASS,,
+enthalpy_first_derivatives,Yes,0,PASS,,
+enthalpy_second_derivatives,Yes,3,PASS,,
+entropy_first_derivatives,Yes,2,PASS,,
+entropy_from_CT,Yes,2,PASS,,
+entropy_second_derivatives,Yes,2,PASS,,
+f,Yes,1,PASS,,
+geostrophic_velocity,Yes,3,PASS,,
+grav,Yes,2,PASS,,
+infunnel,Yes,0,PASS,,
+internal_energy,Yes,3,PASS,,
+kappa,Yes,3,PASS,,
+latentheat_evap_CT,Yes,2,PASS,,
+latentheat_melting,Yes,2,PASS,,
+pt_first_derivatives,Yes,0,PASS,,
+pt_second_derivatives,Yes,0,PASS,,
+rho,Yes,3,PASS,,
+rho_alpha_beta,Yes,3,PASS,,
+rho_first_derivatives,Yes,3,PASS,,
+rho_first_derivatives_wrt_enthalpy,Yes,3,PASS,,
+rho_second_derivatives,No,0,ERROR,,grad can be implicitly created only for scalar outputs
+rho_second_derivatives_wrt_enthalpy,No,0,ERROR,,grad can be implicitly created only for scalar outputs
+sa_ct_interp,No,0,ERROR,,"diff(): argument 'dim' must be int, not Tensor"
+sigma0,Yes,2,PASS,,
+sigma1,Yes,2,PASS,,
+sigma2,Yes,2,PASS,,
+sigma3,Yes,2,PASS,,
+sigma4,Yes,2,PASS,,
+sound_speed,Yes,3,PASS,,
+specvol,Yes,3,PASS,,
+specvol_alpha_beta,Yes,3,PASS,,
+specvol_anom_standard,Yes,3,PASS,,
+specvol_first_derivatives,Yes,3,PASS,,
+specvol_first_derivatives_wrt_enthalpy,Yes,3,PASS,,
+specvol_second_derivatives,No,0,ERROR,,grad can be implicitly created only for scalar outputs
+specvol_second_derivatives_wrt_enthalpy,No,0,ERROR,,grad can be implicitly created only for scalar outputs
+spiciness0,Yes,2,PASS,,
+spiciness1,Yes,2,PASS,,
+spiciness2,Yes,2,PASS,,
+t90_from_t68,Yes,1,PASS,,
+t_freezing,No,3,FAIL,Non-finite gradients for input 0,
+thermobaric,No,0,ERROR,,grad can be implicitly created only for scalar outputs
+tracer_ct_interp,No,0,ERROR,,"diff(): argument 'dim' must be int, not Tensor"

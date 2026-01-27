@@ -1,0 +1,3471 @@
+{
+  "summary": {
+    "total_reference": 179,
+    "total_pytorch": 118,
+    "in_both": 117,
+    "only_reference": 62,
+    "only_pytorch": 1
+  },
+  "functions_in_both": {
+    "CT_first_derivatives": {
+      "reference": {
+        "name": "CT_first_derivatives",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "pt"
+        ],
+        "num_params": 2,
+        "signature": "(SA, pt)"
+      },
+      "pytorch": {
+        "name": "CT_first_derivatives",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "pt"
+        ],
+        "num_params": 2,
+        "signature": "(SA, pt)"
+      }
+    },
+    "CT_freezing": {
+      "reference": {
+        "name": "CT_freezing",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "p",
+          "saturation_fraction"
+        ],
+        "num_params": 3,
+        "signature": "(SA, p, saturation_fraction)"
+      },
+      "pytorch": {
+        "name": "CT_freezing",
+        "module": "gsw_torch._core.freezing",
+        "parameters": [
+          "SA",
+          "p",
+          "saturation_fraction"
+        ],
+        "num_params": 3,
+        "signature": "(SA, p, saturation_fraction)"
+      }
+    },
+    "CT_from_enthalpy": {
+      "reference": {
+        "name": "CT_from_enthalpy",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "h",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, h, p)"
+      },
+      "pytorch": {
+        "name": "CT_from_enthalpy",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "h",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, h, p)"
+      }
+    },
+    "CT_from_entropy": {
+      "reference": {
+        "name": "CT_from_entropy",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "entropy"
+        ],
+        "num_params": 2,
+        "signature": "(SA, entropy)"
+      },
+      "pytorch": {
+        "name": "CT_from_entropy",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "entropy"
+        ],
+        "num_params": 2,
+        "signature": "(SA, entropy)"
+      }
+    },
+    "CT_from_pt": {
+      "reference": {
+        "name": "CT_from_pt",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "pt"
+        ],
+        "num_params": 2,
+        "signature": "(SA, pt)"
+      },
+      "pytorch": {
+        "name": "CT_from_pt",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "pt"
+        ],
+        "num_params": 2,
+        "signature": "(SA, pt)"
+      }
+    },
+    "CT_from_rho": {
+      "reference": {
+        "name": "CT_from_rho",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "rho",
+          "SA",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(rho, SA, p)"
+      },
+      "pytorch": {
+        "name": "CT_from_rho",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "rho",
+          "SA",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(rho, SA, p)"
+      }
+    },
+    "CT_from_t": {
+      "reference": {
+        "name": "CT_from_t",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      },
+      "pytorch": {
+        "name": "CT_from_t",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      }
+    },
+    "CT_maxdensity": {
+      "reference": {
+        "name": "CT_maxdensity",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(SA, p)"
+      },
+      "pytorch": {
+        "name": "CT_maxdensity",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(SA, p)"
+      }
+    },
+    "CT_second_derivatives": {
+      "reference": {
+        "name": "CT_second_derivatives",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "pt"
+        ],
+        "num_params": 2,
+        "signature": "(SA, pt)"
+      },
+      "pytorch": {
+        "name": "CT_second_derivatives",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "pt"
+        ],
+        "num_params": 2,
+        "signature": "(SA, pt)"
+      }
+    },
+    "C_from_SP": {
+      "reference": {
+        "name": "C_from_SP",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SP",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SP, t, p)"
+      },
+      "pytorch": {
+        "name": "C_from_SP",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SP",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SP, t, p)"
+      }
+    },
+    "IPV_vs_fNsquared_ratio": {
+      "reference": {
+        "name": "IPV_vs_fNsquared_ratio",
+        "module": "gsw.stability",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "p_ref",
+          "axis"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, p_ref=0, axis=0)"
+      },
+      "pytorch": {
+        "name": "IPV_vs_fNsquared_ratio",
+        "module": "gsw_torch.stability",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "p_ref",
+          "axis"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, p_ref=0, axis=0)"
+      }
+    },
+    "Nsquared": {
+      "reference": {
+        "name": "Nsquared",
+        "module": "gsw.stability",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "lat",
+          "axis"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, lat=None, axis=0)"
+      },
+      "pytorch": {
+        "name": "Nsquared",
+        "module": "gsw_torch.stability",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "lat",
+          "axis"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, lat=None, axis=0)"
+      }
+    },
+    "O2sol": {
+      "reference": {
+        "name": "O2sol",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, lon, lat)"
+      },
+      "pytorch": {
+        "name": "O2sol",
+        "module": "gsw_torch._core.utility",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, lon, lat)"
+      }
+    },
+    "O2sol_SP_pt": {
+      "reference": {
+        "name": "O2sol_SP_pt",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SP",
+          "pt"
+        ],
+        "num_params": 2,
+        "signature": "(SP, pt)"
+      },
+      "pytorch": {
+        "name": "O2sol_SP_pt",
+        "module": "gsw_torch._core.utility",
+        "parameters": [
+          "SP",
+          "pt"
+        ],
+        "num_params": 2,
+        "signature": "(SP, pt)"
+      }
+    },
+    "SAAR": {
+      "reference": {
+        "name": "SAAR",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 3,
+        "signature": "(p, lon, lat)"
+      },
+      "pytorch": {
+        "name": "SAAR",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 3,
+        "signature": "(p, lon, lat)"
+      }
+    },
+    "SA_freezing_from_CT": {
+      "reference": {
+        "name": "SA_freezing_from_CT",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "CT",
+          "p",
+          "saturation_fraction"
+        ],
+        "num_params": 3,
+        "signature": "(CT, p, saturation_fraction)"
+      },
+      "pytorch": {
+        "name": "SA_freezing_from_CT",
+        "module": "gsw_torch._core.freezing",
+        "parameters": [
+          "CT",
+          "p",
+          "saturation_fraction"
+        ],
+        "num_params": 3,
+        "signature": "(CT, p, saturation_fraction)"
+      }
+    },
+    "SA_from_SP": {
+      "reference": {
+        "name": "SA_from_SP",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SP",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(SP, p, lon, lat)"
+      },
+      "pytorch": {
+        "name": "SA_from_SP",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SP",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(SP, p, lon, lat)"
+      }
+    },
+    "SA_from_Sstar": {
+      "reference": {
+        "name": "SA_from_Sstar",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "Sstar",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(Sstar, p, lon, lat)"
+      },
+      "pytorch": {
+        "name": "SA_from_Sstar",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "Sstar",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(Sstar, p, lon, lat)"
+      }
+    },
+    "SA_from_rho": {
+      "reference": {
+        "name": "SA_from_rho",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "rho",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(rho, CT, p)"
+      },
+      "pytorch": {
+        "name": "SA_from_rho",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "rho",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(rho, CT, p)"
+      }
+    },
+    "SP_from_C": {
+      "reference": {
+        "name": "SP_from_C",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "C",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(C, t, p)"
+      },
+      "pytorch": {
+        "name": "SP_from_C",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "C",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(C, t, p)"
+      }
+    },
+    "SP_from_SA": {
+      "reference": {
+        "name": "SP_from_SA",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(SA, p, lon, lat)"
+      },
+      "pytorch": {
+        "name": "SP_from_SA",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(SA, p, lon, lat)"
+      }
+    },
+    "SP_from_SK": {
+      "reference": {
+        "name": "SP_from_SK",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SK"
+        ],
+        "num_params": 1,
+        "signature": "(SK)"
+      },
+      "pytorch": {
+        "name": "SP_from_SK",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SK"
+        ],
+        "num_params": 1,
+        "signature": "(SK)"
+      }
+    },
+    "SP_from_SR": {
+      "reference": {
+        "name": "SP_from_SR",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SR"
+        ],
+        "num_params": 1,
+        "signature": "(SR)"
+      },
+      "pytorch": {
+        "name": "SP_from_SR",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SR"
+        ],
+        "num_params": 1,
+        "signature": "(SR)"
+      }
+    },
+    "SP_from_Sstar": {
+      "reference": {
+        "name": "SP_from_Sstar",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "Sstar",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(Sstar, p, lon, lat)"
+      },
+      "pytorch": {
+        "name": "SP_from_Sstar",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "Sstar",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(Sstar, p, lon, lat)"
+      }
+    },
+    "SR_from_SP": {
+      "reference": {
+        "name": "SR_from_SP",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SP"
+        ],
+        "num_params": 1,
+        "signature": "(SP)"
+      },
+      "pytorch": {
+        "name": "SR_from_SP",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SP"
+        ],
+        "num_params": 1,
+        "signature": "(SP)"
+      }
+    },
+    "Sstar_from_SA": {
+      "reference": {
+        "name": "Sstar_from_SA",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(SA, p, lon, lat)"
+      },
+      "pytorch": {
+        "name": "Sstar_from_SA",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(SA, p, lon, lat)"
+      }
+    },
+    "Sstar_from_SP": {
+      "reference": {
+        "name": "Sstar_from_SP",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SP",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(SP, p, lon, lat)"
+      },
+      "pytorch": {
+        "name": "Sstar_from_SP",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SP",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(SP, p, lon, lat)"
+      }
+    },
+    "Turner_Rsubrho": {
+      "reference": {
+        "name": "Turner_Rsubrho",
+        "module": "gsw.stability",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "axis"
+        ],
+        "num_params": 4,
+        "signature": "(SA, CT, p, axis=0)"
+      },
+      "pytorch": {
+        "name": "Turner_Rsubrho",
+        "module": "gsw_torch.stability",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "axis"
+        ],
+        "num_params": 4,
+        "signature": "(SA, CT, p, axis=0)"
+      }
+    },
+    "adiabatic_lapse_rate_from_CT": {
+      "reference": {
+        "name": "adiabatic_lapse_rate_from_CT",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "adiabatic_lapse_rate_from_CT",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "adiabatic_lapse_rate_ice": {
+      "reference": {
+        "name": "adiabatic_lapse_rate_ice",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      },
+      "pytorch": {
+        "name": "adiabatic_lapse_rate_ice",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      }
+    },
+    "alpha": {
+      "reference": {
+        "name": "alpha",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "alpha",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "alpha_on_beta": {
+      "reference": {
+        "name": "alpha_on_beta",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "alpha_on_beta",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "alpha_wrt_t_ice": {
+      "reference": {
+        "name": "alpha_wrt_t_ice",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      },
+      "pytorch": {
+        "name": "alpha_wrt_t_ice",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      }
+    },
+    "beta": {
+      "reference": {
+        "name": "beta",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "beta",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "cabbeling": {
+      "reference": {
+        "name": "cabbeling",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "cabbeling",
+        "module": "gsw_torch._core.stability",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "chem_potential_water_ice": {
+      "reference": {
+        "name": "chem_potential_water_ice",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      },
+      "pytorch": {
+        "name": "chem_potential_water_ice",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      }
+    },
+    "chem_potential_water_t_exact": {
+      "reference": {
+        "name": "chem_potential_water_t_exact",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      },
+      "pytorch": {
+        "name": "chem_potential_water_t_exact",
+        "module": "gsw_torch._core.utility",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      }
+    },
+    "cp_ice": {
+      "reference": {
+        "name": "cp_ice",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      },
+      "pytorch": {
+        "name": "cp_ice",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      }
+    },
+    "deltaSA_from_SP": {
+      "reference": {
+        "name": "deltaSA_from_SP",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SP",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(SP, p, lon, lat)"
+      },
+      "pytorch": {
+        "name": "deltaSA_from_SP",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SP",
+          "p",
+          "lon",
+          "lat"
+        ],
+        "num_params": 4,
+        "signature": "(SP, p, lon, lat)"
+      }
+    },
+    "distance": {
+      "reference": {
+        "name": "distance",
+        "module": "gsw.geostrophy",
+        "parameters": [
+          "lon",
+          "lat",
+          "p",
+          "axis"
+        ],
+        "num_params": 4,
+        "signature": "(lon, lat, p=0, axis=-1)"
+      },
+      "pytorch": {
+        "name": "distance",
+        "module": "gsw_torch.geostrophy",
+        "parameters": [
+          "lon",
+          "lat",
+          "p",
+          "axis"
+        ],
+        "num_params": 4,
+        "signature": "(lon, lat, p=0, axis=-1)"
+      }
+    },
+    "dynamic_enthalpy": {
+      "reference": {
+        "name": "dynamic_enthalpy",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "dynamic_enthalpy",
+        "module": "gsw_torch._core.energy",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "enthalpy": {
+      "reference": {
+        "name": "enthalpy",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "enthalpy",
+        "module": "gsw_torch._core.energy",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "enthalpy_SSO_0": {
+      "reference": {
+        "name": "enthalpy_SSO_0",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "p"
+        ],
+        "num_params": 1,
+        "signature": "(p)"
+      },
+      "pytorch": {
+        "name": "enthalpy_SSO_0",
+        "module": "gsw_torch._core.energy",
+        "parameters": [
+          "p"
+        ],
+        "num_params": 1,
+        "signature": "(p)"
+      }
+    },
+    "enthalpy_diff": {
+      "reference": {
+        "name": "enthalpy_diff",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p_shallow",
+          "p_deep"
+        ],
+        "num_params": 4,
+        "signature": "(SA, CT, p_shallow, p_deep)"
+      },
+      "pytorch": {
+        "name": "enthalpy_diff",
+        "module": "gsw_torch._core.energy",
+        "parameters": [
+          "SA",
+          "CT",
+          "p_shallow",
+          "p_deep"
+        ],
+        "num_params": 4,
+        "signature": "(SA, CT, p_shallow, p_deep)"
+      }
+    },
+    "enthalpy_first_derivatives": {
+      "reference": {
+        "name": "enthalpy_first_derivatives",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "enthalpy_first_derivatives",
+        "module": "gsw_torch._core.energy",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "enthalpy_ice": {
+      "reference": {
+        "name": "enthalpy_ice",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      },
+      "pytorch": {
+        "name": "enthalpy_ice",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      }
+    },
+    "enthalpy_second_derivatives": {
+      "reference": {
+        "name": "enthalpy_second_derivatives",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "enthalpy_second_derivatives",
+        "module": "gsw_torch._core.energy",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "enthalpy_t_exact": {
+      "reference": {
+        "name": "enthalpy_t_exact",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      },
+      "pytorch": {
+        "name": "enthalpy_t_exact",
+        "module": "gsw_torch._core.energy",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      }
+    },
+    "entropy_first_derivatives": {
+      "reference": {
+        "name": "entropy_first_derivatives",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "entropy_first_derivatives",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "entropy_from_CT": {
+      "reference": {
+        "name": "entropy_from_CT",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "entropy_from_CT",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "entropy_from_pt": {
+      "reference": {
+        "name": "entropy_from_pt",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "pt"
+        ],
+        "num_params": 2,
+        "signature": "(SA, pt)"
+      },
+      "pytorch": {
+        "name": "entropy_from_pt",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "pt"
+        ],
+        "num_params": 2,
+        "signature": "(SA, pt)"
+      }
+    },
+    "entropy_from_t": {
+      "reference": {
+        "name": "entropy_from_t",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      },
+      "pytorch": {
+        "name": "entropy_from_t",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      }
+    },
+    "entropy_ice": {
+      "reference": {
+        "name": "entropy_ice",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      },
+      "pytorch": {
+        "name": "entropy_ice",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      }
+    },
+    "entropy_second_derivatives": {
+      "reference": {
+        "name": "entropy_second_derivatives",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "entropy_second_derivatives",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "f": {
+      "reference": {
+        "name": "f",
+        "module": "gsw.geostrophy",
+        "parameters": [
+          "lat"
+        ],
+        "num_params": 1,
+        "signature": "(lat)"
+      },
+      "pytorch": {
+        "name": "f",
+        "module": "gsw_torch.geostrophy",
+        "parameters": [
+          "lat"
+        ],
+        "num_params": 1,
+        "signature": "(lat)"
+      }
+    },
+    "geostrophic_velocity": {
+      "reference": {
+        "name": "geostrophic_velocity",
+        "module": "gsw.geostrophy",
+        "parameters": [
+          "geo_strf",
+          "lon",
+          "lat",
+          "p",
+          "axis"
+        ],
+        "num_params": 5,
+        "signature": "(geo_strf, lon, lat, p=0, axis=0)"
+      },
+      "pytorch": {
+        "name": "geostrophic_velocity",
+        "module": "gsw_torch.geostrophy",
+        "parameters": [
+          "geo_strf",
+          "lon",
+          "lat",
+          "p",
+          "axis"
+        ],
+        "num_params": 5,
+        "signature": "(geo_strf, lon, lat, p=0, axis=0)"
+      }
+    },
+    "grav": {
+      "reference": {
+        "name": "grav",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "lat",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(lat, p)"
+      },
+      "pytorch": {
+        "name": "grav",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "lat",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(lat, p)"
+      }
+    },
+    "ice_fraction_to_freeze_seawater": {
+      "reference": {
+        "name": "ice_fraction_to_freeze_seawater",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "t_Ih"
+        ],
+        "num_params": 4,
+        "signature": "(SA, CT, p, t_Ih)"
+      },
+      "pytorch": {
+        "name": "ice_fraction_to_freeze_seawater",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "t_Ih"
+        ],
+        "num_params": 4,
+        "signature": "(SA, CT, p, t_Ih)"
+      }
+    },
+    "infunnel": {
+      "reference": {
+        "name": "infunnel",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "infunnel",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "internal_energy": {
+      "reference": {
+        "name": "internal_energy",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "internal_energy",
+        "module": "gsw_torch._core.energy",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "internal_energy_ice": {
+      "reference": {
+        "name": "internal_energy_ice",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      },
+      "pytorch": {
+        "name": "internal_energy_ice",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      }
+    },
+    "kappa": {
+      "reference": {
+        "name": "kappa",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "kappa",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "kappa_const_t_ice": {
+      "reference": {
+        "name": "kappa_const_t_ice",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      },
+      "pytorch": {
+        "name": "kappa_const_t_ice",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      }
+    },
+    "kappa_ice": {
+      "reference": {
+        "name": "kappa_ice",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      },
+      "pytorch": {
+        "name": "kappa_ice",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      }
+    },
+    "latentheat_evap_CT": {
+      "reference": {
+        "name": "latentheat_evap_CT",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "latentheat_evap_CT",
+        "module": "gsw_torch._core.energy",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "latentheat_evap_t": {
+      "reference": {
+        "name": "latentheat_evap_t",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "t"
+        ],
+        "num_params": 2,
+        "signature": "(SA, t)"
+      },
+      "pytorch": {
+        "name": "latentheat_evap_t",
+        "module": "gsw_torch._core.energy",
+        "parameters": [
+          "SA",
+          "t"
+        ],
+        "num_params": 2,
+        "signature": "(SA, t)"
+      }
+    },
+    "latentheat_melting": {
+      "reference": {
+        "name": "latentheat_melting",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(SA, p)"
+      },
+      "pytorch": {
+        "name": "latentheat_melting",
+        "module": "gsw_torch._core.energy",
+        "parameters": [
+          "SA",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(SA, p)"
+      }
+    },
+    "melting_ice_SA_CT_ratio": {
+      "reference": {
+        "name": "melting_ice_SA_CT_ratio",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "t_Ih"
+        ],
+        "num_params": 4,
+        "signature": "(SA, CT, p, t_Ih)"
+      },
+      "pytorch": {
+        "name": "melting_ice_SA_CT_ratio",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "t_Ih"
+        ],
+        "num_params": 4,
+        "signature": "(SA, CT, p, t_Ih)"
+      }
+    },
+    "melting_ice_equilibrium_SA_CT_ratio": {
+      "reference": {
+        "name": "melting_ice_equilibrium_SA_CT_ratio",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(SA, p)"
+      },
+      "pytorch": {
+        "name": "melting_ice_equilibrium_SA_CT_ratio",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "SA",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(SA, p)"
+      }
+    },
+    "melting_ice_into_seawater": {
+      "reference": {
+        "name": "melting_ice_into_seawater",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "w_Ih",
+          "t_Ih"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, w_Ih, t_Ih)"
+      },
+      "pytorch": {
+        "name": "melting_ice_into_seawater",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "w_Ih",
+          "t_Ih"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, w_Ih, t_Ih)"
+      }
+    },
+    "melting_seaice_SA_CT_ratio": {
+      "reference": {
+        "name": "melting_seaice_SA_CT_ratio",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "SA_seaice",
+          "t_seaice"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, SA_seaice, t_seaice)"
+      },
+      "pytorch": {
+        "name": "melting_seaice_SA_CT_ratio",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "SA_seaice",
+          "t_seaice"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, SA_seaice, t_seaice)"
+      }
+    },
+    "melting_seaice_into_seawater": {
+      "reference": {
+        "name": "melting_seaice_into_seawater",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "w_seaice",
+          "SA_seaice",
+          "t_seaice"
+        ],
+        "num_params": 6,
+        "signature": "(SA, CT, p, w_seaice, SA_seaice, t_seaice)"
+      },
+      "pytorch": {
+        "name": "melting_seaice_into_seawater",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "w_seaice",
+          "SA_seaice",
+          "t_seaice"
+        ],
+        "num_params": 6,
+        "signature": "(SA, CT, p, w_seaice, SA_seaice, t_seaice)"
+      }
+    },
+    "p_from_z": {
+      "reference": {
+        "name": "p_from_z",
+        "module": "gsw._fixed_wrapped_ufuncs",
+        "parameters": [
+          "z",
+          "lat",
+          "geo_strf_dyn_height",
+          "sea_surface_geopotential"
+        ],
+        "num_params": 4,
+        "signature": "(z, lat, geo_strf_dyn_height=0, sea_surface_geopotential=0)"
+      },
+      "pytorch": {
+        "name": "p_from_z",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "z",
+          "lat",
+          "geo_strf_dyn_height",
+          "sea_surface_geopotential"
+        ],
+        "num_params": 4,
+        "signature": "(z, lat, geo_strf_dyn_height=0, sea_surface_geopotential=0)"
+      }
+    },
+    "pchip_interp": {
+      "reference": {
+        "name": "pchip_interp",
+        "module": "gsw.utility",
+        "parameters": [
+          "x",
+          "y",
+          "xi",
+          "axis"
+        ],
+        "num_params": 4,
+        "signature": "(x, y, xi, axis=0)"
+      },
+      "pytorch": {
+        "name": "pchip_interp",
+        "module": "gsw_torch.utility",
+        "parameters": [
+          "x",
+          "y",
+          "xi",
+          "axis"
+        ],
+        "num_params": 4,
+        "signature": "(x, y, xi, axis=0)"
+      }
+    },
+    "pot_enthalpy_ice_freezing": {
+      "reference": {
+        "name": "pot_enthalpy_ice_freezing",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(SA, p)"
+      },
+      "pytorch": {
+        "name": "pot_enthalpy_ice_freezing",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "SA",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(SA, p)"
+      }
+    },
+    "pot_rho_t_exact": {
+      "reference": {
+        "name": "pot_rho_t_exact",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "t",
+          "p",
+          "p_ref"
+        ],
+        "num_params": 4,
+        "signature": "(SA, t, p, p_ref)"
+      },
+      "pytorch": {
+        "name": "pot_rho_t_exact",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "t",
+          "p",
+          "p_ref"
+        ],
+        "num_params": 4,
+        "signature": "(SA, t, p, p_ref)"
+      }
+    },
+    "pressure_coefficient_ice": {
+      "reference": {
+        "name": "pressure_coefficient_ice",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      },
+      "pytorch": {
+        "name": "pressure_coefficient_ice",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "t",
+          "p"
+        ],
+        "num_params": 2,
+        "signature": "(t, p)"
+      }
+    },
+    "pressure_freezing_CT": {
+      "reference": {
+        "name": "pressure_freezing_CT",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "saturation_fraction"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, saturation_fraction)"
+      },
+      "pytorch": {
+        "name": "pressure_freezing_CT",
+        "module": "gsw_torch._core.freezing",
+        "parameters": [
+          "SA",
+          "CT",
+          "saturation_fraction"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, saturation_fraction)"
+      }
+    },
+    "pt0_from_t": {
+      "reference": {
+        "name": "pt0_from_t",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      },
+      "pytorch": {
+        "name": "pt0_from_t",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      }
+    },
+    "pt_first_derivatives": {
+      "reference": {
+        "name": "pt_first_derivatives",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "pt_first_derivatives",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "pt_from_CT": {
+      "reference": {
+        "name": "pt_from_CT",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "pt_from_CT",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "pt_from_entropy": {
+      "reference": {
+        "name": "pt_from_entropy",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "entropy"
+        ],
+        "num_params": 2,
+        "signature": "(SA, entropy)"
+      },
+      "pytorch": {
+        "name": "pt_from_entropy",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "entropy"
+        ],
+        "num_params": 2,
+        "signature": "(SA, entropy)"
+      }
+    },
+    "pt_from_t": {
+      "reference": {
+        "name": "pt_from_t",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "t",
+          "p",
+          "p_ref"
+        ],
+        "num_params": 4,
+        "signature": "(SA, t, p, p_ref)"
+      },
+      "pytorch": {
+        "name": "pt_from_t",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "t",
+          "p",
+          "p_ref"
+        ],
+        "num_params": 4,
+        "signature": "(SA, t, p, p_ref=0)"
+      }
+    },
+    "pt_second_derivatives": {
+      "reference": {
+        "name": "pt_second_derivatives",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "pt_second_derivatives",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "rho": {
+      "reference": {
+        "name": "rho",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "rho",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "rho_alpha_beta": {
+      "reference": {
+        "name": "rho_alpha_beta",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "rho_alpha_beta",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "rho_first_derivatives": {
+      "reference": {
+        "name": "rho_first_derivatives",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "rho_first_derivatives",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "rho_first_derivatives_wrt_enthalpy": {
+      "reference": {
+        "name": "rho_first_derivatives_wrt_enthalpy",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "rho_first_derivatives_wrt_enthalpy",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "rho_second_derivatives": {
+      "reference": {
+        "name": "rho_second_derivatives",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "rho_second_derivatives",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "rho_second_derivatives_wrt_enthalpy": {
+      "reference": {
+        "name": "rho_second_derivatives_wrt_enthalpy",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "rho_second_derivatives_wrt_enthalpy",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "rho_t_exact": {
+      "reference": {
+        "name": "rho_t_exact",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      },
+      "pytorch": {
+        "name": "rho_t_exact",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      }
+    },
+    "sa_ct_interp": {
+      "reference": {
+        "name": "sa_ct_interp",
+        "module": "gsw.interpolation",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "p_i",
+          "axis"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, p_i, axis=0)"
+      },
+      "pytorch": {
+        "name": "sa_ct_interp",
+        "module": "gsw_torch.interpolation",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "p_i",
+          "axis"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, p_i, axis=0)"
+      }
+    },
+    "seaice_fraction_to_freeze_seawater": {
+      "reference": {
+        "name": "seaice_fraction_to_freeze_seawater",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "SA_seaice",
+          "t_seaice"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, SA_seaice, t_seaice)"
+      },
+      "pytorch": {
+        "name": "seaice_fraction_to_freeze_seawater",
+        "module": "gsw_torch._core.ice",
+        "parameters": [
+          "SA",
+          "CT",
+          "p",
+          "SA_seaice",
+          "t_seaice"
+        ],
+        "num_params": 5,
+        "signature": "(SA, CT, p, SA_seaice, t_seaice)"
+      }
+    },
+    "sigma0": {
+      "reference": {
+        "name": "sigma0",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "sigma0",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "sigma1": {
+      "reference": {
+        "name": "sigma1",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "sigma1",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "sigma2": {
+      "reference": {
+        "name": "sigma2",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "sigma2",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "sigma3": {
+      "reference": {
+        "name": "sigma3",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "sigma3",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "sigma4": {
+      "reference": {
+        "name": "sigma4",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "sigma4",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "sound_speed": {
+      "reference": {
+        "name": "sound_speed",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "sound_speed",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "specvol": {
+      "reference": {
+        "name": "specvol",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "specvol",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "specvol_alpha_beta": {
+      "reference": {
+        "name": "specvol_alpha_beta",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "specvol_alpha_beta",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "specvol_anom_standard": {
+      "reference": {
+        "name": "specvol_anom_standard",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "specvol_anom_standard",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "specvol_first_derivatives": {
+      "reference": {
+        "name": "specvol_first_derivatives",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "specvol_first_derivatives",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "specvol_first_derivatives_wrt_enthalpy": {
+      "reference": {
+        "name": "specvol_first_derivatives_wrt_enthalpy",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "specvol_first_derivatives_wrt_enthalpy",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "specvol_second_derivatives": {
+      "reference": {
+        "name": "specvol_second_derivatives",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "specvol_second_derivatives",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "specvol_second_derivatives_wrt_enthalpy": {
+      "reference": {
+        "name": "specvol_second_derivatives_wrt_enthalpy",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "specvol_second_derivatives_wrt_enthalpy",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "specvol_t_exact": {
+      "reference": {
+        "name": "specvol_t_exact",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      },
+      "pytorch": {
+        "name": "specvol_t_exact",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      }
+    },
+    "spiciness0": {
+      "reference": {
+        "name": "spiciness0",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "spiciness0",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "spiciness1": {
+      "reference": {
+        "name": "spiciness1",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "spiciness1",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "spiciness2": {
+      "reference": {
+        "name": "spiciness2",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      },
+      "pytorch": {
+        "name": "spiciness2",
+        "module": "gsw_torch._core.density",
+        "parameters": [
+          "SA",
+          "CT"
+        ],
+        "num_params": 2,
+        "signature": "(SA, CT)"
+      }
+    },
+    "t90_from_t68": {
+      "reference": {
+        "name": "t90_from_t68",
+        "module": "gsw.conversions",
+        "parameters": [
+          "t68"
+        ],
+        "num_params": 1,
+        "signature": "(t68)"
+      },
+      "pytorch": {
+        "name": "t90_from_t68",
+        "module": "gsw_torch.conversions",
+        "parameters": [
+          "t68"
+        ],
+        "num_params": 1,
+        "signature": "(t68)"
+      }
+    },
+    "t_deriv_chem_potential_water_t_exact": {
+      "reference": {
+        "name": "t_deriv_chem_potential_water_t_exact",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      },
+      "pytorch": {
+        "name": "t_deriv_chem_potential_water_t_exact",
+        "module": "gsw_torch._core.utility",
+        "parameters": [
+          "SA",
+          "t",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, t, p)"
+      }
+    },
+    "t_freezing": {
+      "reference": {
+        "name": "t_freezing",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "p",
+          "saturation_fraction"
+        ],
+        "num_params": 3,
+        "signature": "(SA, p, saturation_fraction)"
+      },
+      "pytorch": {
+        "name": "t_freezing",
+        "module": "gsw_torch._core.freezing",
+        "parameters": [
+          "SA",
+          "p",
+          "saturation_fraction"
+        ],
+        "num_params": 3,
+        "signature": "(SA, p, saturation_fraction)"
+      }
+    },
+    "t_from_CT": {
+      "reference": {
+        "name": "t_from_CT",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "t_from_CT",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "thermobaric": {
+      "reference": {
+        "name": "thermobaric",
+        "module": "gsw._wrapped_ufuncs",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      },
+      "pytorch": {
+        "name": "thermobaric",
+        "module": "gsw_torch._core.stability",
+        "parameters": [
+          "SA",
+          "CT",
+          "p"
+        ],
+        "num_params": 3,
+        "signature": "(SA, CT, p)"
+      }
+    },
+    "tracer_ct_interp": {
+      "reference": {
+        "name": "tracer_ct_interp",
+        "module": "gsw.interpolation",
+        "parameters": [
+          "tracer",
+          "CT",
+          "p",
+          "p_i",
+          "factor",
+          "axis"
+        ],
+        "num_params": 6,
+        "signature": "(tracer, CT, p, p_i, factor=9.0, axis=0)"
+      },
+      "pytorch": {
+        "name": "tracer_ct_interp",
+        "module": "gsw_torch.interpolation",
+        "parameters": [
+          "tracer",
+          "CT",
+          "p",
+          "p_i",
+          "factor",
+          "axis"
+        ],
+        "num_params": 6,
+        "signature": "(tracer, CT, p, p_i, factor=9.0, axis=0)"
+      }
+    },
+    "z_from_p": {
+      "reference": {
+        "name": "z_from_p",
+        "module": "gsw._fixed_wrapped_ufuncs",
+        "parameters": [
+          "p",
+          "lat",
+          "geo_strf_dyn_height",
+          "sea_surface_geopotential"
+        ],
+        "num_params": 4,
+        "signature": "(p, lat, geo_strf_dyn_height=0, sea_surface_geopotential=0)"
+      },
+      "pytorch": {
+        "name": "z_from_p",
+        "module": "gsw_torch._core.conversions",
+        "parameters": [
+          "p",
+          "lat",
+          "geo_strf_dyn_height",
+          "sea_surface_geopotential"
+        ],
+        "num_params": 4,
+        "signature": "(p, lat, geo_strf_dyn_height=0, sea_surface_geopotential=0)"
+      }
+    }
+  },
+  "functions_only_reference": {
+    "CT_first_derivatives_wrt_t_exact": {
+      "name": "CT_first_derivatives_wrt_t_exact",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "t",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA, t, p)"
+    },
+    "CT_freezing_first_derivatives": {
+      "name": "CT_freezing_first_derivatives",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p",
+        "saturation_fraction"
+      ],
+      "num_params": 3,
+      "signature": "(SA, p, saturation_fraction)"
+    },
+    "CT_freezing_first_derivatives_poly": {
+      "name": "CT_freezing_first_derivatives_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p",
+        "saturation_fraction"
+      ],
+      "num_params": 3,
+      "signature": "(SA, p, saturation_fraction)"
+    },
+    "CT_freezing_poly": {
+      "name": "CT_freezing_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p",
+        "saturation_fraction"
+      ],
+      "num_params": 3,
+      "signature": "(SA, p, saturation_fraction)"
+    },
+    "CT_from_enthalpy_exact": {
+      "name": "CT_from_enthalpy_exact",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "h",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA, h, p)"
+    },
+    "Fdelta": {
+      "name": "Fdelta",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "p",
+        "lon",
+        "lat"
+      ],
+      "num_params": 3,
+      "signature": "(p, lon, lat)"
+    },
+    "Helmholtz_energy_ice": {
+      "name": "Helmholtz_energy_ice",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "t",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(t, p)"
+    },
+    "Hill_ratio_at_SP2": {
+      "name": "Hill_ratio_at_SP2",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "t"
+      ],
+      "num_params": 1,
+      "signature": "(t)"
+    },
+    "SA_freezing_from_CT_poly": {
+      "name": "SA_freezing_from_CT_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "CT",
+        "p",
+        "saturation_fraction"
+      ],
+      "num_params": 3,
+      "signature": "(CT, p, saturation_fraction)"
+    },
+    "SA_freezing_from_t": {
+      "name": "SA_freezing_from_t",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "t",
+        "p",
+        "saturation_fraction"
+      ],
+      "num_params": 3,
+      "signature": "(t, p, saturation_fraction)"
+    },
+    "SA_freezing_from_t_poly": {
+      "name": "SA_freezing_from_t_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "t",
+        "p",
+        "saturation_fraction"
+      ],
+      "num_params": 3,
+      "signature": "(t, p, saturation_fraction)"
+    },
+    "SA_from_SP_Baltic": {
+      "name": "SA_from_SP_Baltic",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SP",
+        "lon",
+        "lat"
+      ],
+      "num_params": 3,
+      "signature": "(SP, lon, lat)"
+    },
+    "SP_from_SA_Baltic": {
+      "name": "SP_from_SA_Baltic",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "lon",
+        "lat"
+      ],
+      "num_params": 3,
+      "signature": "(SA, lon, lat)"
+    },
+    "SP_salinometer": {
+      "name": "SP_salinometer",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "Rt",
+        "t"
+      ],
+      "num_params": 2,
+      "signature": "(Rt, t)"
+    },
+    "alpha_wrt_t_exact": {
+      "name": "alpha_wrt_t_exact",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "t",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA, t, p)"
+    },
+    "beta_const_t_exact": {
+      "name": "beta_const_t_exact",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "t",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA, t, p)"
+    },
+    "cp_t_exact": {
+      "name": "cp_t_exact",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "t",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA, t, p)"
+    },
+    "deltaSA_atlas": {
+      "name": "deltaSA_atlas",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "p",
+        "lon",
+        "lat"
+      ],
+      "num_params": 3,
+      "signature": "(p, lon, lat)"
+    },
+    "dilution_coefficient_t_exact": {
+      "name": "dilution_coefficient_t_exact",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "t",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA, t, p)"
+    },
+    "enthalpy_CT_exact": {
+      "name": "enthalpy_CT_exact",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "CT",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA, CT, p)"
+    },
+    "enthalpy_first_derivatives_CT_exact": {
+      "name": "enthalpy_first_derivatives_CT_exact",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "CT",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA, CT, p)"
+    },
+    "enthalpy_second_derivatives_CT_exact": {
+      "name": "enthalpy_second_derivatives_CT_exact",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "CT",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA, CT, p)"
+    },
+    "entropy_part": {
+      "name": "entropy_part",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "t",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA, t, p)"
+    },
+    "entropy_part_zerop": {
+      "name": "entropy_part_zerop",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "pt0"
+      ],
+      "num_params": 2,
+      "signature": "(SA, pt0)"
+    },
+    "frazil_properties": {
+      "name": "frazil_properties",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA_bulk",
+        "h_bulk",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA_bulk, h_bulk, p)"
+    },
+    "frazil_properties_potential": {
+      "name": "frazil_properties_potential",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA_bulk",
+        "h_pot_bulk",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA_bulk, h_pot_bulk, p)"
+    },
+    "frazil_properties_potential_poly": {
+      "name": "frazil_properties_potential_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA_bulk",
+        "h_pot_bulk",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA_bulk, h_pot_bulk, p)"
+    },
+    "frazil_ratios_adiabatic": {
+      "name": "frazil_ratios_adiabatic",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p",
+        "w_Ih"
+      ],
+      "num_params": 3,
+      "signature": "(SA, p, w_Ih)"
+    },
+    "frazil_ratios_adiabatic_poly": {
+      "name": "frazil_ratios_adiabatic_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p",
+        "w_Ih"
+      ],
+      "num_params": 3,
+      "signature": "(SA, p, w_Ih)"
+    },
+    "geo_strf_dyn_height": {
+      "name": "geo_strf_dyn_height",
+      "module": "gsw.geostrophy",
+      "parameters": [
+        "SA",
+        "CT",
+        "p",
+        "p_ref",
+        "axis",
+        "max_dp",
+        "interp_method"
+      ],
+      "num_params": 7,
+      "signature": "(SA, CT, p, p_ref=0, axis=0, max_dp=1.0, interp_method='pchip')"
+    },
+    "gibbs": {
+      "name": "gibbs",
+      "module": "gsw._fixed_wrapped_ufuncs",
+      "parameters": [
+        "ns",
+        "nt",
+        "np",
+        "SA",
+        "t",
+        "p"
+      ],
+      "num_params": 6,
+      "signature": "(ns, nt, np, SA, t, p)"
+    },
+    "gibbs_ice": {
+      "name": "gibbs_ice",
+      "module": "gsw._fixed_wrapped_ufuncs",
+      "parameters": [
+        "nt",
+        "np",
+        "t",
+        "p"
+      ],
+      "num_params": 4,
+      "signature": "(nt, np, t, p)"
+    },
+    "gibbs_ice_part_t": {
+      "name": "gibbs_ice_part_t",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "t",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(t, p)"
+    },
+    "gibbs_ice_pt0": {
+      "name": "gibbs_ice_pt0",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "pt0"
+      ],
+      "num_params": 1,
+      "signature": "(pt0)"
+    },
+    "gibbs_ice_pt0_pt0": {
+      "name": "gibbs_ice_pt0_pt0",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "pt0"
+      ],
+      "num_params": 1,
+      "signature": "(pt0)"
+    },
+    "gibbs_pt0_pt0": {
+      "name": "gibbs_pt0_pt0",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "pt0"
+      ],
+      "num_params": 2,
+      "signature": "(SA, pt0)"
+    },
+    "indexer": {
+      "name": "indexer",
+      "module": "gsw._utilities",
+      "parameters": [
+        "shape",
+        "axis",
+        "order"
+      ],
+      "num_params": 3,
+      "signature": "(shape, axis, order='C')"
+    },
+    "kappa_t_exact": {
+      "name": "kappa_t_exact",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "t",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA, t, p)"
+    },
+    "match_args_return": {
+      "name": "match_args_return",
+      "module": "gsw._utilities",
+      "parameters": [
+        "f"
+      ],
+      "num_params": 1,
+      "signature": "(f)"
+    },
+    "melting_ice_SA_CT_ratio_poly": {
+      "name": "melting_ice_SA_CT_ratio_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "CT",
+        "p",
+        "t_Ih"
+      ],
+      "num_params": 4,
+      "signature": "(SA, CT, p, t_Ih)"
+    },
+    "melting_ice_equilibrium_SA_CT_ratio_poly": {
+      "name": "melting_ice_equilibrium_SA_CT_ratio_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(SA, p)"
+    },
+    "melting_seaice_SA_CT_ratio_poly": {
+      "name": "melting_seaice_SA_CT_ratio_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "CT",
+        "p",
+        "SA_seaice",
+        "t_seaice"
+      ],
+      "num_params": 5,
+      "signature": "(SA, CT, p, SA_seaice, t_seaice)"
+    },
+    "melting_seaice_equilibrium_SA_CT_ratio": {
+      "name": "melting_seaice_equilibrium_SA_CT_ratio",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(SA, p)"
+    },
+    "melting_seaice_equilibrium_SA_CT_ratio_poly": {
+      "name": "melting_seaice_equilibrium_SA_CT_ratio_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(SA, p)"
+    },
+    "pot_enthalpy_from_pt_ice": {
+      "name": "pot_enthalpy_from_pt_ice",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "pt0_ice"
+      ],
+      "num_params": 1,
+      "signature": "(pt0_ice)"
+    },
+    "pot_enthalpy_from_pt_ice_poly": {
+      "name": "pot_enthalpy_from_pt_ice_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "pt0_ice"
+      ],
+      "num_params": 1,
+      "signature": "(pt0_ice)"
+    },
+    "pot_enthalpy_ice_freezing_first_derivatives": {
+      "name": "pot_enthalpy_ice_freezing_first_derivatives",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(SA, p)"
+    },
+    "pot_enthalpy_ice_freezing_first_derivatives_poly": {
+      "name": "pot_enthalpy_ice_freezing_first_derivatives_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(SA, p)"
+    },
+    "pot_enthalpy_ice_freezing_poly": {
+      "name": "pot_enthalpy_ice_freezing_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(SA, p)"
+    },
+    "pt0_from_t_ice": {
+      "name": "pt0_from_t_ice",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "t",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(t, p)"
+    },
+    "pt_from_pot_enthalpy_ice": {
+      "name": "pt_from_pot_enthalpy_ice",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "pot_enthalpy_ice"
+      ],
+      "num_params": 1,
+      "signature": "(pot_enthalpy_ice)"
+    },
+    "pt_from_pot_enthalpy_ice_poly": {
+      "name": "pt_from_pot_enthalpy_ice_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "pot_enthalpy_ice"
+      ],
+      "num_params": 1,
+      "signature": "(pot_enthalpy_ice)"
+    },
+    "pt_from_t_ice": {
+      "name": "pt_from_t_ice",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "t",
+        "p",
+        "p_ref"
+      ],
+      "num_params": 3,
+      "signature": "(t, p, p_ref)"
+    },
+    "rho_ice": {
+      "name": "rho_ice",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "t",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(t, p)"
+    },
+    "sound_speed_ice": {
+      "name": "sound_speed_ice",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "t",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(t, p)"
+    },
+    "sound_speed_t_exact": {
+      "name": "sound_speed_t_exact",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "t",
+        "p"
+      ],
+      "num_params": 3,
+      "signature": "(SA, t, p)"
+    },
+    "specvol_SSO_0": {
+      "name": "specvol_SSO_0",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "p"
+      ],
+      "num_params": 1,
+      "signature": "(p)"
+    },
+    "specvol_ice": {
+      "name": "specvol_ice",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "t",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(t, p)"
+    },
+    "t_freezing_first_derivatives": {
+      "name": "t_freezing_first_derivatives",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p",
+        "saturation_fraction"
+      ],
+      "num_params": 3,
+      "signature": "(SA, p, saturation_fraction)"
+    },
+    "t_freezing_first_derivatives_poly": {
+      "name": "t_freezing_first_derivatives_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p",
+        "saturation_fraction"
+      ],
+      "num_params": 3,
+      "signature": "(SA, p, saturation_fraction)"
+    },
+    "t_freezing_poly": {
+      "name": "t_freezing_poly",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "SA",
+        "p",
+        "saturation_fraction"
+      ],
+      "num_params": 3,
+      "signature": "(SA, p, saturation_fraction)"
+    },
+    "t_from_pt0_ice": {
+      "name": "t_from_pt0_ice",
+      "module": "gsw._wrapped_ufuncs",
+      "parameters": [
+        "pt0_ice",
+        "p"
+      ],
+      "num_params": 2,
+      "signature": "(pt0_ice, p)"
+    }
+  },
+  "functions_only_pytorch": {
+    "unwrap": {
+      "name": "unwrap",
+      "module": "gsw_torch.geostrophy",
+      "parameters": [
+        "lon",
+        "centered",
+        "copy"
+      ],
+      "num_params": 3,
+      "signature": "(lon, centered=True, copy=True)"
+    }
+  }
+}

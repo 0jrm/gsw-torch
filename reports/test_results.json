@@ -1,0 +1,3466 @@
+{
+  "CT_first_derivatives": {
+    "function": "CT_first_derivatives",
+    "parity": [
+      {
+        "function": "CT_first_derivatives",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "CT_first_derivatives",
+        "sample_size": 100,
+        "status": "FAIL",
+        "max_abs_error": 8.940696716308594e-08,
+        "max_rel_error": 4.461647192206462e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "CT_first_derivatives",
+        "sample_size": 1000,
+        "status": "FAIL",
+        "max_abs_error": 1.4901161193847656e-08,
+        "max_rel_error": 3.315600520712746e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "CT_first_derivatives",
+        "sample_size": 10000,
+        "status": "FAIL",
+        "max_abs_error": 8.940696716308594e-08,
+        "max_rel_error": 4.461647192206462e-16,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "CT_first_derivatives",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "CT_freezing": {
+    "function": "CT_freezing",
+    "parity": [
+      {
+        "function": "CT_freezing",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.0818013151947525e-12,
+        "max_rel_error": 1.3202465486962916e-11,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "CT_freezing",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.127986593019159e-12,
+        "max_rel_error": 1.3202465486962916e-11,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "CT_freezing",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.2025935802739696e-12,
+        "max_rel_error": 4.9761029264112195e-11,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "CT_freezing",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.3002932064409833e-12,
+        "max_rel_error": 1.983479700891171e-10,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "CT_freezing",
+      "status": "FAIL",
+      "gradients_work": false,
+      "num_differentiable_inputs": 3,
+      "issues": [
+        "Non-finite gradients for input 0",
+        "Non-finite gradients for input 1",
+        "Non-finite gradients for input 2"
+      ],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "CT_from_enthalpy": {
+    "function": "CT_from_enthalpy",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "CT_from_entropy": {
+    "function": "CT_from_entropy",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "CT_from_pt": {
+    "function": "CT_from_pt",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "CT_from_rho": {
+    "function": "CT_from_rho",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "CT_from_t": {
+    "function": "CT_from_t",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "CT_maxdensity": {
+    "function": "CT_maxdensity",
+    "parity": [
+      {
+        "function": "CT_maxdensity",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 3.3511091679372385e-09,
+        "max_rel_error": 1.257963416117019e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "CT_maxdensity",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 3.3511091679372385e-09,
+        "max_rel_error": 1.257963416117019e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "CT_maxdensity",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 3.3511091679372385e-09,
+        "max_rel_error": 1.257963416117019e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "CT_maxdensity",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 3.3511091679372385e-09,
+        "max_rel_error": 1.257963416117019e-09,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "CT_maxdensity",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "CT_second_derivatives": {
+    "function": "CT_second_derivatives",
+    "parity": [
+      {
+        "function": "CT_second_derivatives",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "CT_second_derivatives",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "CT_second_derivatives",
+        "sample_size": 1000,
+        "status": "FAIL",
+        "max_abs_error": 7.450580596923828e-06,
+        "max_rel_error": 1.909034064824363e-10,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "CT_second_derivatives",
+        "sample_size": 10000,
+        "status": "FAIL",
+        "max_abs_error": 1.4901161193847656e-05,
+        "max_rel_error": 2.8981959909081995e-10,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "CT_second_derivatives",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "C_from_SP": {
+    "function": "C_from_SP",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "IPV_vs_fNsquared_ratio": {
+    "function": "IPV_vs_fNsquared_ratio",
+    "parity": [
+      {
+        "function": "IPV_vs_fNsquared_ratio",
+        "sample_size": 10,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/stability.py\", line 182, in IPV_vs_fNsquared_ratio\n    shallow = axis_slicer(SA.ndim, slice(-1), axis)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 95, in axis_slicer\n    itup[axis] = sl\n    ~~~~^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "IPV_vs_fNsquared_ratio",
+        "sample_size": 100,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/stability.py\", line 182, in IPV_vs_fNsquared_ratio\n    shallow = axis_slicer(SA.ndim, slice(-1), axis)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 95, in axis_slicer\n    itup[axis] = sl\n    ~~~~^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "IPV_vs_fNsquared_ratio",
+        "sample_size": 1000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/stability.py\", line 182, in IPV_vs_fNsquared_ratio\n    shallow = axis_slicer(SA.ndim, slice(-1), axis)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 95, in axis_slicer\n    itup[axis] = sl\n    ~~~~^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "IPV_vs_fNsquared_ratio",
+        "sample_size": 10000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/stability.py\", line 182, in IPV_vs_fNsquared_ratio\n    shallow = axis_slicer(SA.ndim, slice(-1), axis)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 95, in axis_slicer\n    itup[axis] = sl\n    ~~~~^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      }
+    ],
+    "autograd": {
+      "function": "IPV_vs_fNsquared_ratio",
+      "status": "ERROR",
+      "gradients_work": false,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": "only integer tensors of a single element can be converted to an index",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 306, in test_autograd\n    output = torch_func(*grad_inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_utilities.py\", line 178, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/stability.py\", line 195, in IPV_vs_fNsquared_ratio\n    shallow = axis_slicer(SA.ndim, slice(-1), axis)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_utilities.py\", line 212, in axis_slicer\n    itup[axis] = sl\n    ~~~~^^^^^^\nTypeError: only integer tensors of a single element can be converted to an index\n"
+    },
+    "benchmark": []
+  },
+  "Nsquared": {
+    "function": "Nsquared",
+    "parity": [
+      {
+        "function": "Nsquared",
+        "sample_size": 10,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/stability.py\", line 69, in Nsquared\n    shallow = axis_slicer(SA.ndim, slice(-1), axis)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 95, in axis_slicer\n    itup[axis] = sl\n    ~~~~^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "Nsquared",
+        "sample_size": 100,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/stability.py\", line 69, in Nsquared\n    shallow = axis_slicer(SA.ndim, slice(-1), axis)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 95, in axis_slicer\n    itup[axis] = sl\n    ~~~~^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "Nsquared",
+        "sample_size": 1000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/stability.py\", line 69, in Nsquared\n    shallow = axis_slicer(SA.ndim, slice(-1), axis)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 95, in axis_slicer\n    itup[axis] = sl\n    ~~~~^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "Nsquared",
+        "sample_size": 10000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/stability.py\", line 69, in Nsquared\n    shallow = axis_slicer(SA.ndim, slice(-1), axis)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 95, in axis_slicer\n    itup[axis] = sl\n    ~~~~^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      }
+    ],
+    "autograd": {
+      "function": "Nsquared",
+      "status": "ERROR",
+      "gradients_work": false,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": "name '_grav' is not defined",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 306, in test_autograd\n    output = torch_func(*grad_inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_utilities.py\", line 178, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/stability.py\", line 70, in Nsquared\n    g = _grav(lat, p)\n        ^^^^^\nNameError: name '_grav' is not defined\n"
+    },
+    "benchmark": []
+  },
+  "O2sol": {
+    "function": "O2sol",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "O2sol_SP_pt": {
+    "function": "O2sol_SP_pt",
+    "parity": [
+      {
+        "function": "O2sol_SP_pt",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "O2sol_SP_pt",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.0658141036401503e-14,
+        "max_rel_error": 4.054368320299707e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "O2sol_SP_pt",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 3.552713678800501e-14,
+        "max_rel_error": 1.395110096668782e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "O2sol_SP_pt",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 3.979039320256561e-13,
+        "max_rel_error": 1.3301622115667104e-15,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "O2sol_SP_pt",
+      "status": "FAIL",
+      "gradients_work": false,
+      "num_differentiable_inputs": 2,
+      "issues": [
+        "Non-finite gradients for input 0",
+        "Non-finite gradients for input 1"
+      ],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "SAAR": {
+    "function": "SAAR",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "SA_freezing_from_CT": {
+    "function": "SA_freezing_from_CT",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "SA_from_SP": {
+    "function": "SA_from_SP",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "SA_from_Sstar": {
+    "function": "SA_from_Sstar",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "SA_from_rho": {
+    "function": "SA_from_rho",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "SP_from_C": {
+    "function": "SP_from_C",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "SP_from_SA": {
+    "function": "SP_from_SA",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "SP_from_SK": {
+    "function": "SP_from_SK",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "SP_from_SR": {
+    "function": "SP_from_SR",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "SP_from_Sstar": {
+    "function": "SP_from_Sstar",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "SR_from_SP": {
+    "function": "SR_from_SP",
+    "parity": [
+      {
+        "function": "SR_from_SP",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "SR_from_SP",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "SR_from_SP",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "SR_from_SP",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "SR_from_SP",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 1,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "Sstar_from_SA": {
+    "function": "Sstar_from_SA",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "Sstar_from_SP": {
+    "function": "Sstar_from_SP",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "Turner_Rsubrho": {
+    "error": "cannot reshape array of size 1000 into shape (3,newaxis)"
+  },
+  "adiabatic_lapse_rate_from_CT": {
+    "function": "adiabatic_lapse_rate_from_CT",
+    "parity": [
+      {
+        "function": "adiabatic_lapse_rate_from_CT",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.377711691280421e-10,
+        "max_rel_error": 0.003889032734707032,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "adiabatic_lapse_rate_from_CT",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.377711691280421e-10,
+        "max_rel_error": 0.003889032734707032,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "adiabatic_lapse_rate_from_CT",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.377711691280421e-10,
+        "max_rel_error": 0.003889032734707032,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "adiabatic_lapse_rate_from_CT",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.377711691280421e-10,
+        "max_rel_error": 0.003889032734707032,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "adiabatic_lapse_rate_from_CT",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "adiabatic_lapse_rate_ice": {
+    "function": "adiabatic_lapse_rate_ice",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "alpha": {
+    "function": "alpha",
+    "parity": [
+      {
+        "function": "alpha",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 8.299784470811034e-14,
+        "max_rel_error": 1.3699699438772428e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "alpha",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 8.299784470811034e-14,
+        "max_rel_error": 1.3699699438772428e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "alpha",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 8.299784470811034e-14,
+        "max_rel_error": 1.3699699438772428e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "alpha",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 8.299784470811034e-14,
+        "max_rel_error": 1.3699699438772428e-09,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "alpha",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "alpha_on_beta": {
+    "function": "alpha_on_beta",
+    "parity": [
+      {
+        "function": "alpha_on_beta",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 7.606835161766412e-10,
+        "max_rel_error": 1.4562085474035175e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "alpha_on_beta",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 7.606835161766412e-10,
+        "max_rel_error": 1.4562085474035175e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "alpha_on_beta",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 7.606835161766412e-10,
+        "max_rel_error": 1.4562085474035175e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "alpha_on_beta",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 7.606835161766412e-10,
+        "max_rel_error": 1.4562085474035175e-09,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "alpha_on_beta",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "alpha_wrt_t_ice": {
+    "function": "alpha_wrt_t_ice",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "beta": {
+    "function": "beta",
+    "parity": [
+      {
+        "function": "beta",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.1509507539739228e-12,
+        "max_rel_error": 1.6894061317329463e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "beta",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.1509507539739228e-12,
+        "max_rel_error": 1.6894061317329463e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "beta",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.1509507539739228e-12,
+        "max_rel_error": 1.6894061317329463e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "beta",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.1509507539739228e-12,
+        "max_rel_error": 1.6894061317329463e-09,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "beta",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "cabbeling": {
+    "function": "cabbeling",
+    "parity": [
+      {
+        "function": "cabbeling",
+        "sample_size": 10,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/stability.py\", line 84, in cabbeling\n    v_SA_SA, v_SA_CT, v_CT_CT, _, _ = specvol_second_derivatives(SA, CT, p)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "cabbeling",
+        "sample_size": 100,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/stability.py\", line 84, in cabbeling\n    v_SA_SA, v_SA_CT, v_CT_CT, _, _ = specvol_second_derivatives(SA, CT, p)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "cabbeling",
+        "sample_size": 1000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/stability.py\", line 84, in cabbeling\n    v_SA_SA, v_SA_CT, v_CT_CT, _, _ = specvol_second_derivatives(SA, CT, p)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "cabbeling",
+        "sample_size": 10000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/stability.py\", line 84, in cabbeling\n    v_SA_SA, v_SA_CT, v_CT_CT, _, _ = specvol_second_derivatives(SA, CT, p)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      }
+    ],
+    "autograd": {
+      "function": "cabbeling",
+      "status": "ERROR",
+      "gradients_work": false,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": "grad can be implicitly created only for scalar outputs",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 306, in test_autograd\n    output = torch_func(*grad_inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/stability.py\", line 84, in cabbeling\n    v_SA_SA, v_SA_CT, v_CT_CT, _, _ = specvol_second_derivatives(SA, CT, p)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+    },
+    "benchmark": []
+  },
+  "chem_potential_water_ice": {
+    "function": "chem_potential_water_ice",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "chem_potential_water_t_exact": {
+    "function": "chem_potential_water_t_exact",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "cp_ice": {
+    "function": "cp_ice",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "deltaSA_from_SP": {
+    "function": "deltaSA_from_SP",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "distance": {
+    "function": "distance",
+    "parity": [
+      {
+        "function": "distance",
+        "sample_size": 10,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/geostrophy.py\", line 180, in distance\n    if not (lon.ndim in (1, 2) and lon.shape[axis] > 1):\n                                   ~~~~~~~~~^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "distance",
+        "sample_size": 100,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/geostrophy.py\", line 180, in distance\n    if not (lon.ndim in (1, 2) and lon.shape[axis] > 1):\n                                   ~~~~~~~~~^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "distance",
+        "sample_size": 1000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/geostrophy.py\", line 180, in distance\n    if not (lon.ndim in (1, 2) and lon.shape[axis] > 1):\n                                   ~~~~~~~~~^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "distance",
+        "sample_size": 10000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/geostrophy.py\", line 180, in distance\n    if not (lon.ndim in (1, 2) and lon.shape[axis] > 1):\n                                   ~~~~~~~~~^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      }
+    ],
+    "autograd": {
+      "function": "distance",
+      "status": "ERROR",
+      "gradients_work": false,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": "only integer tensors of a single element can be converted to an index",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 306, in test_autograd\n    output = torch_func(*grad_inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_utilities.py\", line 178, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/geostrophy.py\", line 357, in distance\n    if not (lon.ndim in (1, 2) and lon.shape[axis] > 1):\n                                   ~~~~~~~~~^^^^^^\nTypeError: only integer tensors of a single element can be converted to an index\n"
+    },
+    "benchmark": []
+  },
+  "dynamic_enthalpy": {
+    "function": "dynamic_enthalpy",
+    "parity": [
+      {
+        "function": "dynamic_enthalpy",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 7.275957614183426e-12,
+        "max_rel_error": 3.3759970629905404e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "dynamic_enthalpy",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.4551915228366852e-11,
+        "max_rel_error": 3.9234574031211916e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "dynamic_enthalpy",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 2.1827872842550278e-11,
+        "max_rel_error": 5.831679286645237e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "dynamic_enthalpy",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 2.9103830456733704e-11,
+        "max_rel_error": 7.022567212011316e-16,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "dynamic_enthalpy",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "enthalpy": {
+    "function": "enthalpy",
+    "parity": [
+      {
+        "function": "enthalpy",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.4551915228366852e-11,
+        "max_rel_error": 2.2079765102299912e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 2.9103830456733704e-11,
+        "max_rel_error": 2.559678266040968e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 2.9103830456733704e-11,
+        "max_rel_error": 2.7997280497562043e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 2.9103830456733704e-11,
+        "max_rel_error": 3.575805625539265e-16,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "enthalpy",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "enthalpy_SSO_0": {
+    "function": "enthalpy_SSO_0",
+    "parity": [
+      {
+        "function": "enthalpy_SSO_0",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 7.275957614183426e-12,
+        "max_rel_error": 1.9403284040275193e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy_SSO_0",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 7.275957614183426e-12,
+        "max_rel_error": 2.9792335304468504e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy_SSO_0",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.4551915228366852e-11,
+        "max_rel_error": 3.558725924424338e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy_SSO_0",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 2.1827872842550278e-11,
+        "max_rel_error": 5.356845969332692e-16,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "enthalpy_SSO_0",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 1,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "enthalpy_diff": {
+    "function": "enthalpy_diff",
+    "parity": [
+      {
+        "function": "enthalpy_diff",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy_diff",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy_diff",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy_diff",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "enthalpy_diff",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 4,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "enthalpy_first_derivatives": {
+    "function": "enthalpy_first_derivatives",
+    "parity": [
+      {
+        "function": "enthalpy_first_derivatives",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.7763568394002505e-13,
+        "max_rel_error": 6.325614266349392e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy_first_derivatives",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 3.410605131648481e-13,
+        "max_rel_error": 1.396164615488733e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy_first_derivatives",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 4.973799150320701e-13,
+        "max_rel_error": 1.542148056440088e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy_first_derivatives",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 5.648814749292796e-13,
+        "max_rel_error": 1.9081666573479682e-14,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "enthalpy_first_derivatives",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "enthalpy_ice": {
+    "function": "enthalpy_ice",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "enthalpy_second_derivatives": {
+    "function": "enthalpy_second_derivatives",
+    "parity": [
+      {
+        "function": "enthalpy_second_derivatives",
+        "sample_size": 10,
+        "status": "FAIL",
+        "max_abs_error": 0.005930489980086162,
+        "max_rel_error": 0.07527073584082467,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy_second_derivatives",
+        "sample_size": 100,
+        "status": "FAIL",
+        "max_abs_error": 0.005959230845279662,
+        "max_rel_error": 0.07527073584082467,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy_second_derivatives",
+        "sample_size": 1000,
+        "status": "FAIL",
+        "max_abs_error": 0.005959242010991683,
+        "max_rel_error": 0.07527073584082467,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "enthalpy_second_derivatives",
+        "sample_size": 10000,
+        "status": "FAIL",
+        "max_abs_error": 0.005959245714012851,
+        "max_rel_error": 0.07527073584082467,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "enthalpy_second_derivatives",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "enthalpy_t_exact": {
+    "function": "enthalpy_t_exact",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "entropy_first_derivatives": {
+    "function": "entropy_first_derivatives",
+    "parity": [
+      {
+        "function": "entropy_first_derivatives",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.7763568394002505e-15,
+        "max_rel_error": 3.885793597485889e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "entropy_first_derivatives",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 3.552713678800501e-15,
+        "max_rel_error": 9.789378183935296e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "entropy_first_derivatives",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 3.552713678800501e-15,
+        "max_rel_error": 1.0298372389443346e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "entropy_first_derivatives",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 5.329070518200751e-15,
+        "max_rel_error": 1.0671100231383154e-15,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "entropy_first_derivatives",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "entropy_from_CT": {
+    "function": "entropy_from_CT",
+    "parity": [
+      {
+        "function": "entropy_from_CT",
+        "sample_size": 10,
+        "status": "FAIL",
+        "max_abs_error": 2.5711606213008054e-06,
+        "max_rel_error": 1.7864177973896443e-06,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "entropy_from_CT",
+        "sample_size": 100,
+        "status": "FAIL",
+        "max_abs_error": 2.6617277057994215e-06,
+        "max_rel_error": 1.7864177973896443e-06,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "entropy_from_CT",
+        "sample_size": 1000,
+        "status": "FAIL",
+        "max_abs_error": 2.6719283141574124e-06,
+        "max_rel_error": 1.7864177973896443e-06,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "entropy_from_CT",
+        "sample_size": 10000,
+        "status": "FAIL",
+        "max_abs_error": 2.6721161816567474e-06,
+        "max_rel_error": 1.7864177973896443e-06,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "entropy_from_CT",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "entropy_from_pt": {
+    "function": "entropy_from_pt",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "entropy_from_t": {
+    "function": "entropy_from_t",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "entropy_ice": {
+    "function": "entropy_ice",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "entropy_second_derivatives": {
+    "function": "entropy_second_derivatives",
+    "parity": [
+      {
+        "function": "entropy_second_derivatives",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 6.938893903907228e-18,
+        "max_rel_error": 9.638674468198211e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "entropy_second_derivatives",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 3.469446951953614e-17,
+        "max_rel_error": 9.886294229278767e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "entropy_second_derivatives",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 4.85722573273506e-17,
+        "max_rel_error": 2.5999378585137784e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "entropy_second_derivatives",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 4.85722573273506e-17,
+        "max_rel_error": 3.1330269214968806e-15,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "entropy_second_derivatives",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "f": {
+    "function": "f",
+    "parity": [
+      {
+        "function": "f",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "f",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "f",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.3552527156068805e-20,
+        "max_rel_error": 1.5908804871668507e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "f",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.3552527156068805e-20,
+        "max_rel_error": 2.4239280913713775e-16,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "f",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 1,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "geostrophic_velocity": {
+    "function": "geostrophic_velocity",
+    "parity": [
+      {
+        "function": "geostrophic_velocity",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "geostrophic_velocity",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.3877787807814457e-17,
+        "max_rel_error": 2.0207985314723648e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "geostrophic_velocity",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 8.881784197001252e-16,
+        "max_rel_error": 3.118097621253551e-16,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "geostrophic_velocity",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 4.440892098500626e-16,
+        "max_rel_error": 4.328170811586758e-16,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "geostrophic_velocity",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "grav": {
+    "function": "grav",
+    "parity": [
+      {
+        "function": "grav",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "grav",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "grav",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "grav",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.7763568394002505e-15,
+        "max_rel_error": 1.8109572041056934e-16,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "grav",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "ice_fraction_to_freeze_seawater": {
+    "function": "ice_fraction_to_freeze_seawater",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "infunnel": {
+    "function": "infunnel",
+    "parity": [
+      {
+        "function": "infunnel",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "infunnel",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "infunnel",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "infunnel",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "infunnel",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "internal_energy": {
+    "function": "internal_energy",
+    "parity": [
+      {
+        "function": "internal_energy",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.3096723705530167e-10,
+        "max_rel_error": 1.3076664325111944e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "internal_energy",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.4551915228366852e-10,
+        "max_rel_error": 1.4678588322218338e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "internal_energy",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.4551915228366852e-10,
+        "max_rel_error": 1.5154424259978317e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "internal_energy",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.7462298274040222e-10,
+        "max_rel_error": 6.637536305411364e-14,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "internal_energy",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "internal_energy_ice": {
+    "function": "internal_energy_ice",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "kappa": {
+    "function": "kappa",
+    "parity": [
+      {
+        "function": "kappa",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.683829534428257e-22,
+        "max_rel_error": 1.6250086671129815e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "kappa",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.683829534428257e-22,
+        "max_rel_error": 1.6250086671129815e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "kappa",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.683829534428257e-22,
+        "max_rel_error": 1.6250086671129815e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "kappa",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.6843465223111026e-22,
+        "max_rel_error": 1.6255064396177013e-14,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "kappa",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "kappa_const_t_ice": {
+    "function": "kappa_const_t_ice",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "kappa_ice": {
+    "function": "kappa_ice",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "latentheat_evap_CT": {
+    "function": "latentheat_evap_CT",
+    "parity": [
+      {
+        "function": "latentheat_evap_CT",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "latentheat_evap_CT",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "latentheat_evap_CT",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "latentheat_evap_CT",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "latentheat_evap_CT",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "latentheat_evap_t": {
+    "function": "latentheat_evap_t",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "latentheat_melting": {
+    "function": "latentheat_melting",
+    "parity": [
+      {
+        "function": "latentheat_melting",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 4.656612873077393e-10,
+        "max_rel_error": 1.4361431132263412e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "latentheat_melting",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 6.402842700481415e-10,
+        "max_rel_error": 2.00104307362824e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "latentheat_melting",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 6.402842700481415e-10,
+        "max_rel_error": 2.00104307362824e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "latentheat_melting",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 9.313225746154785e-10,
+        "max_rel_error": 2.880466779523473e-15,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "latentheat_melting",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "melting_ice_SA_CT_ratio": {
+    "function": "melting_ice_SA_CT_ratio",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "melting_ice_equilibrium_SA_CT_ratio": {
+    "function": "melting_ice_equilibrium_SA_CT_ratio",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "melting_ice_into_seawater": {
+    "function": "melting_ice_into_seawater",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "melting_seaice_SA_CT_ratio": {
+    "function": "melting_seaice_SA_CT_ratio",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "melting_seaice_into_seawater": {
+    "function": "melting_seaice_into_seawater",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "p_from_z": {
+    "function": "p_from_z",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "pchip_interp": {
+    "function": "pchip_interp",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "pot_enthalpy_ice_freezing": {
+    "function": "pot_enthalpy_ice_freezing",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "pot_rho_t_exact": {
+    "function": "pot_rho_t_exact",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "pressure_coefficient_ice": {
+    "function": "pressure_coefficient_ice",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "pressure_freezing_CT": {
+    "function": "pressure_freezing_CT",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "pt0_from_t": {
+    "function": "pt0_from_t",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "pt_first_derivatives": {
+    "function": "pt_first_derivatives",
+    "parity": [
+      {
+        "function": "pt_first_derivatives",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 5.551115123125783e-16,
+        "max_rel_error": 2.4758172539194895e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "pt_first_derivatives",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 6.661338147750939e-16,
+        "max_rel_error": 2.7274743022974786e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "pt_first_derivatives",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 8.881784197001252e-16,
+        "max_rel_error": 4.317463823832789e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "pt_first_derivatives",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 8.881784197001252e-16,
+        "max_rel_error": 5.235391866337239e-15,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "pt_first_derivatives",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "pt_from_CT": {
+    "function": "pt_from_CT",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "pt_from_entropy": {
+    "function": "pt_from_entropy",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "pt_from_t": {
+    "function": "pt_from_t",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "pt_second_derivatives": {
+    "function": "pt_second_derivatives",
+    "parity": [
+      {
+        "function": "pt_second_derivatives",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 4.5433981528180886e-11,
+        "max_rel_error": 5.494491873550588e-06,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "pt_second_derivatives",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 4.5433981528180886e-11,
+        "max_rel_error": 0.0003733851885780119,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "pt_second_derivatives",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 4.5433981528180886e-11,
+        "max_rel_error": 0.0002327235388893868,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "pt_second_derivatives",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 4.5442591177632594e-11,
+        "max_rel_error": 0.0011139060039839078,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "pt_second_derivatives",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "rho": {
+    "function": "rho",
+    "parity": [
+      {
+        "function": "rho",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 2.9558577807620168e-12,
+        "max_rel_error": 2.823406863721836e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "rho",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 2.9558577807620168e-12,
+        "max_rel_error": 2.823864950416789e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "rho",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 3.183231456205249e-12,
+        "max_rel_error": 3.0414740584266206e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "rho",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 3.183231456205249e-12,
+        "max_rel_error": 3.042095756598201e-15,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "rho",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "rho_alpha_beta": {
+    "function": "rho_alpha_beta",
+    "parity": [
+      {
+        "function": "rho_alpha_beta",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 2.9558577807620168e-12,
+        "max_rel_error": 1.6894061317329463e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "rho_alpha_beta",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 2.9558577807620168e-12,
+        "max_rel_error": 1.6894061317329463e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "rho_alpha_beta",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 3.183231456205249e-12,
+        "max_rel_error": 1.6894061317329463e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "rho_alpha_beta",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 3.183231456205249e-12,
+        "max_rel_error": 1.6894061317329463e-09,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "rho_alpha_beta",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "rho_first_derivatives": {
+    "function": "rho_first_derivatives",
+    "parity": [
+      {
+        "function": "rho_first_derivatives",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.2049418129933542e-09,
+        "max_rel_error": 1.6894280476310857e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "rho_first_derivatives",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.2049418129933542e-09,
+        "max_rel_error": 1.6894280476310857e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "rho_first_derivatives",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.2049418129933542e-09,
+        "max_rel_error": 1.6894280476310857e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "rho_first_derivatives",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.2049418129933542e-09,
+        "max_rel_error": 1.6894280476310857e-09,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "rho_first_derivatives",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "rho_first_derivatives_wrt_enthalpy": {
+    "function": "rho_first_derivatives_wrt_enthalpy",
+    "parity": [
+      {
+        "function": "rho_first_derivatives_wrt_enthalpy",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.2042095098863115e-09,
+        "max_rel_error": 1.6958694404217422e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "rho_first_derivatives_wrt_enthalpy",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.2042095098863115e-09,
+        "max_rel_error": 1.6958694404217422e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "rho_first_derivatives_wrt_enthalpy",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.2042095098863115e-09,
+        "max_rel_error": 1.6958694404217422e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "rho_first_derivatives_wrt_enthalpy",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.2042095098863115e-09,
+        "max_rel_error": 1.6958694404217422e-09,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "rho_first_derivatives_wrt_enthalpy",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "rho_second_derivatives": {
+    "function": "rho_second_derivatives",
+    "parity": [
+      {
+        "function": "rho_second_derivatives",
+        "sample_size": 10,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1163, in rho_second_derivatives\n    v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "rho_second_derivatives",
+        "sample_size": 100,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1163, in rho_second_derivatives\n    v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "rho_second_derivatives",
+        "sample_size": 1000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1163, in rho_second_derivatives\n    v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "rho_second_derivatives",
+        "sample_size": 10000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1163, in rho_second_derivatives\n    v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      }
+    ],
+    "autograd": {
+      "function": "rho_second_derivatives",
+      "status": "ERROR",
+      "gradients_work": false,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": "grad can be implicitly created only for scalar outputs",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 306, in test_autograd\n    output = torch_func(*grad_inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1163, in rho_second_derivatives\n    v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+    },
+    "benchmark": []
+  },
+  "rho_second_derivatives_wrt_enthalpy": {
+    "function": "rho_second_derivatives_wrt_enthalpy",
+    "parity": [
+      {
+        "function": "rho_second_derivatives_wrt_enthalpy",
+        "sample_size": 10,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1890, in rho_second_derivatives_wrt_enthalpy\n    rho_SA_SA, rho_SA_CT, rho_CT_CT, _, _ = rho_second_derivatives(SA, CT, p)\n                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1163, in rho_second_derivatives\n    v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "rho_second_derivatives_wrt_enthalpy",
+        "sample_size": 100,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1890, in rho_second_derivatives_wrt_enthalpy\n    rho_SA_SA, rho_SA_CT, rho_CT_CT, _, _ = rho_second_derivatives(SA, CT, p)\n                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1163, in rho_second_derivatives\n    v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "rho_second_derivatives_wrt_enthalpy",
+        "sample_size": 1000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1890, in rho_second_derivatives_wrt_enthalpy\n    rho_SA_SA, rho_SA_CT, rho_CT_CT, _, _ = rho_second_derivatives(SA, CT, p)\n                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1163, in rho_second_derivatives\n    v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "rho_second_derivatives_wrt_enthalpy",
+        "sample_size": 10000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1890, in rho_second_derivatives_wrt_enthalpy\n    rho_SA_SA, rho_SA_CT, rho_CT_CT, _, _ = rho_second_derivatives(SA, CT, p)\n                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1163, in rho_second_derivatives\n    v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      }
+    ],
+    "autograd": {
+      "function": "rho_second_derivatives_wrt_enthalpy",
+      "status": "ERROR",
+      "gradients_work": false,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": "grad can be implicitly created only for scalar outputs",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 306, in test_autograd\n    output = torch_func(*grad_inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1890, in rho_second_derivatives_wrt_enthalpy\n    rho_SA_SA, rho_SA_CT, rho_CT_CT, _, _ = rho_second_derivatives(SA, CT, p)\n                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1163, in rho_second_derivatives\n    v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+    },
+    "benchmark": []
+  },
+  "rho_t_exact": {
+    "function": "rho_t_exact",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "sa_ct_interp": {
+    "function": "sa_ct_interp",
+    "parity": [
+      {
+        "function": "sa_ct_interp",
+        "sample_size": 10,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/interpolation.py\", line 66, in sa_ct_interp\n    if np.ma.any(np.ma.diff(np.ma.masked_invalid(p_i), axis=axis) <= 0) \\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/ma/core.py\", line 8275, in __call__\n    result = self._func.__call__(*args, **params).view(MaskedArray)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<__array_function__ internals>\", line 200, in diff\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/lib/function_base.py\", line 1415, in diff\n    axis = normalize_axis_index(axis, nd)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "sa_ct_interp",
+        "sample_size": 100,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/interpolation.py\", line 66, in sa_ct_interp\n    if np.ma.any(np.ma.diff(np.ma.masked_invalid(p_i), axis=axis) <= 0) \\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/ma/core.py\", line 8275, in __call__\n    result = self._func.__call__(*args, **params).view(MaskedArray)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<__array_function__ internals>\", line 200, in diff\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/lib/function_base.py\", line 1415, in diff\n    axis = normalize_axis_index(axis, nd)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "sa_ct_interp",
+        "sample_size": 1000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/interpolation.py\", line 66, in sa_ct_interp\n    if np.ma.any(np.ma.diff(np.ma.masked_invalid(p_i), axis=axis) <= 0) \\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/ma/core.py\", line 8275, in __call__\n    result = self._func.__call__(*args, **params).view(MaskedArray)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<__array_function__ internals>\", line 200, in diff\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/lib/function_base.py\", line 1415, in diff\n    axis = normalize_axis_index(axis, nd)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "sa_ct_interp",
+        "sample_size": 10000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/interpolation.py\", line 66, in sa_ct_interp\n    if np.ma.any(np.ma.diff(np.ma.masked_invalid(p_i), axis=axis) <= 0) \\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/ma/core.py\", line 8275, in __call__\n    result = self._func.__call__(*args, **params).view(MaskedArray)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<__array_function__ internals>\", line 200, in diff\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/lib/function_base.py\", line 1415, in diff\n    axis = normalize_axis_index(axis, nd)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      }
+    ],
+    "autograd": {
+      "function": "sa_ct_interp",
+      "status": "ERROR",
+      "gradients_work": false,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": "diff(): argument 'dim' must be int, not Tensor",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 306, in test_autograd\n    output = torch_func(*grad_inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_utilities.py\", line 178, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/interpolation.py\", line 638, in sa_ct_interp\n    if torch.any(torch.diff(p_i, dim=axis) <= 0) or torch.any(torch.diff(p, dim=axis) <= 0):\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: diff(): argument 'dim' must be int, not Tensor\n"
+    },
+    "benchmark": []
+  },
+  "seaice_fraction_to_freeze_seawater": {
+    "function": "seaice_fraction_to_freeze_seawater",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "sigma0": {
+    "function": "sigma0",
+    "parity": [
+      {
+        "function": "sigma0",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 4.547473508864641e-13,
+        "max_rel_error": 1.7153759982092542e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma0",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 4.547473508864641e-13,
+        "max_rel_error": 1.7153759982092542e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma0",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 4.547473508864641e-13,
+        "max_rel_error": 1.809092771268502e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma0",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 4.547473508864641e-13,
+        "max_rel_error": 1.8866448791249177e-14,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "sigma0",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "sigma1": {
+    "function": "sigma1",
+    "parity": [
+      {
+        "function": "sigma1",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 2.2737367544323206e-13,
+        "max_rel_error": 7.917726586308631e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma1",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 2.2737367544323206e-13,
+        "max_rel_error": 7.917726586308631e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma1",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 4.547473508864641e-13,
+        "max_rel_error": 1.5613993773934297e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma1",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 4.547473508864641e-13,
+        "max_rel_error": 1.581228903672977e-14,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "sigma1",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "sigma2": {
+    "function": "sigma2",
+    "parity": [
+      {
+        "function": "sigma2",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 4.547473508864641e-13,
+        "max_rel_error": 1.362948246127457e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma2",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 4.547473508864641e-13,
+        "max_rel_error": 1.362948246127457e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma2",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 6.821210263296962e-13,
+        "max_rel_error": 1.9373670770128064e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma2",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 6.821210263296962e-13,
+        "max_rel_error": 2.0174772128250977e-14,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "sigma2",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "sigma3": {
+    "function": "sigma3",
+    "parity": [
+      {
+        "function": "sigma3",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 9.094947017729282e-13,
+        "max_rel_error": 2.3992872712309162e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma3",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 9.094947017729282e-13,
+        "max_rel_error": 2.3992872712309162e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma3",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.1368683772161603e-12,
+        "max_rel_error": 2.904073684173074e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma3",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.1368683772161603e-12,
+        "max_rel_error": 2.998855322281482e-14,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "sigma3",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "sigma4": {
+    "function": "sigma4",
+    "parity": [
+      {
+        "function": "sigma4",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.8189894035458565e-12,
+        "max_rel_error": 4.187494414048594e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma4",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.8189894035458565e-12,
+        "max_rel_error": 4.267106603582278e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma4",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 2.0463630789890885e-12,
+        "max_rel_error": 4.7430116380200535e-14,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sigma4",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 2.0463630789890885e-12,
+        "max_rel_error": 4.824064535180983e-14,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "sigma4",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "sound_speed": {
+    "function": "sound_speed",
+    "parity": [
+      {
+        "function": "sound_speed",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 3.7994141166564077e-10,
+        "max_rel_error": 2.3388886008810973e-13,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sound_speed",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 3.7994141166564077e-10,
+        "max_rel_error": 2.3388886008810973e-13,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sound_speed",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 3.7994141166564077e-10,
+        "max_rel_error": 2.3388886008810973e-13,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "sound_speed",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 3.8039615901652724e-10,
+        "max_rel_error": 2.341797758056062e-13,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "sound_speed",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "specvol": {
+    "function": "specvol",
+    "parity": [
+      {
+        "function": "specvol",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 2.710505431213761e-18,
+        "max_rel_error": 2.8376302385618568e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 2.710505431213761e-18,
+        "max_rel_error": 2.8376302385618568e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 2.927345865710862e-18,
+        "max_rel_error": 3.0637518971115225e-15,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 2.927345865710862e-18,
+        "max_rel_error": 3.0646357492240453e-15,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "specvol",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "specvol_alpha_beta": {
+    "function": "specvol_alpha_beta",
+    "parity": [
+      {
+        "function": "specvol_alpha_beta",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.1509507539739228e-12,
+        "max_rel_error": 1.6894061317329463e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol_alpha_beta",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.1509507539739228e-12,
+        "max_rel_error": 1.6894061317329463e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol_alpha_beta",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.1509507539739228e-12,
+        "max_rel_error": 1.6894061317329463e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol_alpha_beta",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.1509507539739228e-12,
+        "max_rel_error": 1.6894061317329463e-09,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "specvol_alpha_beta",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "specvol_anom_standard": {
+    "function": "specvol_anom_standard",
+    "parity": [
+      {
+        "function": "specvol_anom_standard",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 3.2526065174565133e-19,
+        "max_rel_error": 1.2230082751102087e-13,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol_anom_standard",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 4.336808689942018e-19,
+        "max_rel_error": 1.456058343163673e-13,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol_anom_standard",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 4.336808689942018e-19,
+        "max_rel_error": 1.8035531446325244e-13,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol_anom_standard",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 5.421010862427522e-19,
+        "max_rel_error": 2.1601803401905142e-13,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "specvol_anom_standard",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "specvol_first_derivatives": {
+    "function": "specvol_first_derivatives",
+    "parity": [
+      {
+        "function": "specvol_first_derivatives",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.0993789911970518e-15,
+        "max_rel_error": 1.6638649974379812e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol_first_derivatives",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.0993789911970518e-15,
+        "max_rel_error": 1.6638649974379812e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol_first_derivatives",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.0993789911970518e-15,
+        "max_rel_error": 1.6638649974379812e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol_first_derivatives",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.0993789911970518e-15,
+        "max_rel_error": 1.6638649974379812e-09,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "specvol_first_derivatives",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "specvol_first_derivatives_wrt_enthalpy": {
+    "function": "specvol_first_derivatives_wrt_enthalpy",
+    "parity": [
+      {
+        "function": "specvol_first_derivatives_wrt_enthalpy",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.0987106822016681e-15,
+        "max_rel_error": 1.6700968767463076e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol_first_derivatives_wrt_enthalpy",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.0987106822016681e-15,
+        "max_rel_error": 1.6700968767463076e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol_first_derivatives_wrt_enthalpy",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.0987106822016681e-15,
+        "max_rel_error": 1.6700968767463076e-09,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "specvol_first_derivatives_wrt_enthalpy",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.0987106822016681e-15,
+        "max_rel_error": 1.6700968767463076e-09,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "specvol_first_derivatives_wrt_enthalpy",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 3,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "specvol_second_derivatives": {
+    "function": "specvol_second_derivatives",
+    "parity": [
+      {
+        "function": "specvol_second_derivatives",
+        "sample_size": 10,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "specvol_second_derivatives",
+        "sample_size": 100,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "specvol_second_derivatives",
+        "sample_size": 1000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "specvol_second_derivatives",
+        "sample_size": 10000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      }
+    ],
+    "autograd": {
+      "function": "specvol_second_derivatives",
+      "status": "ERROR",
+      "gradients_work": false,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": "grad can be implicitly created only for scalar outputs",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 306, in test_autograd\n    output = torch_func(*grad_inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+    },
+    "benchmark": []
+  },
+  "specvol_second_derivatives_wrt_enthalpy": {
+    "function": "specvol_second_derivatives_wrt_enthalpy",
+    "parity": [
+      {
+        "function": "specvol_second_derivatives_wrt_enthalpy",
+        "sample_size": 10,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1987, in specvol_second_derivatives_wrt_enthalpy\n    v_SA_SA, v_SA_CT, v_CT_CT, _, _ = specvol_second_derivatives(SA, CT, p)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "specvol_second_derivatives_wrt_enthalpy",
+        "sample_size": 100,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1987, in specvol_second_derivatives_wrt_enthalpy\n    v_SA_SA, v_SA_CT, v_CT_CT, _, _ = specvol_second_derivatives(SA, CT, p)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "specvol_second_derivatives_wrt_enthalpy",
+        "sample_size": 1000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1987, in specvol_second_derivatives_wrt_enthalpy\n    v_SA_SA, v_SA_CT, v_CT_CT, _, _ = specvol_second_derivatives(SA, CT, p)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "specvol_second_derivatives_wrt_enthalpy",
+        "sample_size": 10000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1987, in specvol_second_derivatives_wrt_enthalpy\n    v_SA_SA, v_SA_CT, v_CT_CT, _, _ = specvol_second_derivatives(SA, CT, p)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      }
+    ],
+    "autograd": {
+      "function": "specvol_second_derivatives_wrt_enthalpy",
+      "status": "ERROR",
+      "gradients_work": false,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": "grad can be implicitly created only for scalar outputs",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 306, in test_autograd\n    output = torch_func(*grad_inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1987, in specvol_second_derivatives_wrt_enthalpy\n    v_SA_SA, v_SA_CT, v_CT_CT, _, _ = specvol_second_derivatives(SA, CT, p)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+    },
+    "benchmark": []
+  },
+  "specvol_t_exact": {
+    "function": "specvol_t_exact",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "spiciness0": {
+    "function": "spiciness0",
+    "parity": [
+      {
+        "function": "spiciness0",
+        "sample_size": 10,
+        "status": "FAIL",
+        "max_abs_error": 9.74097982187061e-06,
+        "max_rel_error": 6.075450471768244e-06,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "spiciness0",
+        "sample_size": 100,
+        "status": "FAIL",
+        "max_abs_error": 9.74097982187061e-06,
+        "max_rel_error": 9.931612947921763e-05,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "spiciness0",
+        "sample_size": 1000,
+        "status": "FAIL",
+        "max_abs_error": 9.74097982187061e-06,
+        "max_rel_error": 0.00877955049008229,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "spiciness0",
+        "sample_size": 10000,
+        "status": "FAIL",
+        "max_abs_error": 9.74097982187061e-06,
+        "max_rel_error": 0.001958709089425907,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "spiciness0",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "spiciness1": {
+    "function": "spiciness1",
+    "parity": [
+      {
+        "function": "spiciness1",
+        "sample_size": 10,
+        "status": "FAIL",
+        "max_abs_error": 9.746522190212659e-06,
+        "max_rel_error": 2.044430597926394e-05,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "spiciness1",
+        "sample_size": 100,
+        "status": "FAIL",
+        "max_abs_error": 9.746522190212659e-06,
+        "max_rel_error": 0.00011851045186605353,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "spiciness1",
+        "sample_size": 1000,
+        "status": "FAIL",
+        "max_abs_error": 9.746522190212659e-06,
+        "max_rel_error": 0.001136667410051211,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "spiciness1",
+        "sample_size": 10000,
+        "status": "FAIL",
+        "max_abs_error": 9.746522190212659e-06,
+        "max_rel_error": 0.006521625600961611,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "spiciness1",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "spiciness2": {
+    "function": "spiciness2",
+    "parity": [
+      {
+        "function": "spiciness2",
+        "sample_size": 10,
+        "status": "FAIL",
+        "max_abs_error": 9.752721775058149e-06,
+        "max_rel_error": 1.6038519802165976e-05,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "spiciness2",
+        "sample_size": 100,
+        "status": "FAIL",
+        "max_abs_error": 9.752721775058149e-06,
+        "max_rel_error": 0.0002572217147813095,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "spiciness2",
+        "sample_size": 1000,
+        "status": "FAIL",
+        "max_abs_error": 9.752721775058149e-06,
+        "max_rel_error": 0.002243995931329419,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "spiciness2",
+        "sample_size": 10000,
+        "status": "FAIL",
+        "max_abs_error": 9.752721775058149e-06,
+        "max_rel_error": 0.01406034760702511,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "spiciness2",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 2,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "t90_from_t68": {
+    "function": "t90_from_t68",
+    "parity": [
+      {
+        "function": "t90_from_t68",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "t90_from_t68",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "t90_from_t68",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "t90_from_t68",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "t90_from_t68",
+      "status": "PASS",
+      "gradients_work": true,
+      "num_differentiable_inputs": 1,
+      "issues": [],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "t_deriv_chem_potential_water_t_exact": {
+    "function": "t_deriv_chem_potential_water_t_exact",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "t_freezing": {
+    "function": "t_freezing",
+    "parity": [
+      {
+        "function": "t_freezing",
+        "sample_size": 10,
+        "status": "PASS",
+        "max_abs_error": 1.1901590823981678e-12,
+        "max_rel_error": 8.898192434886838e-11,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "t_freezing",
+        "sample_size": 100,
+        "status": "PASS",
+        "max_abs_error": 1.2398970739013748e-12,
+        "max_rel_error": 8.898192434886838e-11,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "t_freezing",
+        "sample_size": 1000,
+        "status": "PASS",
+        "max_abs_error": 1.319833131674386e-12,
+        "max_rel_error": 8.898192434886838e-11,
+        "error": null,
+        "traceback": null
+      },
+      {
+        "function": "t_freezing",
+        "sample_size": 10000,
+        "status": "PASS",
+        "max_abs_error": 1.4210854715202004e-12,
+        "max_rel_error": 3.1151406602964067e-10,
+        "error": null,
+        "traceback": null
+      }
+    ],
+    "autograd": {
+      "function": "t_freezing",
+      "status": "FAIL",
+      "gradients_work": false,
+      "num_differentiable_inputs": 3,
+      "issues": [
+        "Non-finite gradients for input 0"
+      ],
+      "error": null,
+      "traceback": null
+    },
+    "benchmark": []
+  },
+  "t_from_CT": {
+    "function": "t_from_CT",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  },
+  "thermobaric": {
+    "function": "thermobaric",
+    "parity": [
+      {
+        "function": "thermobaric",
+        "sample_size": 10,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/stability.py\", line 48, in thermobaric\n    _, _, _, _, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "thermobaric",
+        "sample_size": 100,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/stability.py\", line 48, in thermobaric\n    _, _, _, _, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "thermobaric",
+        "sample_size": 1000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/stability.py\", line 48, in thermobaric\n    _, _, _, _, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      },
+      {
+        "function": "thermobaric",
+        "sample_size": 10000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "grad can be implicitly created only for scalar outputs",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 233, in test_numerical_parity\n    torch_output = torch_func(*torch_inputs)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/stability.py\", line 48, in thermobaric\n    _, _, _, _, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+      }
+    ],
+    "autograd": {
+      "function": "thermobaric",
+      "status": "ERROR",
+      "gradients_work": false,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": "grad can be implicitly created only for scalar outputs",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 306, in test_autograd\n    output = torch_func(*grad_inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/stability.py\", line 48, in thermobaric\n    _, _, _, _, v_CT_p = specvol_second_derivatives(SA, CT, p)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_core/density.py\", line 1036, in specvol_second_derivatives\n    v_SA_grad = torch.autograd.grad(\n                ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 288, in grad\n    grad_outputs_ = _make_grads(t_outputs, grad_outputs_, is_grads_batched=is_grads_batched)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py\", line 88, in _make_grads\n    raise RuntimeError(\"grad can be implicitly created only for scalar outputs\")\nRuntimeError: grad can be implicitly created only for scalar outputs\n"
+    },
+    "benchmark": []
+  },
+  "tracer_ct_interp": {
+    "function": "tracer_ct_interp",
+    "parity": [
+      {
+        "function": "tracer_ct_interp",
+        "sample_size": 10,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/interpolation.py\", line 150, in tracer_ct_interp\n    if np.ma.any(np.ma.diff(np.ma.masked_invalid(p_i), axis=axis) <= 0) \\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/ma/core.py\", line 8275, in __call__\n    result = self._func.__call__(*args, **params).view(MaskedArray)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<__array_function__ internals>\", line 200, in diff\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/lib/function_base.py\", line 1415, in diff\n    axis = normalize_axis_index(axis, nd)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "tracer_ct_interp",
+        "sample_size": 100,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/interpolation.py\", line 150, in tracer_ct_interp\n    if np.ma.any(np.ma.diff(np.ma.masked_invalid(p_i), axis=axis) <= 0) \\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/ma/core.py\", line 8275, in __call__\n    result = self._func.__call__(*args, **params).view(MaskedArray)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<__array_function__ internals>\", line 200, in diff\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/lib/function_base.py\", line 1415, in diff\n    axis = normalize_axis_index(axis, nd)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "tracer_ct_interp",
+        "sample_size": 1000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/interpolation.py\", line 150, in tracer_ct_interp\n    if np.ma.any(np.ma.diff(np.ma.masked_invalid(p_i), axis=axis) <= 0) \\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/ma/core.py\", line 8275, in __call__\n    result = self._func.__call__(*args, **params).view(MaskedArray)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<__array_function__ internals>\", line 200, in diff\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/lib/function_base.py\", line 1415, in diff\n    axis = normalize_axis_index(axis, nd)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      },
+      {
+        "function": "tracer_ct_interp",
+        "sample_size": 10000,
+        "status": "ERROR",
+        "max_abs_error": null,
+        "max_rel_error": null,
+        "error": "only integer scalar arrays can be converted to a scalar index",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 227, in test_numerical_parity\n    ref_output = ref_func(*ref_inputs)\n                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/_utilities.py\", line 77, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/source_files/gsw/interpolation.py\", line 150, in tracer_ct_interp\n    if np.ma.any(np.ma.diff(np.ma.masked_invalid(p_i), axis=axis) <= 0) \\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/ma/core.py\", line 8275, in __call__\n    result = self._func.__call__(*args, **params).view(MaskedArray)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<__array_function__ internals>\", line 200, in diff\n  File \"/home/jrm22n/anaconda3/lib/python3.11/site-packages/numpy/lib/function_base.py\", line 1415, in diff\n    axis = normalize_axis_index(axis, nd)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: only integer scalar arrays can be converted to a scalar index\n"
+      }
+    ],
+    "autograd": {
+      "function": "tracer_ct_interp",
+      "status": "ERROR",
+      "gradients_work": false,
+      "num_differentiable_inputs": 0,
+      "issues": [],
+      "error": "diff(): argument 'dim' must be int, not Tensor",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/jrm22n/gsw2torch/implementation/tools/test_runner.py\", line 306, in test_autograd\n    output = torch_func(*grad_inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/_utilities.py\", line 178, in wrapper\n    ret = f(*newargs, **kw)\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/jrm22n/gsw2torch/implementation/gsw_torch/interpolation.py\", line 735, in tracer_ct_interp\n    if torch.any(torch.diff(p_i, dim=axis) <= 0) or torch.any(torch.diff(p, dim=axis) <= 0):\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: diff(): argument 'dim' must be int, not Tensor\n"
+    },
+    "benchmark": []
+  },
+  "z_from_p": {
+    "function": "z_from_p",
+    "parity": [],
+    "autograd": null,
+    "benchmark": [],
+    "error": "Could not prepare test inputs"
+  }
+}

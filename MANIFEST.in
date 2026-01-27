@@ -1,0 +1,13 @@
+include LICENSE
+include README.md
+include CHANGELOG.md
+include CONTRIBUTING.md
+include IMPLEMENTATION_STATUS.md
+recursive-include gsw_torch/_core *.npy
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .git*
+recursive-exclude tests *
+recursive-exclude tools *
+recursive-exclude reports *
+recursive-exclude .github *
