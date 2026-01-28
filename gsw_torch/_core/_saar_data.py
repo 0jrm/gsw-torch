@@ -12,53 +12,74 @@ Grid dimensions:
 Total saar_ref elements: 91 * 45 * 45 = 184275
 """
 
+import os
+
 import numpy as np
 import torch
 
-# Load the extracted data
-_data_file = "/tmp/saar_data.npz"
-try:
-    _data = np.load(_data_file, allow_pickle=True)
+# Try to load SAAR data from package directory first, then fall back to /tmp
+_package_dir = os.path.dirname(__file__)
+_package_data_file = os.path.join(_package_dir, "saar_data.npz")
+_tmp_data_file = "/tmp/saar_data.npz"
 
-    # Grid dimensions
-    NX = int(_data["nx"])
-    NY = int(_data["ny"])
-    NZ = int(_data["nz"])
+# Prefer package-bundled data, fall back to /tmp for development/testing
+if os.path.exists(_package_data_file):
+    _data_file = _package_data_file
+elif os.path.exists(_tmp_data_file):
+    _data_file = _tmp_data_file
+else:
+    _data_file = None
 
-    # Reference grids
-    P_REF = torch.tensor(_data["p_ref"], dtype=torch.float64)
-    LATS_REF = torch.tensor(_data["lats_ref"], dtype=torch.float64)
-    LONGS_REF = torch.tensor(_data["longs_ref"], dtype=torch.float64)
+if _data_file is not None:
+    try:
+        _data = np.load(_data_file, allow_pickle=True)
 
-    # SAAR lookup table (flattened, shape will be (nz, ny, nx) when reshaped)
-    SAAR_REF = torch.tensor(_data["saar_ref"], dtype=torch.float64)
-    SAAR_REF = SAAR_REF.reshape(NZ, NY, NX)  # Reshape to 3D grid
+        # Grid dimensions
+        NX = int(_data["nx"])
+        NY = int(_data["ny"])
+        NZ = int(_data["nz"])
 
-    # Depth reference (for determining valid ocean points)
-    NDEPTH_REF = torch.tensor(_data["ndepth_ref"], dtype=torch.float64)
-    NDEPTH_REF = NDEPTH_REF.reshape(NY, NX)  # Reshape to 2D grid
+        # Reference grids
+        P_REF = torch.tensor(_data["p_ref"], dtype=torch.float64)
+        LATS_REF = torch.tensor(_data["lats_ref"], dtype=torch.float64)
+        LONGS_REF = torch.tensor(_data["longs_ref"], dtype=torch.float64)
 
-    # Delta SA reference (for deltaSA_atlas function)
-    DELTA_SA_REF = torch.tensor(_data["delta_sa_ref"], dtype=torch.float64)
-    DELTA_SA_REF = DELTA_SA_REF.reshape(NZ, NY, NX)  # Reshape to 3D grid
+        # SAAR lookup table (flattened, shape will be (nz, ny, nx) when reshaped)
+        SAAR_REF = torch.tensor(_data["saar_ref"], dtype=torch.float64)
+        SAAR_REF = SAAR_REF.reshape(NZ, NY, NX)  # Reshape to 3D grid
 
-    # Panama barrier coordinates
-    NPAN = int(_data["npan"])
-    LONGS_PAN = torch.tensor([260.00, 272.59, 276.50, 278.65, 280.73, 292.0], dtype=torch.float64)
-    LATS_PAN = torch.tensor([19.55, 13.97, 9.60, 8.10, 9.33, 3.4], dtype=torch.float64)
+        # Depth reference (for determining valid ocean points)
+        NDEPTH_REF = torch.tensor(_data["ndepth_ref"], dtype=torch.float64)
+        NDEPTH_REF = NDEPTH_REF.reshape(NY, NX)  # Reshape to 2D grid
 
-    # Grid index offsets for 4 corners
-    DELI = torch.tensor([0, 1, 1, 0], dtype=torch.int64)
-    DELJ = torch.tensor([0, 0, 1, 1], dtype=torch.int64)
+        # Delta SA reference (for deltaSA_atlas function)
+        DELTA_SA_REF = torch.tensor(_data["delta_sa_ref"], dtype=torch.float64)
+        DELTA_SA_REF = DELTA_SA_REF.reshape(NZ, NY, NX)  # Reshape to 3D grid
 
-    # Constants
-    GSW_ERROR_LIMIT = 1e10
-    GSW_INVALID_VALUE = 9e15
+        # Panama barrier coordinates
+        NPAN = int(_data["npan"])
+        LONGS_PAN = torch.tensor(
+            [260.00, 272.59, 276.50, 278.65, 280.73, 292.0], dtype=torch.float64
+        )
+        LATS_PAN = torch.tensor([19.55, 13.97, 9.60, 8.10, 9.33, 3.4], dtype=torch.float64)
 
-except FileNotFoundError as err:
+        # Grid index offsets for 4 corners
+        DELI = torch.tensor([0, 1, 1, 0], dtype=torch.int64)
+        DELJ = torch.tensor([0, 0, 1, 1], dtype=torch.int64)
+
+        # Constants
+        GSW_ERROR_LIMIT = 1e10
+        GSW_INVALID_VALUE = 9e15
+
+    except Exception as err:
+        raise RuntimeError(f"Failed to load SAAR data file from {_data_file}: {err}") from err
+else:
     raise RuntimeError(
-        f"SAAR data file not found at {_data_file}. Please run the data extraction script first."
-    ) from err
+        f"SAAR data file not found. Expected at:\n"
+        f"  - {_package_data_file} (package-bundled)\n"
+        f"  - {_tmp_data_file} (development/testing)\n"
+        f"Please run: python scripts/extract_saar_data.py"
+    )
 
 __all__ = [
     "NX",

@@ -4,6 +4,7 @@ include CHANGELOG.md
 include CONTRIBUTING.md
 include IMPLEMENTATION_STATUS.md
 recursive-include gsw_torch/_core *.npy
+recursive-include gsw_torch/_core *.npz
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
 recursive-exclude * .git*
