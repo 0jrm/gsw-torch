@@ -61,12 +61,12 @@ jobs:
       - name: Build package
         run: |
           source .venv/bin/activate
-          pip install build
+          uv pip install build
           python -m build
 
       - name: Test package installation
         run: |
           source .venv/bin/activate
-          pip install dist/*.whl
+          uv pip install dist/*.whl
           python -c "import gsw_torch; print(f'Version: {gsw_torch.__version__}')"
           python -c "import gsw_torch; help(gsw_torch.CT_from_t)" || true
