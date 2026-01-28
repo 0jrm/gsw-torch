@@ -17,7 +17,6 @@ def _get_reference_gsw():
     project_root = os.path.abspath(os.path.join(current_dir, "../../.."))
 
     ref_link = os.path.join(project_root, "reference", "gsw")
-    ref_direct = "/home/jrm22n/gsw2torch/source_files"
 
     paths_to_try = []
     if os.path.islink(ref_link):
@@ -30,9 +29,13 @@ def _get_reference_gsw():
         [
             os.path.join(project_root, "reference"),
             os.path.join(current_dir, "../../../reference"),
-            ref_direct,
+            os.path.join(project_root, "source_files"),
+            os.path.join(current_dir, "../../../source_files"),
         ]
     )
+    # Try environment variable as fallback
+    if "GSW_SOURCE_FILES" in os.environ:
+        paths_to_try.append(os.environ["GSW_SOURCE_FILES"])
 
     for path in paths_to_try:
         abs_path = os.path.abspath(path)

@@ -35,9 +35,11 @@ def get_reference_gsw():
     project_root = Path(__file__).parent.parent.parent
     paths_to_try = [
         project_root / "source_files",
-        Path("/home/jrm22n/gsw2torch/source_files"),
         project_root / "reference",
     ]
+    # Try environment variable as fallback
+    if "GSW_SOURCE_FILES" in os.environ:
+        paths_to_try.append(Path(os.environ["GSW_SOURCE_FILES"]))
     
     for path in paths_to_try:
         gsw_path = path / "gsw"

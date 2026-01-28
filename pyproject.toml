@@ -63,6 +63,11 @@ exclude = [
     "/tools",
     "/reports",
     "/.github",
+    "/test_install_env",
+    "/.venv",
+    "/venv",
+    "/env",
+    "/ENV",
 ]
 
 [tool.ruff]
