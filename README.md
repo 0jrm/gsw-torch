@@ -96,6 +96,28 @@ All functions support:
 
 See `IMPLEMENTATION_STATUS.md` for detailed status and known limitations.
 
+## Development History
+
+This package was autonomously translated from the reference GSW-Python implementation to PyTorch using Cursor AI agents. The translation process followed strict guardrails to ensure correctness:
+
+**Core Principles:**
+- **Exact numeric parity**: All functions maintain numerical accuracy within 1e-8 tolerance compared to the reference implementation (float64, CPU)
+- **Pure PyTorch**: No NumPy dependencies in core library code; all operations use PyTorch tensors exclusively
+- **Autograd compatibility**: All differentiable functions support automatic differentiation without breaking gradients
+- **Reference as oracle**: The original GSW implementation served as a read-only reference; no modifications were made to the oracle
+
+**Translation Constraints:**
+- Preserved evaluation order to maintain rounding behavior
+- Used `torch.float64` as default dtype throughout
+- Avoided `.item()` calls and Python branching on tensor values to maintain autograd compatibility
+- Replaced NumPy operations with equivalent PyTorch operations (`np.where` → `torch.where`, etc.)
+- Implemented iterative solvers with deterministic, fixed iteration counts matching the reference
+
+**Quality Assurance:**
+- Comprehensive parity testing against reference GSW for all 118+ functions
+- Gradient checking for all differentiable functions
+- Continuous integration with automated testing, linting, and type checking
+
 ## Testing
 
 Run tests with pytest:
@@ -165,10 +187,11 @@ If you use GSW PyTorch in your research, please cite:
 ```bibtex
 @software{gsw_torch,
   title = {GSW PyTorch: PyTorch Implementation of the Gibbs SeaWater Oceanographic Toolbox},
-  author = {GSW PyTorch Contributors},
-  year = {2025},
+  authors = {Miranda, Jose R.; Zavala-Romero, Olmo},
+  year = {2026},
   version = {0.1.0},
-  url = {https://github.com/TEOS-10/gsw-torch}
+  url = {https://github.com/0jrm/gsw-torch},
+  note = {Autonomously translated from GSW-Python using Cursor AI agents}
 }
 ```
 
