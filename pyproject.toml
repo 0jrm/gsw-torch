@@ -1,6 +1,6 @@
 [project]
 name = "gsw-torch"
-version = "0.1.0"
+version = "0.1.1"
 description = "PyTorch implementation of the Gibbs SeaWater (GSW) Oceanographic Toolbox"
 readme = "README.md"
 license = {text = "BSD-3-Clause"}
