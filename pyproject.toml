@@ -56,6 +56,15 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["gsw_torch"]
 
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/reference",
+    "/tests",
+    "/tools",
+    "/reports",
+    "/.github",
+]
+
 [tool.ruff]
 line-length = 100
 target-version = "py39"

@@ -12,3 +12,4 @@ recursive-exclude tests *
 recursive-exclude tools *
 recursive-exclude reports *
 recursive-exclude .github *
+prune reference
