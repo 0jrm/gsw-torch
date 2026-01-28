@@ -100,55 +100,55 @@ def geo_strf_dyn_height(SA, CT, p, p_ref=0, axis=0, max_dp=1.0, interp_method="p
         in an isobaric surface, relative to the reference surface.
     """
     import torch
+
     from ._core.density import specvol_anom_standard
     from .interpolation import sa_ct_interp
     from .utility import pchip_interp
-    
+
     SA = torch.as_tensor(SA, dtype=torch.float64)
     CT = torch.as_tensor(CT, dtype=torch.float64)
     p = torch.as_tensor(p, dtype=torch.float64)
     p_ref = float(p_ref)
-    
-    interp_methods = {'mrst': 3, 'pchip': 2, 'linear': 1}
+
+    interp_methods = {"mrst": 3, "pchip": 2, "linear": 1}
     if interp_method not in interp_methods:
-        raise ValueError(f'interp_method must be one of {list(interp_methods.keys())}')
-    
+        raise ValueError(f"interp_method must be one of {list(interp_methods.keys())}")
+
     if SA.shape != CT.shape:
-        raise ValueError(f'Shapes of SA and CT must match; found {SA.shape} and {CT.shape}')
-    
+        raise ValueError(f"Shapes of SA and CT must match; found {SA.shape} and {CT.shape}")
+
     # Handle 1D p case
     if p.ndim == 1 and SA.ndim > 1:
         if len(p) != SA.shape[axis]:
             raise ValueError(
-                f'With 1-D p, len(p) must be SA.shape[axis];\n'
-                f' found {len(p)} versus {SA.shape[axis]} on specified axis, {axis}'
+                f"With 1-D p, len(p) must be SA.shape[axis];\n"
+                f" found {len(p)} versus {SA.shape[axis]} on specified axis, {axis}"
             )
         ind = [None] * SA.ndim
         ind[axis] = slice(None)
         p = p[tuple(ind)]
-    
+
     # Check for monotonic pressure
     if torch.any(torch.diff(p, dim=axis) <= 0):
-        raise ValueError('p must be increasing along the specified axis')
-    
+        raise ValueError("p must be increasing along the specified axis")
+
     p = torch.broadcast_to(p, SA.shape)
     goodmask = ~(torch.isnan(SA) | torch.isnan(CT) | torch.isnan(p))
-    dh = torch.full(SA.shape, float('nan'), dtype=torch.float64, device=SA.device)
-    
+    dh = torch.full(SA.shape, float("nan"), dtype=torch.float64, device=SA.device)
+
     # Constants
     db2pa = 1e4  # dbar to Pa conversion
-    
-    from ._utilities import indexer
+
     order = "C"  # Default order
-    
+
     for ind in indexer(SA.shape, axis, order=order):
         igood = goodmask[ind]
         pgood = p[ind][igood]
-        
+
         if len(pgood) > 1 and pgood[-1] >= p_ref:
             sa = SA[ind][igood]
             ct = CT[ind][igood]
-            
+
             # Check if we need to add surface points
             ntop = 0
             if pgood[0] > p_ref:
@@ -158,36 +158,36 @@ def geo_strf_dyn_height(SA, CT, p, p_ref=0, axis=0, max_dp=1.0, interp_method="p
                 sa = torch.cat([sa[0:1].expand(ntop), sa])
                 ct = torch.cat([ct[0:1].expand(ntop), ct])
                 pgood = torch.cat([ptop, pgood])
-            
+
             # Calculate pressure differences
             dp = pgood[1:] - pgood[:-1]
-            dp_min = torch.min(dp).item()
+            torch.min(dp).item()
             dp_max = torch.max(dp).item()
-            
+
             # Check if we need interpolation
             ipref = -1
             for i in range(len(pgood)):
                 if abs(pgood[i].item() - p_ref) < 1e-10:
                     ipref = i
                     break
-            
+
             if dp_max <= max_dp and ipref >= 0:
                 # Simple case: no interpolation needed
                 # Calculate specific volume anomaly
                 b = specvol_anom_standard(sa, ct, pgood)
-                
+
                 # Average between consecutive levels
                 b_av = 0.5 * (b[1:] + b[:-1])
-                
+
                 # Integrate: dyn_height[i] = dyn_height[i-1] - b_av[i-1]*dp[i-1]*db2pa
                 dyn_height = torch.zeros_like(pgood)
                 for i in range(1, len(pgood)):
-                    dyn_height[i] = dyn_height[i-1] - b_av[i-1] * dp[i-1] * db2pa
-                
+                    dyn_height[i] = dyn_height[i - 1] - b_av[i - 1] * dp[i - 1] * db2pa
+
                 # Subtract value at reference pressure
                 dh_ref = dyn_height[ipref]
                 dyn_height = dyn_height - dh_ref
-                
+
                 # Extract values for original pressure levels
                 if ntop > 0:
                     dh[ind][igood] = dyn_height[ntop:]
@@ -212,20 +212,20 @@ def geo_strf_dyn_height(SA, CT, p, p_ref=0, axis=0, max_dp=1.0, interp_method="p
                                 p_refined_list.append(p_intermediate)
                     # Add end point
                     p_refined_list.append(p_end)
-                
+
                 # Remove duplicates and ensure p_ref is included
                 p_refined_list = sorted(set(p_refined_list))
                 if p_ref not in p_refined_list and pgood[0].item() <= p_ref <= pgood[-1].item():
                     p_refined_list.append(p_ref)
                     p_refined_list = sorted(p_refined_list)
-                
+
                 p_refined = torch.tensor(p_refined_list, dtype=torch.float64, device=sa.device)
-                
+
                 # Interpolate SA and CT to refined grid
-                if interp_method == 'pchip':
+                if interp_method == "pchip":
                     sa_refined = pchip_interp(pgood, sa, p_refined)
                     ct_refined = pchip_interp(pgood, ct, p_refined)
-                elif interp_method == 'linear':
+                elif interp_method == "linear":
                     # Linear interpolation
                     sa_refined = torch.zeros_like(p_refined)
                     ct_refined = torch.zeros_like(p_refined)
@@ -260,36 +260,38 @@ def geo_strf_dyn_height(SA, CT, p, p_ref=0, axis=0, max_dp=1.0, interp_method="p
                         # Fall back to PCHIP if not enough points
                         sa_refined = pchip_interp(pgood, sa, p_refined)
                         ct_refined = pchip_interp(pgood, ct, p_refined)
-                
+
                 # Calculate specific volume anomaly on refined grid
                 b = specvol_anom_standard(sa_refined, ct_refined, p_refined)
-                
+
                 # Calculate pressure differences on refined grid
                 dp_refined = p_refined[1:] - p_refined[:-1]
-                
+
                 # Average between consecutive levels
                 b_av = 0.5 * (b[1:] + b[:-1])
-                
+
                 # Integrate on refined grid
                 dyn_height_refined = torch.zeros_like(p_refined)
                 for i in range(1, len(p_refined)):
-                    dyn_height_refined[i] = dyn_height_refined[i-1] - b_av[i-1] * dp_refined[i-1] * db2pa
-                
+                    dyn_height_refined[i] = (
+                        dyn_height_refined[i - 1] - b_av[i - 1] * dp_refined[i - 1] * db2pa
+                    )
+
                 # Find reference pressure index in refined grid
                 ipref_refined = -1
                 for i in range(len(p_refined)):
                     if abs(p_refined[i].item() - p_ref) < 1e-10:
                         ipref_refined = i
                         break
-                
+
                 if ipref_refined >= 0:
                     dh_ref = dyn_height_refined[ipref_refined]
                     dyn_height_refined = dyn_height_refined - dh_ref
-                
+
                 # Interpolate back to original pressure levels
-                if interp_method == 'pchip':
+                if interp_method == "pchip":
                     dyn_height = pchip_interp(p_refined, dyn_height_refined, pgood)
-                elif interp_method == 'linear':
+                elif interp_method == "linear":
                     # Linear interpolation back
                     dyn_height = torch.zeros_like(pgood)
                     for i in range(len(pgood)):
@@ -308,21 +310,25 @@ def geo_strf_dyn_height(SA, CT, p, p_ref=0, axis=0, max_dp=1.0, interp_method="p
                                     j = m
                                 else:
                                     k = m
-                            t = (p_val - p_refined[j].item()) / (p_refined[k].item() - p_refined[j].item())
-                            dyn_height[i] = dyn_height_refined[j] + t * (dyn_height_refined[k] - dyn_height_refined[j])
+                            t = (p_val - p_refined[j].item()) / (
+                                p_refined[k].item() - p_refined[j].item()
+                            )
+                            dyn_height[i] = dyn_height_refined[j] + t * (
+                                dyn_height_refined[k] - dyn_height_refined[j]
+                            )
                 else:  # mrst
                     if len(p_refined) >= 4:
                         # Use PCHIP for interpolation back (sa_ct_interp is for SA/CT, not for single variable)
                         dyn_height = pchip_interp(p_refined, dyn_height_refined, pgood)
                     else:
                         dyn_height = pchip_interp(p_refined, dyn_height_refined, pgood)
-                
+
                 # Extract values for original pressure levels
                 if ntop > 0:
                     dh[ind][igood] = dyn_height[ntop:]
                 else:
                     dh[ind][igood] = dyn_height
-    
+
     return dh
 
 
@@ -394,10 +400,9 @@ def distance(lon, lat, p=0, axis=-1):
     dlon = torch.diff(lon_rad, dim=axis)
     dlat = torch.diff(lat_rad, dim=axis)
 
-    a = (
-        (torch.sin(dlat / 2)) ** 2
-        + torch.cos(lat_rad[indm]) * torch.cos(lat_rad[indp]) * (torch.sin(dlon / 2)) ** 2
-    )
+    a = (torch.sin(dlat / 2)) ** 2 + torch.cos(lat_rad[indm]) * torch.cos(lat_rad[indp]) * (
+        torch.sin(dlon / 2)
+    ) ** 2
 
     angles = 2 * torch.atan2(torch.sqrt(a), torch.sqrt(1 - a))
 

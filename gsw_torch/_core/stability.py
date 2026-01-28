@@ -4,9 +4,6 @@ Core PyTorch implementations of stability functions.
 These functions calculate stability-related properties like thermobaric and cabbeling coefficients.
 """
 
-import torch
-
-from .._utilities import as_tensor
 from .._core.density import (
     specvol_alpha_beta,
     specvol_first_derivatives,
@@ -46,12 +43,12 @@ def thermobaric(SA, CT, p):
     specvol, _, _ = specvol_alpha_beta(SA, CT, p)
     _, v_CT, v_p = specvol_first_derivatives(SA, CT, p)
     _, _, _, _, v_CT_p = specvol_second_derivatives(SA, CT, p)
-    
+
     # Convert v_p from Pa to dbar for consistency (v_CT_p is already in Pa)
     # Actually, v_p and v_CT_p are both in Pa, so the formula should work directly
     # But let me check: thermobaric = (1/v) * (v_CT_p - v_CT * v_p / v)
     thermobaric = (1.0 / specvol) * (v_CT_p - v_CT * v_p / specvol)
-    
+
     return thermobaric
 
 
@@ -82,10 +79,10 @@ def cabbeling(SA, CT, p):
     specvol, _, _ = specvol_alpha_beta(SA, CT, p)
     v_SA, v_CT, _ = specvol_first_derivatives(SA, CT, p)
     v_SA_SA, v_SA_CT, v_CT_CT, _, _ = specvol_second_derivatives(SA, CT, p)
-    
+
     # cabbeling = (1/v) * (v_CT_CT - 2*v_CT*v_SA_CT/v_SA + v_CT^2*v_SA_SA/v_SA^2)
     cabbeling = (1.0 / specvol) * (
         v_CT_CT - 2.0 * v_CT * v_SA_CT / v_SA + v_CT**2 * v_SA_SA / v_SA**2
     )
-    
+
     return cabbeling

@@ -90,20 +90,20 @@ def specvol_alpha_beta(SA, CT, p):
     SA = as_tensor(SA, dtype=torch.float64)
     CT = as_tensor(CT, dtype=torch.float64)
     p = as_tensor(p, dtype=torch.float64)
-    
+
     # Broadcast inputs
     SA, CT, p = torch.broadcast_tensors(SA, CT, p)
-    
+
     # Reduced variables (Roquet et al. 2015)
     SAu = 40.0 * 35.16504 / 35.0
     CTu = 40.0
     Zu = 1e4
     deltaS = 24.0
-    
+
     ss = torch.sqrt((SA + deltaS) / SAu)
     tt = CT / CTu
     pp = p / Zu
-    
+
     # Vertical reference profile of specific volume (6th order polynomial in pp)
     V00 = -4.4015007269e-05
     V01 = 6.9232335784e-06
@@ -111,9 +111,9 @@ def specvol_alpha_beta(SA, CT, p):
     V03 = 1.7009109288e-08
     V04 = -1.6884162004e-08
     V05 = 1.9613503930e-09
-    
+
     v0 = (((((V05 * pp + V04) * pp + V03) * pp + V02) * pp + V01) * pp + V00) * pp
-    
+
     # Specific volume anomaly (75-term polynomial)
     # Coefficients for the polynomial terms
     V000 = 1.0769995862e-03
@@ -190,29 +190,62 @@ def specvol_alpha_beta(SA, CT, p):
     V104 = -1.1147125423e-07
     V014 = 3.1454099902e-07
     V005 = 4.2369007180e-09
-    
+
     # Build polynomial terms (nested Horner form for efficiency)
     vp5 = V005
     vp4 = V014 * tt + V104 * ss + V004
     vp3 = (V023 * tt + V113 * ss + V013) * tt + (V203 * ss + V103) * ss + V003
-    vp2 = (((V042 * tt + V132 * ss + V032) * tt + (V222 * ss + V122) * ss + V022) * tt +
-            ((V312 * ss + V212) * ss + V112) * ss + V012) * tt + \
-            (((V402 * ss + V302) * ss + V202) * ss + V102) * ss + V002
-    vp1 = ((((V051 * tt + V141 * ss + V041) * tt + (V231 * ss + V131) * ss + V031) * tt +
-            ((V321 * ss + V221) * ss + V121) * ss + V021) * tt +
-            (((V411 * ss + V311) * ss + V211) * ss + V111) * ss + V011) * tt + \
-            ((((V501 * ss + V401) * ss + V301) * ss + V201) * ss + V101) * ss + V001
-    vp0 = (((((V060 * tt + V150 * ss + V050) * tt + (V240 * ss + V140) * ss + V040) * tt +
-            ((V330 * ss + V230) * ss + V130) * ss + V030) * tt +
-            (((V420 * ss + V320) * ss + V220) * ss + V120) * ss + V020) * tt +
-            ((((V510 * ss + V410) * ss + V310) * ss + V210) * ss + V110) * ss + V010) * tt + \
-            (((((V600 * ss + V500) * ss + V400) * ss + V300) * ss + V200) * ss + V100) * ss + V000
-    
+    vp2 = (
+        (
+            ((V042 * tt + V132 * ss + V032) * tt + (V222 * ss + V122) * ss + V022) * tt
+            + ((V312 * ss + V212) * ss + V112) * ss
+            + V012
+        )
+        * tt
+        + (((V402 * ss + V302) * ss + V202) * ss + V102) * ss
+        + V002
+    )
+    vp1 = (
+        (
+            (
+                ((V051 * tt + V141 * ss + V041) * tt + (V231 * ss + V131) * ss + V031) * tt
+                + ((V321 * ss + V221) * ss + V121) * ss
+                + V021
+            )
+            * tt
+            + (((V411 * ss + V311) * ss + V211) * ss + V111) * ss
+            + V011
+        )
+        * tt
+        + ((((V501 * ss + V401) * ss + V301) * ss + V201) * ss + V101) * ss
+        + V001
+    )
+    vp0 = (
+        (
+            (
+                (
+                    ((V060 * tt + V150 * ss + V050) * tt + (V240 * ss + V140) * ss + V040) * tt
+                    + ((V330 * ss + V230) * ss + V130) * ss
+                    + V030
+                )
+                * tt
+                + (((V420 * ss + V320) * ss + V220) * ss + V120) * ss
+                + V020
+            )
+            * tt
+            + ((((V510 * ss + V410) * ss + V310) * ss + V210) * ss + V110) * ss
+            + V010
+        )
+        * tt
+        + (((((V600 * ss + V500) * ss + V400) * ss + V300) * ss + V200) * ss + V100) * ss
+        + V000
+    )
+
     delta = ((((vp5 * pp + vp4) * pp + vp3) * pp + vp2) * pp + vp1) * pp + vp0
-    
+
     # Specific volume
     specvol = v0 + delta
-    
+
     # Thermal expansion coefficient alpha (polynomial in ss, tt, pp)
     A000 = -3.9124336688e-07
     A100 = 8.7523999410e-07
@@ -264,22 +297,43 @@ def specvol_alpha_beta(SA, CT, p):
     A103 = -6.8239240593e-09
     A013 = 1.4347952579e-08
     A004 = 7.8635249756e-09
-    
+
     ap4 = A004
     ap3 = A013 * tt + A103 * ss + A003
-    ap2 = (((A032 * tt + A122 * ss + A022) * tt + (A212 * ss + A112) * ss + A012) * tt +
-            ((A302 * ss + A202) * ss + A102) * ss + A002)
-    ap1 = ((((A041 * tt + A131 * ss + A031) * tt + (A221 * ss + A121) * ss + A021) * tt +
-            ((A311 * ss + A211) * ss + A111) * ss + A011) * tt +
-            (((A401 * ss + A301) * ss + A201) * ss + A101) * ss + A001)
-    ap0 = (((((A050 * tt + A140 * ss + A040) * tt + (A230 * ss + A130) * ss + A030) * tt +
-            ((A320 * ss + A220) * ss + A120) * ss + A020) * tt +
-            (((A410 * ss + A310) * ss + A210) * ss + A110) * ss + A010) * tt +
-            ((((A500 * ss + A400) * ss + A300) * ss + A200) * ss + A100) * ss + A000)
-    
+    ap2 = (
+        ((A032 * tt + A122 * ss + A022) * tt + (A212 * ss + A112) * ss + A012) * tt
+        + ((A302 * ss + A202) * ss + A102) * ss
+        + A002
+    )
+    ap1 = (
+        (
+            ((A041 * tt + A131 * ss + A031) * tt + (A221 * ss + A121) * ss + A021) * tt
+            + ((A311 * ss + A211) * ss + A111) * ss
+            + A011
+        )
+        * tt
+        + (((A401 * ss + A301) * ss + A201) * ss + A101) * ss
+        + A001
+    )
+    ap0 = (
+        (
+            (
+                ((A050 * tt + A140 * ss + A040) * tt + (A230 * ss + A130) * ss + A030) * tt
+                + ((A320 * ss + A220) * ss + A120) * ss
+                + A020
+            )
+            * tt
+            + (((A410 * ss + A310) * ss + A210) * ss + A110) * ss
+            + A010
+        )
+        * tt
+        + ((((A500 * ss + A400) * ss + A300) * ss + A200) * ss + A100) * ss
+        + A000
+    )
+
     a = (((ap4 * pp + ap3) * pp + ap2) * pp + ap1) * pp + ap0
     alpha = a / specvol
-    
+
     # Saline contraction coefficient beta (polynomial in ss, tt, pp)
     B000 = 3.8616633493e-06
     B100 = -1.6653488424e-05
@@ -331,22 +385,43 @@ def specvol_alpha_beta(SA, CT, p):
     B103 = -4.1669270980e-10
     B013 = 3.3959486762e-09
     B004 = 1.3868510806e-09
-    
+
     bp4 = B004
     bp3 = B013 * tt + B103 * ss + B003
-    bp2 = (((B032 * tt + B122 * ss + B022) * tt + (B212 * ss + B112) * ss + B012) * tt +
-            ((B302 * ss + B202) * ss + B102) * ss + B002)
-    bp1 = ((((B041 * tt + B131 * ss + B031) * tt + (B221 * ss + B121) * ss + B021) * tt +
-            ((B311 * ss + B211) * ss + B111) * ss + B011) * tt +
-            (((B401 * ss + B301) * ss + B201) * ss + B101) * ss + B001)
-    bp0 = (((((B050 * tt + B140 * ss + B040) * tt + (B230 * ss + B130) * ss + B030) * tt +
-            ((B320 * ss + B220) * ss + B120) * ss + B020) * tt +
-            (((B410 * ss + B310) * ss + B210) * ss + B110) * ss + B010) * tt +
-            ((((B500 * ss + B400) * ss + B300) * ss + B200) * ss + B100) * ss + B000)
-    
+    bp2 = (
+        ((B032 * tt + B122 * ss + B022) * tt + (B212 * ss + B112) * ss + B012) * tt
+        + ((B302 * ss + B202) * ss + B102) * ss
+        + B002
+    )
+    bp1 = (
+        (
+            ((B041 * tt + B131 * ss + B031) * tt + (B221 * ss + B121) * ss + B021) * tt
+            + ((B311 * ss + B211) * ss + B111) * ss
+            + B011
+        )
+        * tt
+        + (((B401 * ss + B301) * ss + B201) * ss + B101) * ss
+        + B001
+    )
+    bp0 = (
+        (
+            (
+                ((B050 * tt + B140 * ss + B040) * tt + (B230 * ss + B130) * ss + B030) * tt
+                + ((B320 * ss + B220) * ss + B120) * ss
+                + B020
+            )
+            * tt
+            + (((B410 * ss + B310) * ss + B210) * ss + B110) * ss
+            + B010
+        )
+        * tt
+        + ((((B500 * ss + B400) * ss + B300) * ss + B200) * ss + B100) * ss
+        + B000
+    )
+
     b = (((bp4 * pp + bp3) * pp + bp2) * pp + bp1) * pp + bp0
     beta = b / ss / specvol
-    
+
     return specvol, alpha, beta
 
 
@@ -504,6 +579,8 @@ def _not_implemented(name):
 
     func.__name__ = name
     return func
+
+
 def sigma0(SA, CT):
     """
     Calculates potential density anomaly with reference pressure of 0 dbar.
@@ -669,39 +746,39 @@ def specvol_first_derivatives(SA, CT, p):
     SA = as_tensor(SA, dtype=torch.float64)
     CT = as_tensor(CT, dtype=torch.float64)
     p = as_tensor(p, dtype=torch.float64)
-    
+
     # Broadcast inputs
     SA, CT, p = torch.broadcast_tensors(SA, CT, p)
-    
+
     # Reduced variables
     SAu = 40.0 * 35.16504 / 35.0
     CTu = 40.0
     Zu = 1e4
     deltaS = 24.0
-    
+
     ss = torch.sqrt((SA + deltaS) / SAu)
     tt = CT / CTu
     pp = p / Zu
-    
+
     # Derivatives of reduced variables
-    dss_dSA = 0.5 / (SAu * ss)  # d(ss)/d(SA)
-    dtt_dCT = 1.0 / CTu  # d(tt)/d(CT)
+    0.5 / (SAu * ss)  # d(ss)/d(SA)
+    1.0 / CTu  # d(tt)/d(CT)
     dpp_dp = 1.0 / Zu  # d(pp)/d(p)
-    
+
     # Get specvol and alpha, beta (we'll use these relationships)
     specvol, alpha, beta = specvol_alpha_beta(SA, CT, p)
-    
+
     # From thermodynamic relationships:
     # alpha = (1/v) * dv/dCT, so v_CT = v * alpha
     # beta = -(1/v) * dv/dSA, so v_SA = -v * beta
     v_CT = specvol * alpha
     v_SA = -specvol * beta
-    
+
     # For v_p, we need to differentiate the polynomial with respect to pp
     # v = v0 + delta, where:
     # v0 = (((((V05*pp+V04)*pp+V03)*pp+V02)*pp+V01)*pp+V00)*pp
     # delta = ((((vp5*pp+vp4)*pp+vp3)*pp+vp2)*pp+vp1)*pp+vp0
-    
+
     # Coefficients (same as in specvol_alpha_beta)
     V00 = -4.4015007269e-05
     V01 = 6.9232335784e-06
@@ -709,10 +786,10 @@ def specvol_first_derivatives(SA, CT, p):
     V03 = 1.7009109288e-08
     V04 = -1.6884162004e-08
     V05 = 1.9613503930e-09
-    
+
     # Derivative of v0 with respect to pp
-    dv0_dpp = ((((6*V05*pp + 5*V04)*pp + 4*V03)*pp + 3*V02)*pp + 2*V01)*pp + V00
-    
+    dv0_dpp = ((((6 * V05 * pp + 5 * V04) * pp + 4 * V03) * pp + 3 * V02) * pp + 2 * V01) * pp + V00
+
     # Now compute delta and its derivative
     # We need to recompute the polynomial terms for delta
     V000 = 1.0769995862e-03
@@ -789,35 +866,68 @@ def specvol_first_derivatives(SA, CT, p):
     V104 = -1.1147125423e-07
     V014 = 3.1454099902e-07
     V005 = 4.2369007180e-09
-    
+
     # Build polynomial terms for delta
     vp5 = V005
     vp4 = V014 * tt + V104 * ss + V004
     vp3 = (V023 * tt + V113 * ss + V013) * tt + (V203 * ss + V103) * ss + V003
-    vp2 = (((V042 * tt + V132 * ss + V032) * tt + (V222 * ss + V122) * ss + V022) * tt +
-            ((V312 * ss + V212) * ss + V112) * ss + V012) * tt + \
-            (((V402 * ss + V302) * ss + V202) * ss + V102) * ss + V002
-    vp1 = ((((V051 * tt + V141 * ss + V041) * tt + (V231 * ss + V131) * ss + V031) * tt +
-            ((V321 * ss + V221) * ss + V121) * ss + V021) * tt +
-            (((V411 * ss + V311) * ss + V211) * ss + V111) * ss + V011) * tt + \
-            ((((V501 * ss + V401) * ss + V301) * ss + V201) * ss + V101) * ss + V001
-    vp0 = (((((V060 * tt + V150 * ss + V050) * tt + (V240 * ss + V140) * ss + V040) * tt +
-            ((V330 * ss + V230) * ss + V130) * ss + V030) * tt +
-            (((V420 * ss + V320) * ss + V220) * ss + V120) * ss + V020) * tt +
-            ((((V510 * ss + V410) * ss + V310) * ss + V210) * ss + V110) * ss + V010) * tt + \
-            (((((V600 * ss + V500) * ss + V400) * ss + V300) * ss + V200) * ss + V100) * ss + V000
-    
+    vp2 = (
+        (
+            ((V042 * tt + V132 * ss + V032) * tt + (V222 * ss + V122) * ss + V022) * tt
+            + ((V312 * ss + V212) * ss + V112) * ss
+            + V012
+        )
+        * tt
+        + (((V402 * ss + V302) * ss + V202) * ss + V102) * ss
+        + V002
+    )
+    vp1 = (
+        (
+            (
+                ((V051 * tt + V141 * ss + V041) * tt + (V231 * ss + V131) * ss + V031) * tt
+                + ((V321 * ss + V221) * ss + V121) * ss
+                + V021
+            )
+            * tt
+            + (((V411 * ss + V311) * ss + V211) * ss + V111) * ss
+            + V011
+        )
+        * tt
+        + ((((V501 * ss + V401) * ss + V301) * ss + V201) * ss + V101) * ss
+        + V001
+    )
+    (
+        (
+            (
+                (
+                    ((V060 * tt + V150 * ss + V050) * tt + (V240 * ss + V140) * ss + V040) * tt
+                    + ((V330 * ss + V230) * ss + V130) * ss
+                    + V030
+                )
+                * tt
+                + (((V420 * ss + V320) * ss + V220) * ss + V120) * ss
+                + V020
+            )
+            * tt
+            + ((((V510 * ss + V410) * ss + V310) * ss + V210) * ss + V110) * ss
+            + V010
+        )
+        * tt
+        + (((((V600 * ss + V500) * ss + V400) * ss + V300) * ss + V200) * ss + V100) * ss
+        + V000
+    )
+
     # Derivative of delta with respect to pp
-    ddelta_dpp = (((5*vp5*pp + 4*vp4)*pp + 3*vp3)*pp + 2*vp2)*pp + vp1
-    
+    ddelta_dpp = (((5 * vp5 * pp + 4 * vp4) * pp + 3 * vp3) * pp + 2 * vp2) * pp + vp1
+
     # Total derivative with respect to p (in dbar): v_p = (dv0_dpp + ddelta_dpp) * dpp_dp
     # This gives v_p in (m^3/kg)/dbar
     v_p_dbar = (dv0_dpp + ddelta_dpp) * dpp_dp
-    
+
     # Convert to (m^3/kg)/Pa for consistency with GSW output
     # 1 dbar = 1e4 Pa, so v_p_Pa = v_p_dbar / 1e4
     v_p = v_p_dbar / 1e4
-    
+
     return v_SA, v_CT, v_p
 
 
@@ -847,11 +957,11 @@ def kappa(SA, CT, p):
     """
     specvol, _, _ = specvol_alpha_beta(SA, CT, p)
     _, _, v_p = specvol_first_derivatives(SA, CT, p)
-    
+
     # v_p from specvol_first_derivatives is already in (m^3/kg)/Pa
     # kappa = -v_p / v (in Pa^-1)
     kappa = -v_p / specvol
-    
+
     return kappa
 
 
@@ -881,12 +991,12 @@ def sound_speed(SA, CT, p):
     """
     specvol, _, _ = specvol_alpha_beta(SA, CT, p)
     _, _, v_p = specvol_first_derivatives(SA, CT, p)
-    
+
     # v_p from specvol_first_derivatives is already in (m^3/kg)/Pa
     # Sound speed: c = sqrt(-v^2 / v_p)
     # v_p is negative, so -v^2/v_p is positive
-    c = torch.sqrt(-specvol**2 / v_p)
-    
+    c = torch.sqrt(-(specvol**2) / v_p)
+
     return c
 
 
@@ -924,68 +1034,63 @@ def specvol_second_derivatives(SA, CT, p):
     SA = as_tensor(SA, dtype=torch.float64)
     CT = as_tensor(CT, dtype=torch.float64)
     p = as_tensor(p, dtype=torch.float64)
-    
+
     # Broadcast inputs
     SA, CT, p = torch.broadcast_tensors(SA, CT, p)
-    
+
     # Reduced variables
     SAu = 40.0 * 35.16504 / 35.0
     CTu = 40.0
     Zu = 1e4
     deltaS = 24.0
-    
+
     ss = torch.sqrt((SA + deltaS) / SAu)
-    tt = CT / CTu
-    pp = p / Zu
-    
+    CT / CTu
+    p / Zu
+
     # Derivatives of reduced variables
-    dss_dSA = 0.5 / (SAu * ss)  # d(ss)/d(SA)
-    dtt_dCT = 1.0 / CTu  # d(tt)/d(CT)
-    dpp_dp = 1.0 / Zu  # d(pp)/d(p)
-    
+    0.5 / (SAu * ss)  # d(ss)/d(SA)
+    1.0 / CTu  # d(tt)/d(CT)
+    1.0 / Zu  # d(pp)/d(p)
+
     # Second derivatives of reduced variables
-    d2ss_dSA2 = -0.25 / (SAu**2 * ss**3)  # d^2(ss)/d(SA)^2
-    
+    -0.25 / (SAu**2 * ss**3)  # d^2(ss)/d(SA)^2
+
     # Get first derivatives and specvol, alpha, beta
     specvol, alpha, beta = specvol_alpha_beta(SA, CT, p)
     v_SA, v_CT, v_p = specvol_first_derivatives(SA, CT, p)
-    
+
     # For second derivatives, we need to differentiate the polynomial expressions
     # v_SA = -v * beta, so v_SA_SA = -d(v*beta)/dSA = -v*d(beta)/dSA - beta*d(v)/dSA
     # v_CT = v * alpha, so v_CT_CT = d(v*alpha)/dCT = v*d(alpha)/dCT + alpha*d(v)/dCT
-    
+
     # We need to compute derivatives of alpha and beta with respect to SA and CT
     # This requires differentiating the polynomial coefficients
-    
+
     # For now, use numerical differentiation via autograd
     # This is more reliable than manually differentiating the complex polynomial
     SA.requires_grad_(True)
     CT.requires_grad_(True)
     p.requires_grad_(True)
-    
+
     specvol_grad, alpha_grad, beta_grad = specvol_alpha_beta(SA, CT, p)
-    
+
     # Compute gradients
     v_SA_grad = torch.autograd.grad(specvol_grad, SA, create_graph=True, retain_graph=True)[0]
     v_CT_grad = torch.autograd.grad(specvol_grad, CT, create_graph=True, retain_graph=True)[0]
-    
+
     # Second derivatives
     v_SA_SA = torch.autograd.grad(v_SA_grad, SA, retain_graph=True)[0]
     v_SA_CT = torch.autograd.grad(v_SA_grad, CT, retain_graph=True)[0]
     v_CT_CT = torch.autograd.grad(v_CT_grad, CT, retain_graph=True)[0]
     v_SA_p = torch.autograd.grad(v_SA_grad, p, retain_graph=True)[0]
     v_CT_p = torch.autograd.grad(v_CT_grad, p)[0]
-    
+
     # Convert pressure derivatives from dbar to Pa
     v_SA_p = v_SA_p / 1e4
     v_CT_p = v_CT_p / 1e4
-    
+
     return v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p
-
-
-
-
-def specvol_second_derivatives(SA, CT, p):
     """
     Calculates the second derivatives of specific volume.
 
@@ -1020,55 +1125,39 @@ def specvol_second_derivatives(SA, CT, p):
     SA = as_tensor(SA, dtype=torch.float64)
     CT = as_tensor(CT, dtype=torch.float64)
     p = as_tensor(p, dtype=torch.float64)
-    
+
     # Broadcast inputs
     SA, CT, p = torch.broadcast_tensors(SA, CT, p)
-    
+
     # Enable gradients for all inputs
     SA_grad = SA.clone().detach().requires_grad_(True)
     CT_grad = CT.clone().detach().requires_grad_(True)
     p_grad = p.clone().detach().requires_grad_(True)
-    
+
     # Compute specvol with gradients enabled
     specvol_grad, _, _ = specvol_alpha_beta(SA_grad, CT_grad, p_grad)
-    
+
     # First derivatives
-    v_SA_grad = torch.autograd.grad(
-        specvol_grad, SA_grad, create_graph=True, retain_graph=True
-    )[0]
-    v_CT_grad = torch.autograd.grad(
-        specvol_grad, CT_grad, create_graph=True, retain_graph=True
-    )[0]
-    v_p_grad = torch.autograd.grad(
-        specvol_grad, p_grad, create_graph=True, retain_graph=True
-    )[0]
-    
+    v_SA_grad = torch.autograd.grad(specvol_grad, SA_grad, create_graph=True, retain_graph=True)[0]
+    v_CT_grad = torch.autograd.grad(specvol_grad, CT_grad, create_graph=True, retain_graph=True)[0]
+    torch.autograd.grad(specvol_grad, p_grad, create_graph=True, retain_graph=True)[0]
+
     # Second derivatives
     # v_SA_SA = d^2(v)/d(SA)^2
-    v_SA_SA = torch.autograd.grad(
-        v_SA_grad, SA_grad, retain_graph=True
-    )[0]
-    
+    v_SA_SA = torch.autograd.grad(v_SA_grad, SA_grad, retain_graph=True)[0]
+
     # v_SA_CT = d^2(v)/(d(SA) d(CT))
-    v_SA_CT = torch.autograd.grad(
-        v_SA_grad, CT_grad, retain_graph=True
-    )[0]
-    
+    v_SA_CT = torch.autograd.grad(v_SA_grad, CT_grad, retain_graph=True)[0]
+
     # v_CT_CT = d^2(v)/d(CT)^2
-    v_CT_CT = torch.autograd.grad(
-        v_CT_grad, CT_grad, retain_graph=True
-    )[0]
-    
+    v_CT_CT = torch.autograd.grad(v_CT_grad, CT_grad, retain_graph=True)[0]
+
     # v_SA_p = d^2(v)/(d(SA) d(p))
-    v_SA_p = torch.autograd.grad(
-        v_SA_grad, p_grad, retain_graph=True
-    )[0]
-    
+    v_SA_p = torch.autograd.grad(v_SA_grad, p_grad, retain_graph=True)[0]
+
     # v_CT_p = d^2(v)/(d(CT) d(p))
-    v_CT_p = torch.autograd.grad(
-        v_CT_grad, p_grad
-    )[0]
-    
+    v_CT_p = torch.autograd.grad(v_CT_grad, p_grad)[0]
+
     # Convert pressure derivatives from dbar to Pa
     # p is in dbar, but derivatives should be in Pa
     # d/dp (in dbar) = d/d(p*1e4) (in Pa) = (1/1e4) * d/d(p in Pa)
@@ -1081,7 +1170,7 @@ def specvol_second_derivatives(SA, CT, p):
     # But we want derivatives in Pa, so we divide by 1e4
     v_SA_p = v_SA_p / 1e4
     v_CT_p = v_CT_p / 1e4
-    
+
     return v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p
 
 
@@ -1117,12 +1206,12 @@ def rho_first_derivatives(SA, CT, p):
     """
     rho_val = rho(SA, CT, p)
     v_SA, v_CT, v_p = specvol_first_derivatives(SA, CT, p)
-    
+
     # rho = 1/v, so drho/dx = -rho^2 * dv/dx
-    rho_SA = -rho_val**2 * v_SA
-    rho_CT = -rho_val**2 * v_CT
-    rho_P = -rho_val**2 * v_p  # v_p is already in Pa
-    
+    rho_SA = -(rho_val**2) * v_SA
+    rho_CT = -(rho_val**2) * v_CT
+    rho_P = -(rho_val**2) * v_p  # v_p is already in Pa
+
     return rho_SA, rho_CT, rho_P
 
 
@@ -1161,23 +1250,23 @@ def rho_second_derivatives(SA, CT, p):
     rho_SA, rho_CT, rho_P = rho_first_derivatives(SA, CT, p)
     v_SA, v_CT, v_p = specvol_first_derivatives(SA, CT, p)
     v_SA_SA, v_SA_CT, v_CT_CT, v_SA_p, v_CT_p = specvol_second_derivatives(SA, CT, p)
-    
+
     # Second derivatives from chain rule: d^2(rho)/dxdy = d(-rho^2 * dv/dy)/dx
     # rho_SA_SA = -rho^2 * v_SA_SA - 2*rho*rho_SA*v_SA
-    rho_SA_SA = -rho_val**2 * v_SA_SA - 2.0 * rho_val * rho_SA * v_SA
-    
+    rho_SA_SA = -(rho_val**2) * v_SA_SA - 2.0 * rho_val * rho_SA * v_SA
+
     # rho_SA_CT = -rho^2 * v_SA_CT - rho*rho_SA*v_CT - rho*rho_CT*v_SA
-    rho_SA_CT = -rho_val**2 * v_SA_CT - rho_val * rho_SA * v_CT - rho_val * rho_CT * v_SA
-    
+    rho_SA_CT = -(rho_val**2) * v_SA_CT - rho_val * rho_SA * v_CT - rho_val * rho_CT * v_SA
+
     # rho_CT_CT = -rho^2 * v_CT_CT - 2*rho*rho_CT*v_CT
-    rho_CT_CT = -rho_val**2 * v_CT_CT - 2.0 * rho_val * rho_CT * v_CT
-    
+    rho_CT_CT = -(rho_val**2) * v_CT_CT - 2.0 * rho_val * rho_CT * v_CT
+
     # rho_SA_P = -rho^2 * v_SA_p - rho*rho_SA*v_p - rho*rho_P*v_SA
-    rho_SA_P = -rho_val**2 * v_SA_p - rho_val * rho_SA * v_p - rho_val * rho_P * v_SA
-    
+    rho_SA_P = -(rho_val**2) * v_SA_p - rho_val * rho_SA * v_p - rho_val * rho_P * v_SA
+
     # rho_CT_P = -rho^2 * v_CT_p - rho*rho_CT*v_p - rho*rho_P*v_CT
-    rho_CT_P = -rho_val**2 * v_CT_p - rho_val * rho_CT * v_p - rho_val * rho_P * v_CT
-    
+    rho_CT_P = -(rho_val**2) * v_CT_p - rho_val * rho_CT * v_p - rho_val * rho_P * v_CT
+
     return rho_SA_SA, rho_SA_CT, rho_CT_CT, rho_SA_P, rho_CT_P
 
 
@@ -1218,25 +1307,25 @@ def rho_t_exact(SA, t, p):
     -----
     This is a pure PyTorch implementation. Calculates density using:
     rho_t_exact(SA, t, p) = rho(SA, CT_from_t(SA, t, p), p)
-    
+
     This uses the exact Gibbs function via CT_from_t, providing exact
     numerical parity with the reference GSW implementation.
     """
     from ..conversions import CT_from_t
-    
+
     SA = as_tensor(SA, dtype=torch.float64)
     t = as_tensor(t, dtype=torch.float64)
     p = as_tensor(p, dtype=torch.float64)
-    
+
     # Broadcast inputs
     SA, t, p = torch.broadcast_tensors(SA, t, p)
-    
+
     # Convert in-situ temperature to Conservative Temperature
     CT = CT_from_t(SA, t, p)
-    
+
     # Calculate density using CT
     rho_val = rho(SA, CT, p)
-    
+
     return rho_val
 
 
@@ -1263,25 +1352,25 @@ def specvol_t_exact(SA, t, p):
     -----
     This is a pure PyTorch implementation. Calculates specific volume using:
     specvol_t_exact(SA, t, p) = specvol(SA, CT_from_t(SA, t, p), p)
-    
+
     This uses the exact Gibbs function via CT_from_t, providing exact
     numerical parity with the reference GSW implementation.
     """
     from ..conversions import CT_from_t
-    
+
     SA = as_tensor(SA, dtype=torch.float64)
     t = as_tensor(t, dtype=torch.float64)
     p = as_tensor(p, dtype=torch.float64)
-    
+
     # Broadcast inputs
     SA, t, p = torch.broadcast_tensors(SA, t, p)
-    
+
     # Convert in-situ temperature to Conservative Temperature
     CT = CT_from_t(SA, t, p)
-    
+
     # Calculate specific volume using CT
     specvol_val = specvol(SA, CT, p)
-    
+
     return specvol_val
 
 
@@ -1312,19 +1401,19 @@ def alpha_wrt_t_exact(SA, t, p):
     This provides exact numerical parity with the reference GSW implementation.
     """
     from .gibbs import gibbs
-    
+
     SA = as_tensor(SA, dtype=torch.float64)
     t = as_tensor(t, dtype=torch.float64)
     p = as_tensor(p, dtype=torch.float64)
-    
+
     # Broadcast inputs
     SA, t, p = torch.broadcast_tensors(SA, t, p)
-    
+
     # Calculate alpha using exact Gibbs function: alpha = gibbs(0,1,1) / gibbs(0,0,1)
     gibbs_011 = gibbs(0, 1, 1, SA, t, p)
     gibbs_001 = gibbs(0, 0, 1, SA, t, p)
     alpha_val = gibbs_011 / gibbs_001
-    
+
     return alpha_val
 
 
@@ -1355,19 +1444,19 @@ def beta_const_t_exact(SA, t, p):
     This provides exact numerical parity with the reference GSW implementation.
     """
     from .gibbs import gibbs
-    
+
     SA = as_tensor(SA, dtype=torch.float64)
     t = as_tensor(t, dtype=torch.float64)
     p = as_tensor(p, dtype=torch.float64)
-    
+
     # Broadcast inputs
     SA, t, p = torch.broadcast_tensors(SA, t, p)
-    
+
     # Calculate beta using exact Gibbs function: beta = -gibbs(1,0,1) / gibbs(0,0,1)
     gibbs_101 = gibbs(1, 0, 1, SA, t, p)
     gibbs_001 = gibbs(0, 0, 1, SA, t, p)
     beta_val = -gibbs_101 / gibbs_001
-    
+
     return beta_val
 
 
@@ -1398,18 +1487,18 @@ def cp_t_exact(SA, t, p):
     This provides exact numerical parity with the reference GSW implementation.
     """
     from .gibbs import gibbs
-    
+
     SA = as_tensor(SA, dtype=torch.float64)
     t = as_tensor(t, dtype=torch.float64)
     p = as_tensor(p, dtype=torch.float64)
-    
+
     # Broadcast inputs
     SA, t, p = torch.broadcast_tensors(SA, t, p)
-    
+
     # Calculate cp using exact Gibbs function: cp = -(t + 273.15) * gibbs(0,2,0)
     gibbs_020 = gibbs(0, 2, 0, SA, t, p)
     cp = -(t + 273.15) * gibbs_020
-    
+
     return cp
 
 
@@ -1444,23 +1533,23 @@ def kappa_t_exact(SA, t, p):
     This provides exact numerical parity with the reference GSW implementation.
     """
     from .gibbs import gibbs
-    
+
     SA = as_tensor(SA, dtype=torch.float64)
     t = as_tensor(t, dtype=torch.float64)
     p = as_tensor(p, dtype=torch.float64)
-    
+
     # Broadcast inputs
     SA, t, p = torch.broadcast_tensors(SA, t, p)
-    
+
     # Calculate kappa using exact Gibbs function derivatives
     g_tt = gibbs(0, 2, 0, SA, t, p)  # d²G/dT²
     g_tp = gibbs(0, 1, 1, SA, t, p)  # d²G/(dT dp)
     g_pp = gibbs(0, 0, 2, SA, t, p)  # d²G/dp²
     g_001 = gibbs(0, 0, 1, SA, t, p)  # dG/dp (specific volume)
-    
+
     # kappa = (g_tp^2 - g_tt * g_pp) / (g_001 * g_tt)
     kappa_val = (g_tp * g_tp - g_tt * g_pp) / (g_001 * g_tt)
-    
+
     return kappa_val
 
 
@@ -1495,24 +1584,24 @@ def sound_speed_t_exact(SA, t, p):
     This provides exact numerical parity with the reference GSW implementation.
     """
     from .gibbs import gibbs
-    
+
     SA = as_tensor(SA, dtype=torch.float64)
     t = as_tensor(t, dtype=torch.float64)
     p = as_tensor(p, dtype=torch.float64)
-    
+
     # Broadcast inputs
     SA, t, p = torch.broadcast_tensors(SA, t, p)
-    
+
     # Calculate sound speed using exact Gibbs function derivatives
     g_001 = gibbs(0, 0, 1, SA, t, p)  # dg/dp (specific volume)
     g_020 = gibbs(0, 2, 0, SA, t, p)  # d^2g/dT^2
     g_011 = gibbs(0, 1, 1, SA, t, p)  # d^2g/(dT dp)
     g_002 = gibbs(0, 0, 2, SA, t, p)  # d^2g/dp^2
-    
+
     # Sound speed formula: c = g_001 * sqrt(g_020 / (g_011^2 - g_020 * g_002))
     denominator = g_011**2 - g_020 * g_002
     sound_speed_val = g_001 * torch.sqrt(g_020 / denominator)
-    
+
     return sound_speed_val
 
 
@@ -1546,7 +1635,7 @@ def specvol_anom_standard(SA, CT, p):
     specvol_standard, _, _ = specvol_alpha_beta(
         torch.full_like(SA, SSO) if isinstance(SA, torch.Tensor) else SSO,
         torch.zeros_like(CT) if isinstance(CT, torch.Tensor) else 0.0,
-        p
+        p,
     )
     specvol_anom = specvol_val - specvol_standard
     return specvol_anom
@@ -1580,58 +1669,58 @@ def infunnel(SA, CT, p):
     This implementation exactly matches the GSW-C source code logic.
     """
     from ..freezing import CT_freezing
-    
+
     SA = as_tensor(SA, dtype=torch.float64)
     CT = as_tensor(CT, dtype=torch.float64)
     p = as_tensor(p, dtype=torch.float64)
-    
+
     # Broadcast inputs
     SA, CT, p = torch.broadcast_tensors(SA, CT, p)
-    
+
     # Initialize result as all inside funnel (1)
     in_funnel = torch.ones_like(SA, dtype=torch.float64)
-    
+
     # Exact GSW-C logic: return 0 (outside) if ANY of these conditions are true
     # Otherwise return 1 (inside)
-    
+
     # Condition 1: p > 8000
     outside = p > 8000.0
-    
+
     # Condition 2: sa < 0
     outside = outside | (SA < 0.0)
-    
+
     # Condition 3: sa > 42
     outside = outside | (SA > 42.0)
-    
+
     # Condition 4: (p < 500 && ct < gsw_ct_freezing(sa, p, 0))
     p_lt_500 = p < 500.0
     ct_freezing_p = CT_freezing(SA, p, torch.zeros_like(SA))
     outside = outside | (p_lt_500 & (CT < ct_freezing_p))
-    
+
     # Condition 5: (p >= 500 && p < 6500 && sa < p * 5e-3 - 2.5)
     p_ge_500_lt_6500 = (p >= 500.0) & (p < 6500.0)
     sa_min = p * 5e-3 - 2.5
     outside = outside | (p_ge_500_lt_6500 & (SA < sa_min))
-    
+
     # Condition 6: (p >= 500 && p < 6500 && ct > (31.66666666666667 - p * 3.333333333333334e-3))
     ct_max = 31.66666666666667 - p * 3.333333333333334e-3
     outside = outside | (p_ge_500_lt_6500 & (CT > ct_max))
-    
+
     # Condition 7: (p >= 500 && ct < gsw_ct_freezing(sa, 500, 0))
     p_ge_500 = p >= 500.0
     ct_freezing_500 = CT_freezing(SA, torch.full_like(SA, 500.0), torch.zeros_like(SA))
     outside = outside | (p_ge_500 & (CT < ct_freezing_500))
-    
+
     # Condition 8: (p >= 6500 && sa < 30)
     p_ge_6500 = p >= 6500.0
     outside = outside | (p_ge_6500 & (SA < 30.0))
-    
+
     # Condition 9: (p >= 6500 && ct > 10.0)
     outside = outside | (p_ge_6500 & (CT > 10.0))
-    
+
     # Set to 0 where outside, keep 1 where inside
     in_funnel = torch.where(outside, torch.zeros_like(in_funnel), in_funnel)
-    
+
     return in_funnel
 
 
@@ -1661,7 +1750,7 @@ def pot_rho_t_exact(SA, t, p, p_ref):
     pot_rho = rho_t_exact(SA, pt_from_t(SA, t, p, p_ref), p_ref)
     """
     from ..conversions import pt_from_t
-    
+
     pt = pt_from_t(SA, t, p, p_ref)
     return rho_t_exact(SA, pt, p_ref)
 
@@ -1690,29 +1779,123 @@ def spiciness0(SA, CT):
     """
     SA = as_tensor(SA, dtype=torch.float64)
     CT = as_tensor(CT, dtype=torch.float64)
-    
+
     SA, CT = torch.broadcast_tensors(SA, CT)
-    
+
     # Polynomial coefficients (degree 8, extracted by fitting to reference)
-    coeffs = torch.tensor([
-        [-2.431955370561746e+01, -7.387673539240366e-02, 9.638671301715956e-03, -1.489335747349061e-04, 2.283567819624033e-06, -2.853891154319540e-08, 1.870996902110296e-10, 8.556362121415946e-18, -1.269140204037538e-19, ],
-        [6.951759338673137e-01, 4.514898601116575e-03, -1.107556429236492e-04, 3.060498291894860e-06, -6.441300318505163e-08, 9.538014500771989e-10, -8.444532826530012e-12, -8.537497971826458e-16, 7.316127616223109e-18, ],
-        [-9.961759226111491e-04, -4.596999527331386e-05, 2.959457642415521e-06, -1.251334884465640e-07, 3.203481957579493e-09, -4.912994781123115e-11, 4.046625211149541e-13, 3.852568238939225e-16, -3.313622313652166e-18, ],
-        [8.781172382433706e-05, 1.746565337621111e-06, -8.848125042702742e-08, 3.477709499227261e-09, -1.004570170094921e-10, 1.778968934859745e-12, -1.488154244463170e-14, -6.208060583395037e-17, 5.371962081998804e-19, ],
-        [-4.416268941932826e-06, -5.132698473761883e-08, 1.976295923832150e-09, -7.582137902295087e-11, 2.686771338716698e-12, -5.430121705984435e-14, 4.054485095063101e-16, 4.983869553742914e-18, -4.345228196743986e-20, ],
-        [1.403942226018915e-07, 1.102980530864775e-09, -3.240828743195997e-11, 1.286261588385750e-12, -5.874368381395211e-14, 1.309347605231335e-15, -7.398540924737357e-18, -2.203131640589027e-19, 1.942497119689663e-21, ],
-        [-2.736815787874290e-09, -1.715121855602137e-11, 3.969875787564126e-13, -1.672895597381926e-14, 9.529966290945683e-16, -2.237034427197181e-17, 8.216355127069111e-20, 5.425332358493830e-21, -4.862978297446668e-23, ],
-        [3.010955032367429e-11, 1.677020059398992e-13, -3.259786520658606e-15, 1.466507756221446e-16, -9.742121213429594e-18, 2.355340465166842e-19, -5.480923032654884e-22, -6.944356982766509e-23, 6.369048170305598e-25, ],
-        [-1.437862762894628e-13, -7.492385820667579e-16, 1.289740505814841e-17, -6.192444981048575e-19, 4.567739830698389e-20, -1.138212016220788e-21, 2.310199957197482e-24, 3.583496565927933e-25, -3.389355716531416e-27, ],
-    ], dtype=torch.float64, device=SA.device)
-    
+    coeffs = torch.tensor(
+        [
+            [
+                -2.431955370561746e01,
+                -7.387673539240366e-02,
+                9.638671301715956e-03,
+                -1.489335747349061e-04,
+                2.283567819624033e-06,
+                -2.853891154319540e-08,
+                1.870996902110296e-10,
+                8.556362121415946e-18,
+                -1.269140204037538e-19,
+            ],
+            [
+                6.951759338673137e-01,
+                4.514898601116575e-03,
+                -1.107556429236492e-04,
+                3.060498291894860e-06,
+                -6.441300318505163e-08,
+                9.538014500771989e-10,
+                -8.444532826530012e-12,
+                -8.537497971826458e-16,
+                7.316127616223109e-18,
+            ],
+            [
+                -9.961759226111491e-04,
+                -4.596999527331386e-05,
+                2.959457642415521e-06,
+                -1.251334884465640e-07,
+                3.203481957579493e-09,
+                -4.912994781123115e-11,
+                4.046625211149541e-13,
+                3.852568238939225e-16,
+                -3.313622313652166e-18,
+            ],
+            [
+                8.781172382433706e-05,
+                1.746565337621111e-06,
+                -8.848125042702742e-08,
+                3.477709499227261e-09,
+                -1.004570170094921e-10,
+                1.778968934859745e-12,
+                -1.488154244463170e-14,
+                -6.208060583395037e-17,
+                5.371962081998804e-19,
+            ],
+            [
+                -4.416268941932826e-06,
+                -5.132698473761883e-08,
+                1.976295923832150e-09,
+                -7.582137902295087e-11,
+                2.686771338716698e-12,
+                -5.430121705984435e-14,
+                4.054485095063101e-16,
+                4.983869553742914e-18,
+                -4.345228196743986e-20,
+            ],
+            [
+                1.403942226018915e-07,
+                1.102980530864775e-09,
+                -3.240828743195997e-11,
+                1.286261588385750e-12,
+                -5.874368381395211e-14,
+                1.309347605231335e-15,
+                -7.398540924737357e-18,
+                -2.203131640589027e-19,
+                1.942497119689663e-21,
+            ],
+            [
+                -2.736815787874290e-09,
+                -1.715121855602137e-11,
+                3.969875787564126e-13,
+                -1.672895597381926e-14,
+                9.529966290945683e-16,
+                -2.237034427197181e-17,
+                8.216355127069111e-20,
+                5.425332358493830e-21,
+                -4.862978297446668e-23,
+            ],
+            [
+                3.010955032367429e-11,
+                1.677020059398992e-13,
+                -3.259786520658606e-15,
+                1.466507756221446e-16,
+                -9.742121213429594e-18,
+                2.355340465166842e-19,
+                -5.480923032654884e-22,
+                -6.944356982766509e-23,
+                6.369048170305598e-25,
+            ],
+            [
+                -1.437862762894628e-13,
+                -7.492385820667579e-16,
+                1.289740505814841e-17,
+                -6.192444981048575e-19,
+                4.567739830698389e-20,
+                -1.138212016220788e-21,
+                2.310199957197482e-24,
+                3.583496565927933e-25,
+                -3.389355716531416e-27,
+            ],
+        ],
+        dtype=torch.float64,
+        device=SA.device,
+    )
+
     # Evaluate bivariate polynomial: sum over i,j of coeffs[i,j] * SA^i * CT^j
     result = torch.zeros_like(SA)
     for i in range(9):
-        sa_power = SA ** i
+        sa_power = SA**i
         for j in range(9):
-            result = result + coeffs[i, j] * sa_power * (CT ** j)
-    
+            result = result + coeffs[i, j] * sa_power * (CT**j)
+
     return result
 
 
@@ -1740,29 +1923,123 @@ def spiciness1(SA, CT):
     """
     SA = as_tensor(SA, dtype=torch.float64)
     CT = as_tensor(CT, dtype=torch.float64)
-    
+
     SA, CT = torch.broadcast_tensors(SA, CT)
-    
+
     # Polynomial coefficients (degree 8, extracted by fitting to reference)
-    coeffs = torch.tensor([
-        [-2.415719461246059e+01, -3.441837887817599e-02, 8.807091184106901e-03, -1.345606890242647e-04, 2.089960885959342e-06, -2.691849881083835e-08, 1.825110048004535e-10, -1.209117140060156e-15, 8.377653548166112e-18, ],
-        [6.901960790239419e-01, 4.333904294335586e-03, -1.054539960636668e-04, 2.878144153220236e-06, -6.061600372616413e-08, 9.160062013102234e-10, -8.583020247905407e-12, 2.618576765466695e-15, -1.716805756675443e-17, ],
-        [-9.890195405067807e-04, -4.448337361553529e-05, 2.853341315565204e-06, -1.202236005672241e-07, 3.121698036985327e-09, -4.979144834415669e-11, 4.838900618733353e-13, -1.085421172732982e-15, 7.025523923663177e-18, ],
-        [8.799045556874457e-05, 1.706600809521068e-06, -8.756351795492742e-08, 3.457589859899594e-09, -1.035687836861103e-10, 2.076907560071799e-12, -2.751123564375776e-14, 1.718033342020972e-16, -1.106284122904055e-18, ],
-        [-4.416619740749549e-06, -5.202626216318611e-08, 2.104823669213275e-09, -8.212034891538988e-11, 3.091536557226764e-12, -8.057829865939728e-14, 1.426661698481669e-15, -1.388187855820923e-17, 8.913864194632678e-20, ],
-        [1.402710097874940e-07, 1.163902453077685e-09, -3.859609020348952e-11, 1.586056388575832e-12, -7.782878644382252e-14, 2.535834692915905e-15, -5.399935421506188e-17, 6.361664220046001e-19, -4.079005832608527e-21, ],
-        [-2.734254676285801e-09, -1.862680666717505e-11, 5.337392868657882e-13, -2.378537232114066e-14, 1.448103867456581e-15, -5.470175331616091e-17, 1.295794379077201e-18, -1.677078670408742e-20, 1.074856773011888e-22, ],
-        [3.008172307595580e-11, 1.852757128875368e-13, -4.851487703870082e-15, 2.354493122343185e-16, -1.657693658299395e-17, 6.873312526700001e-19, -1.736825919065051e-20, 2.370376299159410e-22, -1.519762796318790e-24, ],
-        [-1.436555909716299e-13, -8.363564976217445e-16, 2.075531441004741e-17, -1.090854597322327e-18, 8.466686912441082e-20, -3.736124238863725e-21, 9.850097498049255e-23, -1.390048987054546e-24, 8.920683218960688e-27, ],
-    ], dtype=torch.float64, device=SA.device)
-    
+    coeffs = torch.tensor(
+        [
+            [
+                -2.415719461246059e01,
+                -3.441837887817599e-02,
+                8.807091184106901e-03,
+                -1.345606890242647e-04,
+                2.089960885959342e-06,
+                -2.691849881083835e-08,
+                1.825110048004535e-10,
+                -1.209117140060156e-15,
+                8.377653548166112e-18,
+            ],
+            [
+                6.901960790239419e-01,
+                4.333904294335586e-03,
+                -1.054539960636668e-04,
+                2.878144153220236e-06,
+                -6.061600372616413e-08,
+                9.160062013102234e-10,
+                -8.583020247905407e-12,
+                2.618576765466695e-15,
+                -1.716805756675443e-17,
+            ],
+            [
+                -9.890195405067807e-04,
+                -4.448337361553529e-05,
+                2.853341315565204e-06,
+                -1.202236005672241e-07,
+                3.121698036985327e-09,
+                -4.979144834415669e-11,
+                4.838900618733353e-13,
+                -1.085421172732982e-15,
+                7.025523923663177e-18,
+            ],
+            [
+                8.799045556874457e-05,
+                1.706600809521068e-06,
+                -8.756351795492742e-08,
+                3.457589859899594e-09,
+                -1.035687836861103e-10,
+                2.076907560071799e-12,
+                -2.751123564375776e-14,
+                1.718033342020972e-16,
+                -1.106284122904055e-18,
+            ],
+            [
+                -4.416619740749549e-06,
+                -5.202626216318611e-08,
+                2.104823669213275e-09,
+                -8.212034891538988e-11,
+                3.091536557226764e-12,
+                -8.057829865939728e-14,
+                1.426661698481669e-15,
+                -1.388187855820923e-17,
+                8.913864194632678e-20,
+            ],
+            [
+                1.402710097874940e-07,
+                1.163902453077685e-09,
+                -3.859609020348952e-11,
+                1.586056388575832e-12,
+                -7.782878644382252e-14,
+                2.535834692915905e-15,
+                -5.399935421506188e-17,
+                6.361664220046001e-19,
+                -4.079005832608527e-21,
+            ],
+            [
+                -2.734254676285801e-09,
+                -1.862680666717505e-11,
+                5.337392868657882e-13,
+                -2.378537232114066e-14,
+                1.448103867456581e-15,
+                -5.470175331616091e-17,
+                1.295794379077201e-18,
+                -1.677078670408742e-20,
+                1.074856773011888e-22,
+            ],
+            [
+                3.008172307595580e-11,
+                1.852757128875368e-13,
+                -4.851487703870082e-15,
+                2.354493122343185e-16,
+                -1.657693658299395e-17,
+                6.873312526700001e-19,
+                -1.736825919065051e-20,
+                2.370376299159410e-22,
+                -1.519762796318790e-24,
+            ],
+            [
+                -1.436555909716299e-13,
+                -8.363564976217445e-16,
+                2.075531441004741e-17,
+                -1.090854597322327e-18,
+                8.466686912441082e-20,
+                -3.736124238863725e-21,
+                9.850097498049255e-23,
+                -1.390048987054546e-24,
+                8.920683218960688e-27,
+            ],
+        ],
+        dtype=torch.float64,
+        device=SA.device,
+    )
+
     # Evaluate bivariate polynomial: sum over i,j of coeffs[i,j] * SA^i * CT^j
     result = torch.zeros_like(SA)
     for i in range(9):
-        sa_power = SA ** i
+        sa_power = SA**i
         for j in range(9):
-            result = result + coeffs[i, j] * sa_power * (CT ** j)
-    
+            result = result + coeffs[i, j] * sa_power * (CT**j)
+
     return result
 
 
@@ -1790,29 +2067,123 @@ def spiciness2(SA, CT):
     """
     SA = as_tensor(SA, dtype=torch.float64)
     CT = as_tensor(CT, dtype=torch.float64)
-    
+
     SA, CT = torch.broadcast_tensors(SA, CT)
-    
+
     # Polynomial coefficients (degree 8, extracted by fitting to reference)
-    coeffs = torch.tensor([
-        [-2.400289725214319e+01, 3.833187999128562e-03, 7.999543100470756e-03, -1.202205990879004e-04, 1.891974442053441e-06, -2.520488538547152e-08, 1.771732493680001e-10, 2.598580339491429e-15, -1.838202401775100e-17, ],
-        [6.856734562950098e-01, 4.148589257256817e-03, -9.986101619336914e-05, 2.676553938687926e-06, -5.616889090346250e-08, 8.565806175123272e-10, -8.273340592850169e-12, -2.583384516867344e-17, -3.524684942235574e-19, ],
-        [-9.981531699529101e-04, -4.271643244347013e-05, 2.731119349014883e-06, -1.139124070557778e-07, 2.944114719714940e-09, -4.565126374166942e-11, 4.252687121967226e-13, -4.132321631293292e-16, 3.145585066321571e-18, ],
-        [8.863627756496427e-05, 1.656363093094631e-06, -8.580090103465302e-08, 3.323062038323373e-09, -9.562617736613740e-11, 1.740914871035500e-12, -2.037827706588311e-14, 8.843648980883209e-17, -6.605938038594419e-19, ],
-        [-4.426471407761267e-06, -5.236771996831444e-08, 2.195983906184809e-09, -8.145277719230868e-11, 2.708419751200742e-12, -5.936282044619570e-14, 9.296170643674740e-16, -8.125623055484238e-18, 6.023291098949289e-20, ],
-        [1.403393373581912e-07, 1.216432407200859e-09, -4.363588315212783e-11, 1.605927308347947e-12, -6.296272890723383e-14, 1.680466061290706e-15, -3.352366494450067e-17, 4.010041556750080e-19, -2.955744419228624e-21, ],
-        [-2.734631908749898e-09, -1.997361472853544e-11, 6.463843148211673e-13, -2.394050238033276e-14, 1.083495539240198e-15, -3.404928105082452e-17, 7.981277771010948e-19, -1.107402304288622e-20, 8.122362640929773e-23, ],
-        [3.008241916979583e-11, 2.016388816573376e-13, -6.141206640847427e-15, 2.308026349995287e-16, -1.166183652510963e-17, 4.140938412223425e-19, -1.074888914696179e-20, 1.610881500660721e-22, -1.176434743755892e-24, ],
-        [-1.436515121088602e-13, -9.183198661441348e-16, 2.697009669989727e-17, -1.033205808726678e-18, 5.686618578207756e-20, -2.211396039639113e-21, 6.132520288488010e-23, -9.604293990643602e-25, 6.988407714042877e-27, ],
-    ], dtype=torch.float64, device=SA.device)
-    
+    coeffs = torch.tensor(
+        [
+            [
+                -2.400289725214319e01,
+                3.833187999128562e-03,
+                7.999543100470756e-03,
+                -1.202205990879004e-04,
+                1.891974442053441e-06,
+                -2.520488538547152e-08,
+                1.771732493680001e-10,
+                2.598580339491429e-15,
+                -1.838202401775100e-17,
+            ],
+            [
+                6.856734562950098e-01,
+                4.148589257256817e-03,
+                -9.986101619336914e-05,
+                2.676553938687926e-06,
+                -5.616889090346250e-08,
+                8.565806175123272e-10,
+                -8.273340592850169e-12,
+                -2.583384516867344e-17,
+                -3.524684942235574e-19,
+            ],
+            [
+                -9.981531699529101e-04,
+                -4.271643244347013e-05,
+                2.731119349014883e-06,
+                -1.139124070557778e-07,
+                2.944114719714940e-09,
+                -4.565126374166942e-11,
+                4.252687121967226e-13,
+                -4.132321631293292e-16,
+                3.145585066321571e-18,
+            ],
+            [
+                8.863627756496427e-05,
+                1.656363093094631e-06,
+                -8.580090103465302e-08,
+                3.323062038323373e-09,
+                -9.562617736613740e-11,
+                1.740914871035500e-12,
+                -2.037827706588311e-14,
+                8.843648980883209e-17,
+                -6.605938038594419e-19,
+            ],
+            [
+                -4.426471407761267e-06,
+                -5.236771996831444e-08,
+                2.195983906184809e-09,
+                -8.145277719230868e-11,
+                2.708419751200742e-12,
+                -5.936282044619570e-14,
+                9.296170643674740e-16,
+                -8.125623055484238e-18,
+                6.023291098949289e-20,
+            ],
+            [
+                1.403393373581912e-07,
+                1.216432407200859e-09,
+                -4.363588315212783e-11,
+                1.605927308347947e-12,
+                -6.296272890723383e-14,
+                1.680466061290706e-15,
+                -3.352366494450067e-17,
+                4.010041556750080e-19,
+                -2.955744419228624e-21,
+            ],
+            [
+                -2.734631908749898e-09,
+                -1.997361472853544e-11,
+                6.463843148211673e-13,
+                -2.394050238033276e-14,
+                1.083495539240198e-15,
+                -3.404928105082452e-17,
+                7.981277771010948e-19,
+                -1.107402304288622e-20,
+                8.122362640929773e-23,
+            ],
+            [
+                3.008241916979583e-11,
+                2.016388816573376e-13,
+                -6.141206640847427e-15,
+                2.308026349995287e-16,
+                -1.166183652510963e-17,
+                4.140938412223425e-19,
+                -1.074888914696179e-20,
+                1.610881500660721e-22,
+                -1.176434743755892e-24,
+            ],
+            [
+                -1.436515121088602e-13,
+                -9.183198661441348e-16,
+                2.697009669989727e-17,
+                -1.033205808726678e-18,
+                5.686618578207756e-20,
+                -2.211396039639113e-21,
+                6.132520288488010e-23,
+                -9.604293990643602e-25,
+                6.988407714042877e-27,
+            ],
+        ],
+        dtype=torch.float64,
+        device=SA.device,
+    )
+
     # Evaluate bivariate polynomial: sum over i,j of coeffs[i,j] * SA^i * CT^j
     result = torch.zeros_like(SA)
     for i in range(9):
-        sa_power = SA ** i
+        sa_power = SA**i
         for j in range(9):
-            result = result + coeffs[i, j] * sa_power * (CT ** j)
-    
+            result = result + coeffs[i, j] * sa_power * (CT**j)
+
     return result
 
 
@@ -1844,16 +2215,16 @@ def rho_first_derivatives_wrt_enthalpy(SA, CT, p):
     where h_SA and h_CT are enthalpy derivatives.
     """
     from ..energy import enthalpy_first_derivatives
-    
+
     rho_SA, rho_CT, _ = rho_first_derivatives(SA, CT, p)
     h_SA, h_CT = enthalpy_first_derivatives(SA, CT, p)
-    
+
     # rho_SA_wrt_h = rho_SA - rho_CT * h_SA / h_CT
     rho_SA_wrt_h = rho_SA - rho_CT * h_SA / h_CT
-    
+
     # rho_h = rho_CT / h_CT
     rho_h = rho_CT / h_CT
-    
+
     return rho_SA_wrt_h, rho_h
 
 
@@ -1885,31 +2256,31 @@ def rho_second_derivatives_wrt_enthalpy(SA, CT, p):
     CT-based derivatives to enthalpy-based derivatives.
     """
     from ..energy import enthalpy_first_derivatives, enthalpy_second_derivatives
-    
+
     rho_SA, rho_CT, _ = rho_first_derivatives(SA, CT, p)
     rho_SA_SA, rho_SA_CT, rho_CT_CT, _, _ = rho_second_derivatives(SA, CT, p)
     h_SA, h_CT = enthalpy_first_derivatives(SA, CT, p)
     h_SA_SA, h_SA_CT, h_CT_CT = enthalpy_second_derivatives(SA, CT, p)
-    
+
     # rho_SA_wrt_h = rho_SA - rho_CT * h_SA / h_CT
     # rho_SA_SA_wrt_h = d(rho_SA_wrt_h)/dSA (holding h constant)
     # = rho_SA_SA - rho_SA_CT*h_SA/h_CT - rho_CT*d(h_SA/h_CT)/dSA
     # d(h_SA/h_CT)/dSA = (h_SA_SA*h_CT - h_SA*h_SA_CT)/h_CT^2
     d_hSA_hCT_dSA = (h_SA_SA * h_CT - h_SA * h_SA_CT) / h_CT**2
     rho_SA_SA_wrt_h = rho_SA_SA - rho_SA_CT * h_SA / h_CT - rho_CT * d_hSA_hCT_dSA
-    
+
     # rho_SA_h = d(rho_SA_wrt_h)/dh = d(rho_SA_wrt_h)/dCT / h_CT
     # d(rho_SA_wrt_h)/dCT = rho_SA_CT - rho_CT_CT*h_SA/h_CT - rho_CT*d(h_SA/h_CT)/dCT
     # d(h_SA/h_CT)/dCT = (h_SA_CT*h_CT - h_SA*h_CT_CT)/h_CT^2
     d_hSA_hCT_dCT = (h_SA_CT * h_CT - h_SA * h_CT_CT) / h_CT**2
     d_rho_SA_wrt_h_dCT = rho_SA_CT - rho_CT_CT * h_SA / h_CT - rho_CT * d_hSA_hCT_dCT
     rho_SA_h = d_rho_SA_wrt_h_dCT / h_CT
-    
+
     # rho_h_h = d(rho_h)/dh = d(rho_CT/h_CT)/dCT / h_CT
     # d(rho_CT/h_CT)/dCT = (rho_CT_CT*h_CT - rho_CT*h_CT_CT)/h_CT^2
     d_rho_h_dCT = (rho_CT_CT * h_CT - rho_CT * h_CT_CT) / h_CT**2
     rho_h_h = d_rho_h_dCT / h_CT
-    
+
     return rho_SA_SA_wrt_h, rho_SA_h, rho_h_h
 
 
@@ -1941,16 +2312,16 @@ def specvol_first_derivatives_wrt_enthalpy(SA, CT, p):
     where v_SA, v_CT are specvol derivatives and h_SA, h_CT are enthalpy derivatives.
     """
     from ..energy import enthalpy_first_derivatives
-    
+
     v_SA, v_CT, _ = specvol_first_derivatives(SA, CT, p)
     h_SA, h_CT = enthalpy_first_derivatives(SA, CT, p)
-    
+
     # v_SA_wrt_h = v_SA - v_CT * h_SA / h_CT
     v_SA_wrt_h = v_SA - v_CT * h_SA / h_CT
-    
+
     # v_h = v_CT / h_CT
     v_h = v_CT / h_CT
-    
+
     return v_SA_wrt_h, v_h
 
 
@@ -1982,24 +2353,24 @@ def specvol_second_derivatives_wrt_enthalpy(SA, CT, p):
     CT-based derivatives to enthalpy-based derivatives.
     """
     from ..energy import enthalpy_first_derivatives, enthalpy_second_derivatives
-    
+
     v_SA, v_CT, _ = specvol_first_derivatives(SA, CT, p)
     v_SA_SA, v_SA_CT, v_CT_CT, _, _ = specvol_second_derivatives(SA, CT, p)
     h_SA, h_CT = enthalpy_first_derivatives(SA, CT, p)
     h_SA_SA, h_SA_CT, h_CT_CT = enthalpy_second_derivatives(SA, CT, p)
-    
+
     # v_SA_wrt_h = v_SA - v_CT * h_SA / h_CT
     # v_SA_SA_wrt_h = d(v_SA_wrt_h)/dSA (holding h constant)
     d_hSA_hCT_dSA = (h_SA_SA * h_CT - h_SA * h_SA_CT) / h_CT**2
     v_SA_SA_wrt_h = v_SA_SA - v_SA_CT * h_SA / h_CT - v_CT * d_hSA_hCT_dSA
-    
+
     # v_SA_h = d(v_SA_wrt_h)/dh = d(v_SA_wrt_h)/dCT / h_CT
     d_hSA_hCT_dCT = (h_SA_CT * h_CT - h_SA * h_CT_CT) / h_CT**2
     d_v_SA_wrt_h_dCT = v_SA_CT - v_CT_CT * h_SA / h_CT - v_CT * d_hSA_hCT_dCT
     v_SA_h = d_v_SA_wrt_h_dCT / h_CT
-    
+
     # v_h_h = d(v_h)/dh = d(v_CT/h_CT)/dCT / h_CT
     d_v_h_dCT = (v_CT_CT * h_CT - v_CT * h_CT_CT) / h_CT**2
     v_h_h = d_v_h_dCT / h_CT
-    
+
     return v_SA_SA_wrt_h, v_SA_h, v_h_h

@@ -23,6 +23,7 @@ Key differences from numpy GSW:
 
 from . import conversions, density, energy, geostrophy, ice, stability, utility
 from .conversions import (
+    SAAR,
     C_from_SP,
     CT_first_derivatives,
     CT_from_enthalpy,
@@ -32,7 +33,7 @@ from .conversions import (
     CT_from_t,
     CT_maxdensity,
     CT_second_derivatives,
-    SAAR,
+    SA_from_rho,
     SA_from_SP,
     SA_from_Sstar,
     SP_from_C,
@@ -43,8 +44,6 @@ from .conversions import (
     SR_from_SP,
     Sstar_from_SA,
     Sstar_from_SP,
-    pt_from_entropy,
-    SA_from_rho,
     adiabatic_lapse_rate_from_CT,
     deltaSA_from_SP,
     entropy_first_derivatives,
@@ -57,11 +56,44 @@ from .conversions import (
     pt0_from_t,
     pt_first_derivatives,
     pt_from_CT,
+    pt_from_entropy,
     pt_from_t,
     pt_second_derivatives,
     t90_from_t68,
     t_from_CT,
     z_from_p,
+)
+from .density import (
+    alpha,
+    alpha_on_beta,
+    beta,
+    infunnel,
+    kappa,
+    pot_rho_t_exact,
+    rho,
+    rho_alpha_beta,
+    rho_first_derivatives,
+    rho_first_derivatives_wrt_enthalpy,
+    rho_second_derivatives,
+    rho_second_derivatives_wrt_enthalpy,
+    rho_t_exact,
+    sigma0,
+    sigma1,
+    sigma2,
+    sigma3,
+    sigma4,
+    sound_speed,
+    specvol,
+    specvol_alpha_beta,
+    specvol_anom_standard,
+    specvol_first_derivatives,
+    specvol_first_derivatives_wrt_enthalpy,
+    specvol_second_derivatives,
+    specvol_second_derivatives_wrt_enthalpy,
+    specvol_t_exact,
+    spiciness0,
+    spiciness1,
+    spiciness2,
 )
 from .energy import (
     dynamic_enthalpy,
@@ -77,6 +109,7 @@ from .energy import (
     latentheat_melting,
 )
 from .freezing import CT_freezing, SA_freezing_from_CT, pressure_freezing_CT, t_freezing
+from .geostrophy import distance, f, geostrophic_velocity, unwrap  # noqa
 from .ice import (
     adiabatic_lapse_rate_ice,
     alpha_wrt_t_ice,
@@ -97,42 +130,21 @@ from .ice import (
     pressure_coefficient_ice,
     seaice_fraction_to_freeze_seawater,
 )
-from .density import (
-    alpha,
-    alpha_on_beta,
-    beta,
-    infunnel,
-    kappa,
-    pot_rho_t_exact,
-    rho,
-    rho_alpha_beta,
-    rho_first_derivatives,
-    rho_second_derivatives,
-    rho_t_exact,
-    sigma0,
-    sigma1,
-    sigma2,
-    sigma3,
-    sigma4,
-    sound_speed,
-    specvol,
-    specvol_alpha_beta,
-    specvol_anom_standard,
-    specvol_first_derivatives,
-    specvol_second_derivatives,
-    specvol_t_exact,
-    spiciness0,
-    spiciness1,
-    spiciness2,
-    rho_first_derivatives_wrt_enthalpy,
-    rho_second_derivatives_wrt_enthalpy,
-    specvol_first_derivatives_wrt_enthalpy,
-    specvol_second_derivatives_wrt_enthalpy,
-)
-from .geostrophy import distance, f, geostrophic_velocity, unwrap  # noqa
 from .interpolation import sa_ct_interp, tracer_ct_interp  # noqa
-from .stability import Nsquared, Turner_Rsubrho, IPV_vs_fNsquared_ratio, cabbeling, thermobaric  # noqa
-from .utility import pchip_interp, O2sol, O2sol_SP_pt, chem_potential_water_t_exact, t_deriv_chem_potential_water_t_exact  # noqa
+from .stability import (  # noqa
+    IPV_vs_fNsquared_ratio,
+    Nsquared,
+    Turner_Rsubrho,
+    cabbeling,
+    thermobaric,
+)
+from .utility import (  # noqa
+    O2sol,
+    O2sol_SP_pt,
+    chem_potential_water_t_exact,
+    pchip_interp,
+    t_deriv_chem_potential_water_t_exact,
+)
 
 try:
     from ._version import __version__
@@ -162,7 +174,10 @@ __all__ = [
     "SA_from_SP",
     "SA_from_Sstar",
     "SP_from_SA",
+    "SP_from_SK",
+    "SP_from_SR",
     "SP_from_Sstar",
+    "SR_from_SP",
     "Sstar_from_SA",
     "Sstar_from_SP",
     "C_from_SP",
@@ -227,9 +242,20 @@ __all__ = [
     "thermobaric",
     "cabbeling",
     "rho",
+    "rho_first_derivatives",
+    "rho_first_derivatives_wrt_enthalpy",
+    "rho_second_derivatives",
+    "rho_second_derivatives_wrt_enthalpy",
     "rho_t_exact",
+    "specvol_first_derivatives",
+    "specvol_first_derivatives_wrt_enthalpy",
+    "specvol_second_derivatives",
+    "specvol_second_derivatives_wrt_enthalpy",
     "specvol_t_exact",
     "pot_rho_t_exact",
+    "spiciness0",
+    "spiciness1",
+    "spiciness2",
     "infunnel",
     "kappa",
     "sound_speed",

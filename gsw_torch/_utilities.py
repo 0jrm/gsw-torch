@@ -6,7 +6,7 @@ common operations needed across the GSW package.
 """
 
 from functools import wraps
-from typing import Any, Callable, Optional, Tuple, Union
+from typing import Any, Callable, Optional, Union
 
 import numpy as np
 import torch
@@ -92,6 +92,7 @@ def match_args_return(f: Callable) -> Callable:
     Callable
         Wrapped function with tensor conversion and broadcasting
     """
+
     @wraps(f)
     def wrapper(*args, **kw):
         # Handle 'p' keyword argument that might be passed separately
@@ -102,9 +103,7 @@ def match_args_return(f: Callable) -> Callable:
 
         # Check if inputs are arrays/iterables
         isarray = [hasattr(a, "__iter__") and not isinstance(a, (str, bytes)) for a in args]
-        ismasked = [
-            hasattr(np.ma, "isMaskedArray") and np.ma.isMaskedArray(a) for a in args
-        ]
+        ismasked = [hasattr(np.ma, "isMaskedArray") and np.ma.isMaskedArray(a) for a in args]
         isduck = [
             hasattr(a, "__array_ufunc__") and not isinstance(a, (torch.Tensor, np.ndarray))
             for a in args
@@ -189,7 +188,7 @@ def match_args_return(f: Callable) -> Callable:
     return wrapper
 
 
-def axis_slicer(n: int, sl: slice, axis: int) -> Tuple[Union[slice, int], ...]:
+def axis_slicer(n: int, sl: slice, axis: int) -> tuple[Union[slice, int], ...]:
     """
     Return an indexing tuple for an array with `n` dimensions,
     with slice `sl` taken on `axis`.
@@ -213,7 +212,7 @@ def axis_slicer(n: int, sl: slice, axis: int) -> Tuple[Union[slice, int], ...]:
     return tuple(itup)
 
 
-def indexer(shape: Tuple[int, ...], axis: int, order: str = "C"):
+def indexer(shape: tuple[int, ...], axis: int, order: str = "C"):
     """
     Generator of indexing tuples for "apply_along_axis" usage.
 
@@ -296,7 +295,7 @@ class Bunch(dict):
         try:
             return self[name]
         except KeyError as err:
-            raise AttributeError(f"'Bunch' object has no attribute {name}. {err}")
+            raise AttributeError(f"'Bunch' object has no attribute {name}. {err}") from err
 
     def __setattr__(self, name: str, value: Any) -> None:
         self[name] = value
@@ -345,7 +344,9 @@ class Bunch(dict):
         lines = ["def _temp_func():\n"]
         with open(filename) as f:
             lines.extend(["    " + line for line in f])
-        lines.extend(["\n    return(locals())\n", "_temp_out = _temp_func()\n", "del(_temp_func)\n"])
+        lines.extend(
+            ["\n    return(locals())\n", "_temp_out = _temp_func()\n", "del(_temp_func)\n"]
+        )
         codetext = "".join(lines)
         code = compile(codetext, filename, "exec")
         exec(code, globals(), d)

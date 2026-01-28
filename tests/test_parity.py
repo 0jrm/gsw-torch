@@ -12,11 +12,11 @@ import pytest
 import torch
 
 import gsw_torch
+
 from .conftest import (
     HAS_REFERENCE,
     assert_torch_allclose,
     check_values,
-    reference_gsw,
 )
 
 

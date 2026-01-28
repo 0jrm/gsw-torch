@@ -1,0 +1,13 @@
+CI Fixes and Code Quality Improvements
+
+This release fixes all remaining CI linting errors (130 → 0) and ensures
+the CI workflow passes. All changes maintain numerical parity with the
+reference GSW implementation.
+
+Key improvements:
+- Removed duplicate function definitions and dead code
+- Fixed all linting errors (F811, F821, B904, E722, E402)
+- Added SAAR data extraction script for test infrastructure
+- Fixed configuration issues (mypy.ini)
+- All 29 parity tests pass
+- No numerical regressions detected

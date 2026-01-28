@@ -1,6 +1,7 @@
 """
 Functions involving internal energy, enthalpy, latent heat.
 """
+
 # Import from _core modules
 from ._core.energy import (
     dynamic_enthalpy,
@@ -24,7 +25,9 @@ __all__ = [
     "enthalpy",
     "enthalpy_CT_exact",
     "enthalpy_diff",
+    "enthalpy_first_derivatives",
     "enthalpy_first_derivatives_CT_exact",
+    "enthalpy_second_derivatives",
     "enthalpy_second_derivatives_CT_exact",
     "enthalpy_SSO_0",
     "enthalpy_t_exact",

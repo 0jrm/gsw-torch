@@ -7,6 +7,7 @@ These are a subset of the TEOS-10 table category
 We are grouping the functions related to enthalpy and internal energy
 in their own "energy" module.
 """
+
 # Import from _core modules
 from ._core.density import (
     alpha,
@@ -22,7 +23,9 @@ from ._core.density import (
     rho,
     rho_alpha_beta,
     rho_first_derivatives,
+    rho_first_derivatives_wrt_enthalpy,
     rho_second_derivatives,
+    rho_second_derivatives_wrt_enthalpy,
     rho_t_exact,
     sigma0,
     sigma1,
@@ -35,15 +38,13 @@ from ._core.density import (
     specvol_alpha_beta,
     specvol_anom_standard,
     specvol_first_derivatives,
+    specvol_first_derivatives_wrt_enthalpy,
     specvol_second_derivatives,
+    specvol_second_derivatives_wrt_enthalpy,
     specvol_t_exact,
     spiciness0,
     spiciness1,
     spiciness2,
-    rho_first_derivatives_wrt_enthalpy,
-    rho_second_derivatives_wrt_enthalpy,
-    specvol_first_derivatives_wrt_enthalpy,
-    specvol_second_derivatives_wrt_enthalpy,
 )
 
 __all__ = [
@@ -59,6 +60,8 @@ __all__ = [
     "pot_rho_t_exact",
     "rho",
     "rho_alpha_beta",
+    "rho_first_derivatives",
+    "rho_second_derivatives",
     "rho_t_exact",
     "sigma0",
     "sigma1",
@@ -70,6 +73,8 @@ __all__ = [
     "specvol",
     "specvol_alpha_beta",
     "specvol_anom_standard",
+    "specvol_first_derivatives",
+    "specvol_second_derivatives",
     "specvol_t_exact",
     "spiciness0",
     "spiciness1",

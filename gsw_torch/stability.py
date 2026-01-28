@@ -23,8 +23,8 @@ __all__ = [
 ]
 
 # Import core functions
-from ._core.conversions import grav
 from ._core.density import specvol_alpha_beta
+from .conversions import grav
 
 # In the following, axis=0 matches the Matlab behavior.
 
@@ -67,7 +67,7 @@ def Nsquared(SA, CT, p, lat=None, axis=0):
         if torch.any((lat < -90) | (lat > 90)):
             raise ValueError("lat is out of range")
         SA, CT, p, lat = torch.broadcast_tensors(SA, CT, p, lat)
-        g = _grav(lat, p)
+        g = grav(lat, p)
     else:
         SA, CT, p = torch.broadcast_tensors(SA, CT, p)
         g = torch.tensor(9.7963, dtype=torch.float64, device=SA.device)  # (Griffies, 2004)
@@ -89,7 +89,7 @@ def Nsquared(SA, CT, p, lat=None, axis=0):
 
     specvol_mid, alpha_mid, beta_mid = specvol_alpha_beta(SA_mid, CT_mid, p_mid)
 
-    N2 = ((g_local**2) / (specvol_mid * db_to_pa * dp))
+    N2 = (g_local**2) / (specvol_mid * db_to_pa * dp)
     N2 *= beta_mid * dSA - alpha_mid * dCT
 
     return N2, p_mid
@@ -140,7 +140,7 @@ def Turner_Rsubrho(SA, CT, p, axis=0):
     CT_mid = 0.5 * (CT[shallow] + CT[deep])
     p_mid = 0.5 * (p[shallow] + p[deep])
 
-    _, alpha, beta = _specvol_alpha_beta(SA_mid, CT_mid, p_mid)
+    _, alpha, beta = specvol_alpha_beta(SA_mid, CT_mid, p_mid)
 
     Tu = torch.atan2((alpha * dCT + beta * dSA), (alpha * dCT - beta * dSA))
     Tu = torch.rad2deg(Tu)
