@@ -36,10 +36,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/TEOS-10/gsw-torch"
-Documentation = "https://github.com/TEOS-10/gsw-torch#readme"
-Repository = "https://github.com/TEOS-10/gsw-torch"
-Issues = "https://github.com/TEOS-10/gsw-torch/issues"
+Homepage = "https://github.com/0jrm/gsw-torch"
+Documentation = "https://github.com/0jrm/gsw-torch#readme"
+Repository = "https://github.com/0jrm/gsw-torch"
+Issues = "https://github.com/0jrm/gsw-torch/issues"
 
 [project.optional-dependencies]
 dev = [
