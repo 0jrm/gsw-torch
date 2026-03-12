@@ -14,13 +14,23 @@ This package provides a PyTorch-based reimplementation of the GSW Python package
 
 ## Installation
 
-### Development Installation
-
-This package uses `uv` for environment management:
+### PyPI Installation
 
 ```bash
-# Create virtual environment
-uv venv
+pip install gsw-torch #Recommended: use `uv` for faster installation
+```
+### Development Installation
+
+`uv` is highly recommended for environment management:
+
+```bash
+# Clone from GitHub
+git clone https://github.com/0jrm/gsw-torch.git
+cd gsw-torch
+
+# Create virtual environment with 'uv' 
+# If not installed, run: pip install uv
+uv venv 
 
 # Activate environment (Linux/Mac)
 source .venv/bin/activate
@@ -31,12 +41,6 @@ uv pip install -e .
 
 # Install development dependencies
 uv pip install -e ".[dev]"
-```
-
-### Future: PyPI Installation
-
-```bash
-pip install gsw-torch
 ```
 
 ## Usage
